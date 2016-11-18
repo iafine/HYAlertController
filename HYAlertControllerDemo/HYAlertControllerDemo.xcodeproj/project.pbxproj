@@ -1,0 +1,440 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4645D89F6BB43B1DB8A3D657 /* Pods_HYAlertControllerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8962321BAD29FD009C1F4ED /* Pods_HYAlertControllerDemo.framework */; };
+		96C30B0D1DDDAD4500BECB35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C30B0C1DDDAD4500BECB35 /* AppDelegate.swift */; };
+		96C30B0F1DDDAD4500BECB35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C30B0E1DDDAD4500BECB35 /* ViewController.swift */; };
+		96C30B121DDDAD4500BECB35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C30B101DDDAD4500BECB35 /* Main.storyboard */; };
+		96C30B141DDDAD4500BECB35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96C30B131DDDAD4500BECB35 /* Assets.xcassets */; };
+		96C30B171DDDAD4500BECB35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C30B151DDDAD4500BECB35 /* LaunchScreen.storyboard */; };
+		96C30B2C1DDDAE8200BECB35 /* HY_Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C30B201DDDAE8200BECB35 /* HY_Constants.swift */; };
+		96C30B2D1DDDAE8200BECB35 /* HYActionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C30B211DDDAE8200BECB35 /* HYActionSheetView.swift */; };
+		96C30B2E1DDDAE8200BECB35 /* HYAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C30B221DDDAE8200BECB35 /* HYAlertAction.swift */; };
+		96C30B2F1DDDAE8200BECB35 /* HYAlertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C30B231DDDAE8200BECB35 /* HYAlertCell.swift */; };
+		96C30B301DDDAE8200BECB35 /* HYAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C30B241DDDAE8200BECB35 /* HYAlertController.swift */; };
+		96C30B311DDDAE8200BECB35 /* HYAlertDismissSlideDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C30B251DDDAE8200BECB35 /* HYAlertDismissSlideDown.swift */; };
+		96C30B321DDDAE8200BECB35 /* HYAlertPresentSlideUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C30B261DDDAE8200BECB35 /* HYAlertPresentSlideUp.swift */; };
+		96C30B331DDDAE8200BECB35 /* HYAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C30B271DDDAE8200BECB35 /* HYAlertView.swift */; };
+		96C30B341DDDAE8200BECB35 /* HYShareCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C30B281DDDAE8200BECB35 /* HYShareCollectionCell.swift */; };
+		96C30B351DDDAE8200BECB35 /* HYShareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C30B291DDDAE8200BECB35 /* HYShareTableViewCell.swift */; };
+		96C30B361DDDAE8200BECB35 /* HYShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C30B2A1DDDAE8200BECB35 /* HYShareView.swift */; };
+		96C30B371DDDAE8200BECB35 /* HYTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C30B2B1DDDAE8200BECB35 /* HYTitleView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		826299CD49BD0AEF5BC31FD9 /* Pods-HYAlertControllerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYAlertControllerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYAlertControllerDemo/Pods-HYAlertControllerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		895AC2AAAAC46E3C094981CB /* Pods-HYAlertControllerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYAlertControllerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-HYAlertControllerDemo/Pods-HYAlertControllerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		96C30B091DDDAD4500BECB35 /* HYAlertControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HYAlertControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		96C30B0C1DDDAD4500BECB35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		96C30B0E1DDDAD4500BECB35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		96C30B111DDDAD4500BECB35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		96C30B131DDDAD4500BECB35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		96C30B161DDDAD4500BECB35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		96C30B181DDDAD4500BECB35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96C30B201DDDAE8200BECB35 /* HY_Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HY_Constants.swift; sourceTree = "<group>"; };
+		96C30B211DDDAE8200BECB35 /* HYActionSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYActionSheetView.swift; sourceTree = "<group>"; };
+		96C30B221DDDAE8200BECB35 /* HYAlertAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertAction.swift; sourceTree = "<group>"; };
+		96C30B231DDDAE8200BECB35 /* HYAlertCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertCell.swift; sourceTree = "<group>"; };
+		96C30B241DDDAE8200BECB35 /* HYAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertController.swift; sourceTree = "<group>"; };
+		96C30B251DDDAE8200BECB35 /* HYAlertDismissSlideDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertDismissSlideDown.swift; sourceTree = "<group>"; };
+		96C30B261DDDAE8200BECB35 /* HYAlertPresentSlideUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertPresentSlideUp.swift; sourceTree = "<group>"; };
+		96C30B271DDDAE8200BECB35 /* HYAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertView.swift; sourceTree = "<group>"; };
+		96C30B281DDDAE8200BECB35 /* HYShareCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYShareCollectionCell.swift; sourceTree = "<group>"; };
+		96C30B291DDDAE8200BECB35 /* HYShareTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYShareTableViewCell.swift; sourceTree = "<group>"; };
+		96C30B2A1DDDAE8200BECB35 /* HYShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYShareView.swift; sourceTree = "<group>"; };
+		96C30B2B1DDDAE8200BECB35 /* HYTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYTitleView.swift; sourceTree = "<group>"; };
+		A8962321BAD29FD009C1F4ED /* Pods_HYAlertControllerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HYAlertControllerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		96C30B061DDDAD4500BECB35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4645D89F6BB43B1DB8A3D657 /* Pods_HYAlertControllerDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4CE2C2B408485975BA908293 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A8962321BAD29FD009C1F4ED /* Pods_HYAlertControllerDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5BF758534A6576F3C2ECD4D6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				826299CD49BD0AEF5BC31FD9 /* Pods-HYAlertControllerDemo.debug.xcconfig */,
+				895AC2AAAAC46E3C094981CB /* Pods-HYAlertControllerDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		96C30B001DDDAD4500BECB35 = {
+			isa = PBXGroup;
+			children = (
+				96C30B0B1DDDAD4500BECB35 /* HYAlertControllerDemo */,
+				96C30B0A1DDDAD4500BECB35 /* Products */,
+				5BF758534A6576F3C2ECD4D6 /* Pods */,
+				4CE2C2B408485975BA908293 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		96C30B0A1DDDAD4500BECB35 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96C30B091DDDAD4500BECB35 /* HYAlertControllerDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96C30B0B1DDDAD4500BECB35 /* HYAlertControllerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				96C30B1F1DDDAE8200BECB35 /* HYAlertController */,
+				96C30B0C1DDDAD4500BECB35 /* AppDelegate.swift */,
+				96C30B0E1DDDAD4500BECB35 /* ViewController.swift */,
+				96C30B101DDDAD4500BECB35 /* Main.storyboard */,
+				96C30B131DDDAD4500BECB35 /* Assets.xcassets */,
+				96C30B151DDDAD4500BECB35 /* LaunchScreen.storyboard */,
+				96C30B181DDDAD4500BECB35 /* Info.plist */,
+			);
+			path = HYAlertControllerDemo;
+			sourceTree = "<group>";
+		};
+		96C30B1F1DDDAE8200BECB35 /* HYAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				96C30B201DDDAE8200BECB35 /* HY_Constants.swift */,
+				96C30B211DDDAE8200BECB35 /* HYActionSheetView.swift */,
+				96C30B221DDDAE8200BECB35 /* HYAlertAction.swift */,
+				96C30B231DDDAE8200BECB35 /* HYAlertCell.swift */,
+				96C30B241DDDAE8200BECB35 /* HYAlertController.swift */,
+				96C30B251DDDAE8200BECB35 /* HYAlertDismissSlideDown.swift */,
+				96C30B261DDDAE8200BECB35 /* HYAlertPresentSlideUp.swift */,
+				96C30B271DDDAE8200BECB35 /* HYAlertView.swift */,
+				96C30B281DDDAE8200BECB35 /* HYShareCollectionCell.swift */,
+				96C30B291DDDAE8200BECB35 /* HYShareTableViewCell.swift */,
+				96C30B2A1DDDAE8200BECB35 /* HYShareView.swift */,
+				96C30B2B1DDDAE8200BECB35 /* HYTitleView.swift */,
+			);
+			path = HYAlertController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		96C30B081DDDAD4500BECB35 /* HYAlertControllerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96C30B1B1DDDAD4500BECB35 /* Build configuration list for PBXNativeTarget "HYAlertControllerDemo" */;
+			buildPhases = (
+				BBFA77F568310E4234C3DB50 /* [CP] Check Pods Manifest.lock */,
+				96C30B051DDDAD4500BECB35 /* Sources */,
+				96C30B061DDDAD4500BECB35 /* Frameworks */,
+				96C30B071DDDAD4500BECB35 /* Resources */,
+				8FB412E2AEB7999AFEE5AC0D /* [CP] Embed Pods Frameworks */,
+				33D2BE3B823EF38116BB695B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HYAlertControllerDemo;
+			productName = HYAlertControllerDemo;
+			productReference = 96C30B091DDDAD4500BECB35 /* HYAlertControllerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		96C30B011DDDAD4500BECB35 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = hyyy;
+				TargetAttributes = {
+					96C30B081DDDAD4500BECB35 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 96C30B041DDDAD4500BECB35 /* Build configuration list for PBXProject "HYAlertControllerDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 96C30B001DDDAD4500BECB35;
+			productRefGroup = 96C30B0A1DDDAD4500BECB35 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				96C30B081DDDAD4500BECB35 /* HYAlertControllerDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		96C30B071DDDAD4500BECB35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96C30B171DDDAD4500BECB35 /* LaunchScreen.storyboard in Resources */,
+				96C30B141DDDAD4500BECB35 /* Assets.xcassets in Resources */,
+				96C30B121DDDAD4500BECB35 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		33D2BE3B823EF38116BB695B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HYAlertControllerDemo/Pods-HYAlertControllerDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8FB412E2AEB7999AFEE5AC0D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HYAlertControllerDemo/Pods-HYAlertControllerDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BBFA77F568310E4234C3DB50 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		96C30B051DDDAD4500BECB35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96C30B351DDDAE8200BECB35 /* HYShareTableViewCell.swift in Sources */,
+				96C30B361DDDAE8200BECB35 /* HYShareView.swift in Sources */,
+				96C30B341DDDAE8200BECB35 /* HYShareCollectionCell.swift in Sources */,
+				96C30B0F1DDDAD4500BECB35 /* ViewController.swift in Sources */,
+				96C30B2D1DDDAE8200BECB35 /* HYActionSheetView.swift in Sources */,
+				96C30B321DDDAE8200BECB35 /* HYAlertPresentSlideUp.swift in Sources */,
+				96C30B2E1DDDAE8200BECB35 /* HYAlertAction.swift in Sources */,
+				96C30B331DDDAE8200BECB35 /* HYAlertView.swift in Sources */,
+				96C30B0D1DDDAD4500BECB35 /* AppDelegate.swift in Sources */,
+				96C30B2C1DDDAE8200BECB35 /* HY_Constants.swift in Sources */,
+				96C30B301DDDAE8200BECB35 /* HYAlertController.swift in Sources */,
+				96C30B311DDDAE8200BECB35 /* HYAlertDismissSlideDown.swift in Sources */,
+				96C30B371DDDAE8200BECB35 /* HYTitleView.swift in Sources */,
+				96C30B2F1DDDAE8200BECB35 /* HYAlertCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		96C30B101DDDAD4500BECB35 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96C30B111DDDAD4500BECB35 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		96C30B151DDDAD4500BECB35 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96C30B161DDDAD4500BECB35 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		96C30B191DDDAD4500BECB35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		96C30B1A1DDDAD4500BECB35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		96C30B1C1DDDAD4500BECB35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 826299CD49BD0AEF5BC31FD9 /* Pods-HYAlertControllerDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = HYAlertControllerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyyy.HYAlertControllerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		96C30B1D1DDDAD4500BECB35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 895AC2AAAAC46E3C094981CB /* Pods-HYAlertControllerDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = HYAlertControllerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyyy.HYAlertControllerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		96C30B041DDDAD4500BECB35 /* Build configuration list for PBXProject "HYAlertControllerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96C30B191DDDAD4500BECB35 /* Debug */,
+				96C30B1A1DDDAD4500BECB35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96C30B1B1DDDAD4500BECB35 /* Build configuration list for PBXNativeTarget "HYAlertControllerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96C30B1C1DDDAD4500BECB35 /* Debug */,
+				96C30B1D1DDDAD4500BECB35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 96C30B011DDDAD4500BECB35 /* Project object */;
+}
