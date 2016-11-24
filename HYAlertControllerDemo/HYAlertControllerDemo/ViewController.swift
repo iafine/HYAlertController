@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HYAlertController
 
 struct Constant {
     static let ScreenWidth: CGFloat = UIScreen.main.bounds.size.width
@@ -238,7 +239,7 @@ extension ViewController {
     }
     
     fileprivate func showAlertStyleWithWithMessage() {
-        let alertVC: HYAlertController = HYAlertController (title: nil, message: "Message", style: .alert)
+        let alertVC: HYAlertController = HYAlertController (title: nil, message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .alert)
         let oneAction: HYAlertAction = HYAlertAction (title: "One Action", style: .normal, handler:  { (action) in
             print(action.title)
         })
@@ -259,7 +260,7 @@ extension ViewController {
     }
     
     fileprivate func showAlertStyleWithWithTitleAndMessage() {
-        let alertVC: HYAlertController = HYAlertController (title: "Title", message: "Message", style: .alert)
+        let alertVC: HYAlertController = HYAlertController (title: "Title", message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .alert)
         let oneAction: HYAlertAction = HYAlertAction (title: "One Action", style: .normal, handler:  { (action) in
             print(action.title)
         })
@@ -280,12 +281,12 @@ extension ViewController {
     }
     
     fileprivate func showAlertStyleWithoutAction() {
-        let alertVC: HYAlertController = HYAlertController (title: "Title", message: "Message", style: .alert)
+        let alertVC: HYAlertController = HYAlertController (title: "Title", message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .alert)
         self.present(alertVC, animated: true, completion: nil)
     }
     
     fileprivate func showAlertStyleWithImageAction() {
-        let alertVC: HYAlertController = HYAlertController (title: "Title", message: "Message", style: .alert)
+        let alertVC: HYAlertController = HYAlertController (title: "Title", message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .alert)
         let oneAction: HYAlertAction = HYAlertAction (title: "Facebook Action", image: UIImage (named: "facebook")!, style: .normal, handler: {
             (action) in
             print(action.title)
@@ -350,7 +351,7 @@ extension ViewController {
     }
     
     fileprivate func showSheetStyleWithWithMessage() {
-        let alertVC: HYAlertController = HYAlertController (title: nil, message: "Message", style: .actionSheet)
+        let alertVC: HYAlertController = HYAlertController (title: nil, message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .actionSheet)
         let oneAction: HYAlertAction = HYAlertAction (title: "One Action", style: .normal, handler:  { (action) in
             print(action.title)
         })
@@ -371,7 +372,7 @@ extension ViewController {
     }
     
     fileprivate func showSheetStyleWithWithTitleAndMessage() {
-        let alertVC: HYAlertController = HYAlertController (title: "Title", message: "Message", style: .actionSheet)
+        let alertVC: HYAlertController = HYAlertController (title: "Title", message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .actionSheet)
         let oneAction: HYAlertAction = HYAlertAction (title: "One Action", style: .normal, handler:  { (action) in
             print(action.title)
         })
@@ -392,12 +393,12 @@ extension ViewController {
     }
     
     fileprivate func showSheetStyleWithoutAction() {
-        let alertVC: HYAlertController = HYAlertController (title: "Title", message: "Message", style: .actionSheet)
+        let alertVC: HYAlertController = HYAlertController (title: "Title", message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .actionSheet)
         self.present(alertVC, animated: true, completion: nil)
     }
     
     fileprivate func showSheetStyleWithImageAction() {
-        let alertVC: HYAlertController = HYAlertController (title: "Title", message: "Message", style: .actionSheet)
+        let alertVC: HYAlertController = HYAlertController (title: "Title", message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .actionSheet)
         let oneAction: HYAlertAction = HYAlertAction (title: "Facebook Action", image: UIImage (named: "facebook")!, style: .normal, handler: {
             (action) in
             print(action.title)
@@ -564,7 +565,7 @@ extension ViewController {
     }
     
     fileprivate func showShareStyleWithMessage() {
-        let alertVC: HYAlertController = HYAlertController (title: nil, message: "Message", style: .shareSheet)
+        let alertVC: HYAlertController = HYAlertController (title: nil, message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .shareSheet)
         let facebookAction: HYAlertAction = HYAlertAction (title: "Facebook", image: UIImage (named: "facebook")!, style: .normal, handler: {
             (action) in
             print(action.title)
@@ -621,7 +622,7 @@ extension ViewController {
     }
     
     fileprivate func showShareStyleWithTitleAndMessage() {
-        let alertVC: HYAlertController = HYAlertController (title: "Title", message: "Message", style: .shareSheet)
+        let alertVC: HYAlertController = HYAlertController (title: "Title", message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .shareSheet)
         let facebookAction: HYAlertAction = HYAlertAction (title: "Facebook", image: UIImage (named: "facebook")!, style: .normal, handler: {
             (action) in
             print(action.title)

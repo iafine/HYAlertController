@@ -1,0 +1,6 @@
+framework module HYAlertController {
+  umbrella header "HYAlertController-umbrella.h"
+
+  export *
+  module * { export * }
+}
