@@ -56,6 +56,7 @@ extension ViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         self.title = "HYAlertControllerDemo"
+        
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.view.addSubview(self.tableView)

@@ -50,7 +50,6 @@ extension HYAlertCell {
 extension HYAlertCell {
     fileprivate func initCellUI() {
         
-        self.selectionStyle = .none
         self.preservesSuperviewLayoutMargins = false
         self.separatorInset = UIEdgeInsets.zero
         self.layoutMargins = UIEdgeInsets.zero

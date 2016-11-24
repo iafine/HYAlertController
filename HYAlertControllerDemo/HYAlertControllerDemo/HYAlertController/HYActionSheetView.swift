@@ -136,6 +136,8 @@ extension HYActionSheetView: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         if indexPath.section == 0 {
             let action: HYAlertAction = self.sheetDataArray.object(at: indexPath.row) as! HYAlertAction
             action.myHandler(action)
