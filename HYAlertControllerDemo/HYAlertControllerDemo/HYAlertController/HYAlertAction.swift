@@ -16,7 +16,7 @@ public enum HYAlertActionStyle : Int {
 
 typealias actionHandler = (_ action: HYAlertAction) -> Void
 
-class HYAlertAction: NSObject {
+public class HYAlertAction: NSObject {
     
     var title: String
     var image: UIImage = UIImage ()
