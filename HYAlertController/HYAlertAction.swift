@@ -18,9 +18,9 @@ typealias actionHandler = (_ action: HYAlertAction) -> Void
 
 public class HYAlertAction: NSObject {
     
-    var title: String
-    var image: UIImage = UIImage ()
-    var style: HYAlertActionStyle
+    public var title: String
+    public var image: UIImage = UIImage ()
+    public var style: HYAlertActionStyle
     var myHandler: actionHandler
 
     init(title: String, style: HYAlertActionStyle, handler: @escaping actionHandler) {

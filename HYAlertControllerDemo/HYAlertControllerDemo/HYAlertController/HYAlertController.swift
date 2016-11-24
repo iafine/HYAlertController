@@ -58,7 +58,7 @@ public class HYAlertController: UIViewController {
         return view
     }()
     
-    init(title: String?, message: String?, style: HYAlertControllerStyle) {
+    public init(title: String?, message: String?, style: HYAlertControllerStyle) {
         self.alertTitle = (title ?? "").isEmpty ? "" : title!
         self.alertMessage = (message ?? "").isEmpty ? "" : message!
         self.alertStyle = style

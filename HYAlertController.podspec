@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "HYAlertController"
-  s.version      = "0.1.2"
+  s.version      = "0.1.4"
   s.summary      = "A simple and practical AlertController."
 
   # This description is used to generate tags and improve search results.
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => 'https://github.com/castial/HYAlertController.git', :tag => '0.1.2' }
+  s.source       = { :git => 'https://github.com/castial/HYAlertController.git', :tag => '0.1.4' }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
