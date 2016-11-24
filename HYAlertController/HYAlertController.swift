@@ -18,7 +18,7 @@ public enum HYAlertControllerStyle : Int {
 }
 
 // MARK: - Class
-class HYAlertController: UIViewController {
+public class HYAlertController: UIViewController {
 
     var alertTitle: String
     var alertMessage: String
@@ -70,21 +70,21 @@ class HYAlertController: UIViewController {
         self.modalTransitionStyle = UIModalTransitionStyle.coverVertical
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
 // MARK: - LifeCycle
 extension HYAlertController {
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.clear
 
         initUI()
     }
     
-    override func viewDidLayoutSubviews() {
+    override public func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         if self.alertStyle == .shareSheet {
@@ -203,11 +203,11 @@ extension HYAlertController: HYAlertViewDelegate {
 
 // MARK: - UIViewControllerTransitioningDelegate
 extension HYAlertController: UIViewControllerTransitioningDelegate {
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return HYAlertPresentSlideUp ()
     }
     
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return HYAlertDismissSlideDown ()
     }
 }
