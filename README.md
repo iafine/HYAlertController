@@ -5,7 +5,7 @@
   [![GitHub license](https://img.shields.io/cocoapods/l/HYAlertController.svg)](https://github.com/castial/HYAlertController/blob/master/LICENSE)
   [![Pod version](http://img.shields.io/cocoapods/v/HYAlertController.svg)](https://cocoapods.org/pods/HYAlertController)
 
-HYAlertController是一款极简形式的Alert控件，包含多种使用场景，并且拥有和Apple的`UIAlertController`一样的语法，所以您可以轻松地在您自己的app中使用它。
+HYAlertController is a minimalist Alert control, that contains a variety of usage scenarios. It has the same syntax as Apple's `UIAlertController`, so you can easily use it in your own app.
 
 #### Alert Style
 
@@ -21,22 +21,22 @@ HYAlertController是一款极简形式的Alert控件，包含多种使用场景�
 
 <img src="/Screenshots/share.png" width=320 alt="Icon"/>
 
-## 特性
+## Features
 ----------------
 
-- [x] 标题
-- [x] 介绍信息(自适应高度)
-- [x] 按钮可以带icon显示
-- [x] 自带取消按钮
-- [x] 新增分享风格
-- [x] 点击事件采用闭包语法回调
-- [x] 与UIAlertController相同的语法实现
-- [x] 支持Swift 3
+- [x] Title
+- [x] Description message(Adaptive height)
+- [x] Button with icon
+- [x] The default has the Cancel button
+- [x] New share style
+- [x] Closure when a button is clicked
+- [x] Similar syntax to UIAlertController
+- [x] Swift 3 support
 - [x] Cocoapods
-- [ ] Carthage(暂不支持)
+- [ ] Carthage(not support)
 
 
-## 要求
+## Requirements
 ----------------
 
 - Swift 3
@@ -46,13 +46,13 @@ HYAlertController是一款极简形式的Alert控件，包含多种使用场景�
 ## CocoaPods
 ----------------
 
-[CocoaPods](http://cocoapods.org)是iOS最常用的依赖管理工具，您可以用下面的命令安装它:
+[CocoaPods](http://cocoapods.org)is a dependency manager for Cocoa projects. You can install it with the following command:
 
 ```bash
 $ gem install cocoapods
 ```
 
-然后在项目根目录创建`Podfile`文件，写入下面内容：
+Then create `Podfile` file into your Xcode project, specify it in your `Podfile`:
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
@@ -62,31 +62,31 @@ use_frameworks!
 pod 'HYAlertController'
 ```
 
-最后，命令行运行下面命令即可完成安装：
+Finially, You will complete it with the following command:
 
 ```bash
 $ pod install
 ```
 
->注意：`HYAlertController`会依赖安装`SnapKit`库，`HYAlertController`所有的自动布局都采用`SnapKit`完成，如果您的项目中也使用到了`SnapKit`，请避免依赖重复。
+>Note: `HYAlertController` will rely on the` SnapKit` library installed, and all autolayout into `HYAlertController` Complete with `SnapKit`. If you use `SnapKit` into your project, Please Avoid duplicate dependencies.
 
-## 手动安装
+## Manually
 ----------------
 
-1. 下载该项目文件，将```/HYAlertController```文件夹拖到您的项目中去；
-2. 如果您的项目中没有使用`SnapKit`，您还需要安装`SnapKit`，版本是3.0.0+；
+1. Download and drop ```/HYAlertController``` folder in your project；
+2. If your project does not use `SnapKit`, you also need to install` SnapKit`, the version is 3.0.0 +;
 
->注意：推荐您使用Cocoapods方式安装，这样可以避免繁琐的依赖问题，但是如果您是手动安装的话，一定要保证您的`SnapKit`版本高于3.0.0。
+>Note: It is recommended that you install using Cocoapods, which avoids cumbersome dependencies. If you are installing manually, make sure your version of SnapKit is higher than 3.0.0.
 
-## 用法
+## Usage
 ----------------
-用法类似于`UIAlertController`，不过`HYAlertController`提供了三种风格: Alert、Sheet和Share。
+The usage is very similar to UIAlertController. `HYAlertController` has three styles: Alert, Sheet and Share.
 
-**Alert Style:** 拥有这种风格，您可以居中显示内容，作为提醒用户操作所用的对话框；
+**Alert Style:** with this style, you can center the contents of the display as a reminder to the user operation of the dialog box;
 
-**Sheet Style:** 拥有这种风格，您可以在屏幕下方显示内容，和微信、微博等的风格类似，下面会弹出一个对话框，供用户选择；
+**Sheet Style:** with this style, you can display the contents of the bottom of the screen, the following will pop up a dialog box for the user to select;
 
-**Share Style:** 与**Sheet Style**类似，也是下面弹出一个对话框，所不同的是，这种样式可用于分享所用，您可以快速地完成主流分享样式的创建。
+**Share Style:** similar to ** Sheet Style **, the difference is that this style can be used for sharing, you can quickly complete the creation of mainstream sharing style.
 
 #### Alert Style
 
@@ -173,23 +173,24 @@ alertVC.addShareActions(actions: [oneAction, twoAction, threeAction, fourAction,
 self.present(alertVC, animated: true, completion: nil)
 
 ```
->查看更多使用场景，请参考`HYAlertControllerDemo`里详细介绍。
+>For more usage scenarios, please refer to `HYAlertControllerDemo` for details.
 
-## Swift版本要求
+## Swift Version
 
-`HYAlertController`采用Swift 3开发完成，所以您的Swift版本必须是Swift 3。
+`HYAlertController` is developed with Swift 3, so your Swift version must be Swift 3.
 
-## 自定义
+## Custom
 
-`HYAlertController`本身外部并没有提供自定义选择，这和开发者的想法有关，如果您想做一些基本的改变，请下载项目源码，修改[`HY_Constants.swift`](https://github.com/castial/HYAlertController/blob/master/HYAlertController/HY_Constants.swift)文件，这里包含了一些基本的设置常量，修改这里即可完成自定义。  
+`HYAlertController` does not provide customization outside, which is related to the developer's idea. If you want to make some basic changes, download the project source and modify the`HY_Constants.swift` '(https://github.com) /castial/HYAlertController/blob/master/HYAlertController/HY_Constants.swift) file, which contains some basic setting constants, modify it.
 
-修改完成之后，可以参照上述手动安装方法将改造后的类库集成到项目中。
+After modification, you can integrate into your project using the above manual installation method.
 
-## 交流
+## Communicate
 
-- 如果您遇到问题或者是需要帮助，可以创建issue，我会第一时间为您解答；
-- 如果您需要一些优化，可以创建issue讨论；
-- 如果您想提交贡献，请发布一个pull request.
+- If you need help or you'd like to ask a general question, open an issue;
+- If you found a bug, open an issue;
+- If you have a feature request, open an issue;
+- If you want to contribute, submit a pull request.
 
 ## MIT License
 ----------------

@@ -9,23 +9,17 @@ HYAlertController是一款极简形式的Alert控件，包含多种使用场景�
 
 #### Alert Style
 
-<div align="center">
-![alert1][/Screenshots/alert1.png]
-![alert2][/Screenshots/alert2.png]
-</div>
+<img src="/Screenshots/alert1.png" width=320 alt="Icon"/>
+<img src="/Screenshots/alert2.png" width=320 alt="Icon"/>
 
 #### Sheet Style
 
-<div align="center">
-![sheet1][/Screenshots/sheet1.png]
-![sheet2][/Screenshots/sheet2.png]
-</div>
+<img src="/Screenshots/sheet1.png" width=320 alt="Icon"/>
+<img src="/Screenshots/sheet2.png" width=320 alt="Icon"/>
 
 #### Share Style
 
-<div align="center">
-![share][/Screenshots/share.png]
-</div>
+<img src="/Screenshots/share.png" width=320 alt="Icon"/>
 
 ## 特性
 ----------------
