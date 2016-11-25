@@ -7,7 +7,17 @@
 
 HYAlertController是一款极简形式的Alert控件，包含多种使用场景，并且拥有和Apple的`UIAlertController`一样的语法，所以您可以轻松地在您自己的app中使用它。
 
-<div align="center">![an image][./xxx.jpg]</div>
+#### Alert Style
+
+    <div align="center">![alert1][/Screenshots/alert1.png]![alert2][/Screenshots/alert2.png]</div>
+
+#### Sheet Style
+
+    <div align="center">![sheet1][/Screenshots/sheet1.png]![sheet2][/Screenshots/sheet2.png]</div>
+
+#### Share Style
+
+    <div align="center">![share][/Screenshots/share.png]</div>
 
 ## 特性
 ----------------
@@ -79,18 +89,25 @@ $ pod install
 #### Alert Style
 
 ```swift
-//This code works with Swift 3
+//Work with Swift 3
 
-let alertVC = PMAlertController(title: "A Title", description: "My Description", image: UIImage(named: "img.png"), style: .alert)
-
-alertVC.addAction(PMAlertAction(title: "Cancel", style: .cancel, action: { () -> Void in
-            print("Capture action Cancel")
-        }))
-        
-alertVC.addAction(PMAlertAction(title: "OK", style: .default, action: { () in
-            print("Capture action OK")
-        }))
-        
+let alertVC: HYAlertController = HYAlertController (title: "Title", message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .alert)
+let oneAction: HYAlertAction = HYAlertAction (title: "One Action", style: .normal, handler:  { (action) in
+    print(action.title)
+})
+let twoAction: HYAlertAction = HYAlertAction (title: "Two Action", style: .normal, handler:  { (action) in
+    print(action.title)
+})
+let threeAction: HYAlertAction = HYAlertAction (title: "Three Action", style: .destructive, handler:  { (action) in
+    print(action.title)
+})
+let cancelAction: HYAlertAction = HYAlertAction (title: "Cancel Action", style: .cancel, handler:  { (action) in
+    print(action.title)
+})
+alertVC.addAction(action: oneAction)
+alertVC.addAction(action: twoAction)
+alertVC.addAction(action: threeAction)
+alertVC.addAction(action: cancelAction)
 self.present(alertVC, animated: true, completion: nil)
 
 ```
@@ -98,18 +115,25 @@ self.present(alertVC, animated: true, completion: nil)
 #### Sheet Style
 
 ```swift
-//This code works with Swift 3
+//Work with Swift 3
 
-let alertVC = PMAlertController(title: "A Title", description: "My Description", image: UIImage(named: "img.png"), style: .alert)
-
-alertVC.addAction(PMAlertAction(title: "Cancel", style: .cancel, action: { () -> Void in
-            print("Capture action Cancel")
-        }))
-        
-alertVC.addAction(PMAlertAction(title: "OK", style: .default, action: { () in
-            print("Capture action OK")
-        }))
-        
+let alertVC: HYAlertController = HYAlertController (title: "Title", message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .actionSheet)
+let oneAction: HYAlertAction = HYAlertAction (title: "One Action", style: .normal, handler:  { (action) in
+    print(action.title)
+})
+let twoAction: HYAlertAction = HYAlertAction (title: "Two Action", style: .normal, handler:  { (action) in
+    print(action.title)
+})
+let threeAction: HYAlertAction = HYAlertAction (title: "Three Action", style: .destructive, handler:  { (action) in
+    print(action.title)
+})
+let cancelAction: HYAlertAction = HYAlertAction (title: "Cancel Action", style: .cancel, handler:  { (action) in
+    print(action.title)
+})
+alertVC.addAction(action: oneAction)
+alertVC.addAction(action: twoAction)
+alertVC.addAction(action: threeAction)
+alertVC.addAction(action: cancelAction)
 self.present(alertVC, animated: true, completion: nil)
 
 ```
@@ -117,21 +141,37 @@ self.present(alertVC, animated: true, completion: nil)
 #### Share Style
 
 ```swift
-//This code works with Swift 3
-
-let alertVC = PMAlertController(title: "A Title", description: "My Description", image: UIImage(named: "img.png"), style: .alert)
-
-alertVC.addAction(PMAlertAction(title: "Cancel", style: .cancel, action: { () -> Void in
-            print("Capture action Cancel")
-        }))
-        
-alertVC.addAction(PMAlertAction(title: "OK", style: .default, action: { () in
-            print("Capture action OK")
-        }))
-        
+//Work with Swift 3
+let alertVC: HYAlertController = HYAlertController (title: nil, message: nil, style: .shareSheet)
+let oneAction: HYAlertAction = HYAlertAction (title: "Facebook", image: UIImage (named: "facebook")!, style: .normal, handler: {
+            (action) in
+    print(action.title)
+})
+let twoAction: HYAlertAction = HYAlertAction (title: "Twitter", image: UIImage (named: "twitter")!, style: .normal, handler: {
+            (action) in
+    print(action.title)
+})
+let threeAction: HYAlertAction = HYAlertAction (title: "Snapchat", image: UIImage (named: "snapchat")!, style: .normal, handler: {
+            (action) in
+    print(action.title)
+})
+let fourAction: HYAlertAction = HYAlertAction (title: "Instagram", image: UIImage (named: "instagram")!, style: .normal, handler: {
+            (action) in
+    print(action.title)
+})
+let fiveAction: HYAlertAction = HYAlertAction (title: "Pinterest", image: UIImage (named: "pinterest")!, style: .normal, handler: {
+            (action) in
+    print(action.title)
+})
+let sixAction: HYAlertAction = HYAlertAction (title: "Line", image: UIImage (named: "line")!, style: .normal, handler: {
+            (action) in
+    print(action.title)
+})
+alertVC.addShareActions(actions: [oneAction, twoAction, threeAction, fourAction, fiveAction, sixAction])
 self.present(alertVC, animated: true, completion: nil)
 
 ```
+>查看更多使用场景，请参考`HYAlertControllerDemo`里详细介绍。
 
 ## Swift版本要求
 
