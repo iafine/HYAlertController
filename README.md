@@ -5,7 +5,9 @@
   [![GitHub license](https://img.shields.io/cocoapods/l/HYAlertController.svg)](https://github.com/castial/HYAlertController/blob/master/LICENSE)
   [![Pod version](http://img.shields.io/cocoapods/v/HYAlertController.svg)](https://cocoapods.org/pods/HYAlertController)
 
-HYAlertController is a minimalist Alert control, that contains a variety of usage scenarios. It has the same syntax as Apple's `UIAlertController`, so you can easily use it in your own app.
+HYAlertController is a minimalist alert control, that contains a variety of usage scenarios. It has the same syntax as Apple's `UIAlertController`, so you can easily use it in your own app.
+
+[**中文说明**](Docs/README_cn.md)
 
 #### Alert Style
 
@@ -22,12 +24,11 @@ HYAlertController is a minimalist Alert control, that contains a variety of usag
 <img src="/Screenshots/share.png" width=320 alt="Icon"/>
 
 ## Features
-----------------
 
 - [x] Title
-- [x] Description message(Adaptive height)
+- [x] Description message(adaptive height)
 - [x] Button with icon
-- [x] The default has the Cancel button
+- [x] The default has the cancel button
 - [x] New share style
 - [x] Closure when a button is clicked
 - [x] Similar syntax to UIAlertController
@@ -37,16 +38,14 @@ HYAlertController is a minimalist Alert control, that contains a variety of usag
 
 
 ## Requirements
-----------------
 
 - Swift 3
 - iOS 10.0+
 - Xcode 8+
 
 ## CocoaPods
-----------------
 
-[CocoaPods](http://cocoapods.org)is a dependency manager for Cocoa projects. You can install it with the following command:
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
 
 ```bash
 $ gem install cocoapods
@@ -62,7 +61,7 @@ use_frameworks!
 pod 'HYAlertController'
 ```
 
-Finially, You will complete it with the following command:
+Finially, you will complete it with the following command:
 
 ```bash
 $ pod install
@@ -71,22 +70,20 @@ $ pod install
 >Note: `HYAlertController` will rely on the` SnapKit` library installed, and all autolayout into `HYAlertController` Complete with `SnapKit`. If you use `SnapKit` into your project, Please Avoid duplicate dependencies.
 
 ## Manually
-----------------
 
 1. Download and drop ```/HYAlertController``` folder in your project；
 2. If your project does not use `SnapKit`, you also need to install` SnapKit`, the version is 3.0.0 +;
 
->Note: It is recommended that you install using Cocoapods, which avoids cumbersome dependencies. If you are installing manually, make sure your version of SnapKit is higher than 3.0.0.
+>Note: It is recommended that you install using `Cocoapods`, which avoids cumbersome dependencies. If you are installing manually, make sure your version of `SnapKit` is higher than 3.0.0.
 
 ## Usage
-----------------
 The usage is very similar to UIAlertController. `HYAlertController` has three styles: Alert, Sheet and Share.
 
 **Alert Style:** with this style, you can center the contents of the display as a reminder to the user operation of the dialog box;
 
 **Sheet Style:** with this style, you can display the contents of the bottom of the screen, the following will pop up a dialog box for the user to select;
 
-**Share Style:** similar to ** Sheet Style **, the difference is that this style can be used for sharing, you can quickly complete the creation of mainstream sharing style.
+**Share Style:** similar to **Sheet Style**, the difference is that this style can be used for sharing, you can quickly complete the creation of mainstream sharing style.
 
 #### Alert Style
 
@@ -181,7 +178,7 @@ self.present(alertVC, animated: true, completion: nil)
 
 ## Custom
 
-`HYAlertController` does not provide customization outside, which is related to the developer's idea. If you want to make some basic changes, download the project source and modify the`HY_Constants.swift` '(https://github.com) /castial/HYAlertController/blob/master/HYAlertController/HY_Constants.swift) file, which contains some basic setting constants, modify it.
+`HYAlertController` does not provide customization outside, which is related to the developer's idea. If you want to make some basic changes, download the project source and modify the[`HY_Constants.swift`](https://github.com/castial/HYAlertController/blob/master/HYAlertController/HY_Constants.swift) file, which contains some basic setting constants, modify it.
 
 After modification, you can integrate into your project using the above manual installation method.
 
@@ -193,5 +190,4 @@ After modification, you can integrate into your project using the above manual i
 - If you want to contribute, submit a pull request.
 
 ## MIT License
-----------------
 HYAlertController is available under the MIT license. See the LICENSE file for more info.
