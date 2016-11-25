@@ -101,6 +101,9 @@ extension HYAlertView: UITableViewDataSource {
             let cell: HYAlertCell = HYAlertCell.cellWithTableView(tableView: tableView)
             let action: HYAlertAction = self.alertDataArray.object(at: indexPath.row) as! HYAlertAction
             cell.titleLabel.text = action.title
+            if action.style == .destructive {
+                cell.titleLabel.textColor = UIColor.red
+            }
             cell.cellIcon.image = action.image
             return cell
         }else {
