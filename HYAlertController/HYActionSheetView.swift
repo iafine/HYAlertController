@@ -23,15 +23,15 @@ class HYActionSheetView: UIView {
     }()
 
     lazy var titleView: HYTitleView = {
-        let view: HYTitleView = HYTitleView(frame: CGRect.zero)
+        let view = HYTitleView(frame: CGRect.zero)
         return view
     }()
 
     var sheetTitle: String = String()
     var sheetMessage: String = String()
     var delegate: HYActionSheetViewDelegate?
-    fileprivate var sheetDataArray: NSArray = NSArray()
-    fileprivate var cancelDataArray: NSArray = NSArray()
+    fileprivate var sheetDataArray = NSArray()
+    fileprivate var cancelDataArray = NSArray()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
