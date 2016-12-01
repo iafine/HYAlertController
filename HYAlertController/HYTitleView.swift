@@ -11,16 +11,16 @@ import UIKit
 // MARK: - Header View
 class HYTitleView: UIView {
     lazy var titleLabel: UILabel = {
-        let label: UILabel = UILabel ()
+        let label: UILabel = UILabel()
         label.font = UIFont.systemFont(ofSize: HY_Constants.titleFont)
         label.textAlignment = .center
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         return label
     }()
-    
+
     lazy var messageLabel: UILabel = {
-        let label: UILabel = UILabel ()
+        let label: UILabel = UILabel()
         label.font = UIFont.systemFont(ofSize: HY_Constants.messageFont)
         label.textColor = UIColor.lightGray
         label.textAlignment = .center
@@ -28,19 +28,19 @@ class HYTitleView: UIView {
         label.lineBreakMode = .byWordWrapping
         return label
     }()
-    
+
     lazy var seperatorView: UIView = {
-        let view: UIView = UIView ()
-        view.backgroundColor = UIColor (red: 206 / 255, green: 206 / 255, blue: 206 / 255, alpha: 1)
+        let view: UIView = UIView()
+        view.backgroundColor = UIColor(red: 206 / 255, green: 206 / 255, blue: 206 / 255, alpha: 1)
         return view
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         initUI()
         initLayout()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -51,9 +51,9 @@ extension HYTitleView {
     fileprivate func initUI() {
         self.addSubview(self.titleLabel)
         self.addSubview(self.messageLabel)
-//        self.addSubview(self.seperatorView)
+        //        self.addSubview(self.seperatorView)
     }
-    
+
     fileprivate func initLayout() {
         self.titleLabel.snp.makeConstraints { (make) in
             make.left.equalTo(self.snp.left).offset(20)
@@ -66,12 +66,12 @@ extension HYTitleView {
             make.right.equalTo(self.snp.right).offset(-20)
             make.bottom.equalTo(self.snp.bottom).offset(-5)
         }
-//        self.seperatorView.snp.makeConstraints { (make) in
-//            make.left.equalTo(self.snp.left)
-//            make.bottom.equalTo(self.snp.bottom)
-//            make.right.equalTo(self.snp.right)
-//            make.height.equalTo(0.5)
-//        }
+        //        self.seperatorView.snp.makeConstraints { (make) in
+        //            make.left.equalTo(self.snp.left)
+        //            make.bottom.equalTo(self.snp.bottom)
+        //            make.right.equalTo(self.snp.right)
+        //            make.height.equalTo(0.5)
+        //        }
     }
 }
 
@@ -102,7 +102,7 @@ extension String {
     func heightWithConstrainedWidth(width: CGFloat, font: UIFont) -> CGFloat {
         let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
         let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
-        
+
         return boundingBox.height
     }
 }

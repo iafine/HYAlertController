@@ -7,82 +7,82 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05E2BCAAAB19AD562A6936EC8B579832 /* ConstraintView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F456A1EB58901AD1EA5DACBD7C26150 /* ConstraintView+Extensions.swift */; };
-		15F6A3042ED5B1BB2B8F3EA9E04EA045 /* ConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C8B274B7849AB39A0C727DCA38F64 /* ConstraintDSL.swift */; };
-		18DD92C3AB80CAD2624F43599E61C3FB /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B31F8F27DD4287A59EEC5D1F7D4EFE65 /* SnapKit.framework */; };
-		1B265D807D2FA337EF423000CEE2BAB8 /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ECAD9ADEA8F3B7AFE7EE45D009D611 /* ConstraintView.swift */; };
-		212246A7306BF8252172D9C30ED476C6 /* HYShareCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161E6AB3F7537A18B58F2E6F6B8F7730 /* HYShareCollectionCell.swift */; };
-		2839E9866D61931192A9E297D9AFE793 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A5A4E7A2B6341D792197995FC5105E /* LayoutConstraint.swift */; };
-		28F68034A9024DBDA716117BB89DF614 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B854342025E5B17281F8CE4A7521D14E /* Constraint.swift */; };
-		2C34C4D61184786744956BB14EF86DBC /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA46EB4E8D54C0A0E16C272D26C4E5E2 /* ConstraintLayoutSupportDSL.swift */; };
-		2F50914669CA30C8AEFF0BA156BB5C9B /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E31ACA54F0D517FFBD411D6225EE67DF /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3AFBE8E2C169F37818FB2781B7BD326A /* HYAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6156C2064E9000AC7786AA6E8B6343BA /* HYAlertAction.swift */; };
-		3CAA56C94DE7687FA431918B46D891C9 /* HYAlertController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9124911DC4D78DE6CB81C995697D7B10 /* HYAlertController-dummy.m */; };
-		40E4E5A46EE4131A9DD47B907E6B8F2B /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CFC51E90A2ECED23547D96A42D4ABC /* ConstraintMakerRelatable.swift */; };
-		414358B94D712746E88198111828D015 /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E7D7AD5A58D3419F5AAF7743484C14 /* ConstraintConfig.swift */; };
-		456CF756361381FCE0237FF5248D418C /* HYAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F907DBC4A39239B1E5A36F73A385724 /* HYAlertView.swift */; };
-		4B73200893E8FA742052AB04630170F4 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD046D17CB252618274ECD303E41D45 /* ConstraintDescription.swift */; };
-		4C5212F1DF1864B4BC669227D5209C15 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDD7F3DAE87B6A24AD8E2B347CD72FA /* UIKit.framework */; };
-		4C764CBA2232BCDFDCD23FB6138E932D /* ConstraintLayoutGuideDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEE6651D5B3B81EED1491D42EF3B37E /* ConstraintLayoutGuideDSL.swift */; };
-		53986DABDB52B8377785FA1CC49D10CA /* HYAlertDismissSlideDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3021DC32718C6059179F2400B4892CA /* HYAlertDismissSlideDown.swift */; };
-		653E9317BB8F2BEBB24ABFC3356B26E7 /* UILayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E820176F203588853D70E88F2E1A2A /* UILayoutGuide+Extensions.swift */; };
-		703DEEF15B413662CC24C090F5284A51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6637CE483B936552D3E514D3729083BF /* Foundation.framework */; };
-		74C701210AFAB683D87D111B25AEF33D /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB143E63477F19270953D4D885CBFCA4 /* ConstraintMultiplierTarget.swift */; };
-		805147AD285C8A6B4E2355718FC7E957 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A74914C73CC7C5D9568D7C2CBB9A12 /* ConstraintItem.swift */; };
-		80607B1C743CE26B9C9AE960272F2241 /* ConstraintMakerPriortizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E056EFBA3CF7359E1FE3C28599992F2 /* ConstraintMakerPriortizable.swift */; };
-		886DBC63E3222E03216D3AAF4FA728EB /* HY_Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A739D422F1CFB55A68E4B31C1C8A25B9 /* HY_Constants.swift */; };
-		894A2436C9BC48153ACEF3409877D055 /* HYAlertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33F25988CF165B46B0E34C01B83384 /* HYAlertCell.swift */; };
-		8C361C3FB3AF0E3D3D9475B83A3EDA75 /* HYActionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09372453D679E3B01D045569893A4E34 /* HYActionSheetView.swift */; };
-		92E45BD30A22A619273C6F8992A79898 /* HYAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C99286E4BEE2A9ED33F432C4E715F9 /* HYAlertController.swift */; };
-		984AC611CA98B808482953A243622307 /* Pods-HYAlertControllerDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF7A361D79B03CA6875C6C71AC35094 /* Pods-HYAlertControllerDemo-dummy.m */; };
-		984FB5DAC34D726155796DB5F8C8E505 /* Pods-HYAlertControllerDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9992E8C64B5E14DAAA4B0835144163FA /* Pods-HYAlertControllerDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9C04585820BCBF1E7C70BD421334FE3E /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9AFF266DC8FB1775CB7A69CEABA68A /* SnapKit-dummy.m */; };
-		9C55EC3C3B63D84F0EDEEBBE69D977B2 /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE04D01DE791B2B470A826348D0F3C6 /* ConstraintRelation.swift */; };
-		A88B89B59756FCFC9377380252414F7C /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E00280A78B906FB56BF94AFDFCFAEB /* ConstraintOffsetTarget.swift */; };
-		AA7BB701D19A44E8512E040AC4044A07 /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C254C466D6AD55373DB59BA7DD9919B0 /* ConstraintConstantTarget.swift */; };
-		B7C511DAF9E72DB6669A7A192D7F1316 /* ConstraintRelatableTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BB14D789F50DC0E5B38148229C9228 /* ConstraintRelatableTarget.swift */; };
-		B8E61BF2D94C5E8E15DDEBFC719CF3D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6637CE483B936552D3E514D3729083BF /* Foundation.framework */; };
-		B9D95EBE0825EC87933B22E93752890F /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44877F510B60144E24E610EE6E8077EF /* ConstraintMakerEditable.swift */; };
-		BBC40B6FDD9A47A072DB2A13A029C019 /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FDD0A4275F770F428C7C06F45AAAD8 /* ConstraintMakerExtendable.swift */; };
-		BDB929738F260C580DFB0A7D89F2C30C /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1371A4F155FDF581EE8D08437062E9FC /* ConstraintInsetTarget.swift */; };
-		C25C13D5C652B061F7325549A05A53A5 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981EFDF75ECA70A7B9F14711C7F6EAD1 /* Debugging.swift */; };
-		C35B1AD54A1F62877E55A57B3BA87B77 /* HYShareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA8F89139926CC0C96B27797214FDE3 /* HYShareTableViewCell.swift */; };
-		C3E0481EAF75948DC1E5520BF6D8DA5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6637CE483B936552D3E514D3729083BF /* Foundation.framework */; };
-		CFD57922BB2F079D8C04CE91566A8D38 /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5407FCAEA09D8A1D5E143F223D8C58C /* ConstraintLayoutGuide.swift */; };
-		D2FAA0C690B79038A434FCB40AB27818 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE9E7EE4604366A8B4C7F9451A89A1 /* ConstraintMaker.swift */; };
-		DC129A2DF520877425017FBE05D52E28 /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F705431FD00EAE357717B56C6379F4EC /* ConstraintViewDSL.swift */; };
-		DCC827BACE8480057BB8DDA8F7EAED02 /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D22674D05583A89188A53278AFB27C /* ConstraintMakerFinalizable.swift */; };
-		DEAB58396055671AD9FDD90C06FCF136 /* HYTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F708C601DD1D1B7A43DBF74525CC0A93 /* HYTitleView.swift */; };
-		EBB7975391173E98E3DE71C96105A751 /* HYAlertPresentSlideUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10C0C2655006F454AA2F107D550114D /* HYAlertPresentSlideUp.swift */; };
-		EDB50153575321E1A5D25AD93800E436 /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC31CEAEB6072994569F51B13F61C29 /* ConstraintInsets.swift */; };
-		EFDE25ECD6E460C4272CF4DFD1264D84 /* HYAlertController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C52626B80E103AFE1539516ECB143DF0 /* HYAlertController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F0CC39F89CE1A8BEE4A6F54C83F6D9DC /* ConstraintLayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0FE8B1214BFADF112626E2723F8D63 /* ConstraintLayoutSupport.swift */; };
-		F1546732E32FBC96C9A74536AFA2A977 /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E142C0AA036AE8B93F9A3DC9950E8A13 /* UILayoutSupport+Extensions.swift */; };
-		F256603BEECB3694EC71AB0D61CB2919 /* HYShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6910C03E214A062B4C0DC722E40E83D6 /* HYShareView.swift */; };
-		F31BBDFF238F50D603A21443EBAC28AF /* ConstraintPriorityTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82767E2E67061E6E0AFCC2A35A0DE822 /* ConstraintPriorityTarget.swift */; };
-		F4468D406756489E983B52295ACC3648 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E39F263E5CB8008B435DD59F6EA0B4 /* ConstraintAttributes.swift */; };
+		0159588D4276EB5CB3E63633BEFA3632 /* HYAlertDismissSlideDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3021DC32718C6059179F2400B4892CA /* HYAlertDismissSlideDown.swift */; };
+		0A69717CCB127EE143A55CC7530A4DE5 /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ECAD9ADEA8F3B7AFE7EE45D009D611 /* ConstraintView.swift */; };
+		0B00D8362DB940DFC4D9C684C6B03996 /* HYAlertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E33F25988CF165B46B0E34C01B83384 /* HYAlertCell.swift */; };
+		18D695065BDF4536B692C338E8FD9A3D /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE04D01DE791B2B470A826348D0F3C6 /* ConstraintRelation.swift */; };
+		26F7E56C9440504677B03A92ADC3A720 /* HYShareCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161E6AB3F7537A18B58F2E6F6B8F7730 /* HYShareCollectionCell.swift */; };
+		29D3D39922EE4B9E606B33D24D6E8198 /* ConstraintMakerPriortizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E056EFBA3CF7359E1FE3C28599992F2 /* ConstraintMakerPriortizable.swift */; };
+		2B9829C8B19F9851BBAA8357171A4832 /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9AFF266DC8FB1775CB7A69CEABA68A /* SnapKit-dummy.m */; };
+		2D75E100924A3E0FE5A5151D93F80E8C /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F705431FD00EAE357717B56C6379F4EC /* ConstraintViewDSL.swift */; };
+		309FE25F025970B45977C5A9015697D1 /* HYAlertController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9124911DC4D78DE6CB81C995697D7B10 /* HYAlertController-dummy.m */; };
+		32BC491446A0A4E80A7AC0A04E791D04 /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB143E63477F19270953D4D885CBFCA4 /* ConstraintMultiplierTarget.swift */; };
+		378E885767A14AD5CFA9011635D35A91 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5466486B6900B61A6934317B0C1B9F82 /* Foundation.framework */; };
+		474F7C5046911FD09F0EA412A4C64EF6 /* Pods-HYAlertControllerDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF7A361D79B03CA6875C6C71AC35094 /* Pods-HYAlertControllerDemo-dummy.m */; };
+		4E41BA8DD1FC44C41BBA864DE177C8A3 /* ConstraintView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F456A1EB58901AD1EA5DACBD7C26150 /* ConstraintView+Extensions.swift */; };
+		5F899E9553955E3CA62026C72527F772 /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA46EB4E8D54C0A0E16C272D26C4E5E2 /* ConstraintLayoutSupportDSL.swift */; };
+		6132668B5D78838E815D3FD3A75E4F79 /* HYTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F708C601DD1D1B7A43DBF74525CC0A93 /* HYTitleView.swift */; };
+		6346EF23219EA681FD8CFF61CF202977 /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E7D7AD5A58D3419F5AAF7743484C14 /* ConstraintConfig.swift */; };
+		64AFC27505BF6603ECFB759FEB6F9B6D /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE9E7EE4604366A8B4C7F9451A89A1 /* ConstraintMaker.swift */; };
+		6561A9FC48C31B775FF24EEF552E01C5 /* ConstraintRelatableTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BB14D789F50DC0E5B38148229C9228 /* ConstraintRelatableTarget.swift */; };
+		68EE5A01B871BFAE2C6C49C25DCA37A6 /* ConstraintLayoutGuideDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEE6651D5B3B81EED1491D42EF3B37E /* ConstraintLayoutGuideDSL.swift */; };
+		6FE8BC59617C8B09939672396699D10F /* ConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C8B274B7849AB39A0C727DCA38F64 /* ConstraintDSL.swift */; };
+		7B2B0DB0E5F53E9F366F57B7AC44DF93 /* HYShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6910C03E214A062B4C0DC722E40E83D6 /* HYShareView.swift */; };
+		7E6AFF1FBC67A26954334B03F34A375E /* HYAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C99286E4BEE2A9ED33F432C4E715F9 /* HYAlertController.swift */; };
+		85FAA4A4C60AF279E3F93988E6C7CA81 /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D22674D05583A89188A53278AFB27C /* ConstraintMakerFinalizable.swift */; };
+		883B24B127E4E5510ABD325FB47978A4 /* HYAlertController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C52626B80E103AFE1539516ECB143DF0 /* HYAlertController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8D69B08F730AA6F3BC9C4613EE9875DE /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E142C0AA036AE8B93F9A3DC9950E8A13 /* UILayoutSupport+Extensions.swift */; };
+		99C803A8A6D2A47DC8F4B2C7047328EE /* HYShareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA8F89139926CC0C96B27797214FDE3 /* HYShareTableViewCell.swift */; };
+		9AE134C760C4B54C391BFF86414C7722 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F16A820AC64D80B3F11893402D57655C /* UIKit.framework */; };
+		AB25EFEFEC33CEDC03E32E4B5966D298 /* HY_Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A739D422F1CFB55A68E4B31C1C8A25B9 /* HY_Constants.swift */; };
+		ABF3CA6CADFFB682A155B41C5E9109D1 /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FDD0A4275F770F428C7C06F45AAAD8 /* ConstraintMakerExtendable.swift */; };
+		B117418BE886E21BEF39E06AB3C73BC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5466486B6900B61A6934317B0C1B9F82 /* Foundation.framework */; };
+		B4F91FB0178EDFC46C1B75B3EA0B9FB1 /* ConstraintLayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0FE8B1214BFADF112626E2723F8D63 /* ConstraintLayoutSupport.swift */; };
+		BAD6AC41C8D857B2966315CC9DA2829D /* HYAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F907DBC4A39239B1E5A36F73A385724 /* HYAlertView.swift */; };
+		BBAF4E5228B4A35C22EF2D230C50E43E /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B31F8F27DD4287A59EEC5D1F7D4EFE65 /* SnapKit.framework */; };
+		BFCE5239440445896372B89F9FAC03F4 /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1371A4F155FDF581EE8D08437062E9FC /* ConstraintInsetTarget.swift */; };
+		C4AC04B22EF6F3FFF5CCD3F223961F7B /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A74914C73CC7C5D9568D7C2CBB9A12 /* ConstraintItem.swift */; };
+		CD13FAB785BFD1B946F4A1703BC174D1 /* UILayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E820176F203588853D70E88F2E1A2A /* UILayoutGuide+Extensions.swift */; };
+		CE11E7011C767154E7DC550F748DC872 /* HYAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6156C2064E9000AC7786AA6E8B6343BA /* HYAlertAction.swift */; };
+		D1549CA7CC98B56FB331910B9E82945D /* ConstraintPriorityTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82767E2E67061E6E0AFCC2A35A0DE822 /* ConstraintPriorityTarget.swift */; };
+		D1D1BD41BCD398EDD8B38C26D02B321A /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC31CEAEB6072994569F51B13F61C29 /* ConstraintInsets.swift */; };
+		D3561B6174A13D9BE39D957648F94EAA /* HYActionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09372453D679E3B01D045569893A4E34 /* HYActionSheetView.swift */; };
+		D7A11FF590D9D7B7A8F0FABD2184657C /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5407FCAEA09D8A1D5E143F223D8C58C /* ConstraintLayoutGuide.swift */; };
+		D9C172256725FBD3BF6936D843597DFF /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E00280A78B906FB56BF94AFDFCFAEB /* ConstraintOffsetTarget.swift */; };
+		DABA0BEC44876A6D3418051C7583E316 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5466486B6900B61A6934317B0C1B9F82 /* Foundation.framework */; };
+		DB79A0483C979229DDCBDAADC2E7401D /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44877F510B60144E24E610EE6E8077EF /* ConstraintMakerEditable.swift */; };
+		DD47387D7A5B8E7DC16FCCF1E63B55A8 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD046D17CB252618274ECD303E41D45 /* ConstraintDescription.swift */; };
+		DDA3E70937C9CDE74612F084A83099CD /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CFC51E90A2ECED23547D96A42D4ABC /* ConstraintMakerRelatable.swift */; };
+		DDECDDB6B4353AB75E0A702FF0F7BE45 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E39F263E5CB8008B435DD59F6EA0B4 /* ConstraintAttributes.swift */; };
+		DEAE2B5D8C0AA2B404FAD05D43B9FBE7 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A5A4E7A2B6341D792197995FC5105E /* LayoutConstraint.swift */; };
+		E50FDE8AA6BDC4B72608C8D4E5C30194 /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E31ACA54F0D517FFBD411D6225EE67DF /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E74D73417FB63003DDF6B5DF5D8FD5D4 /* HYAlertPresentSlideUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10C0C2655006F454AA2F107D550114D /* HYAlertPresentSlideUp.swift */; };
+		E89B9AEF1494D7653CFE9A8EE7DF387C /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B854342025E5B17281F8CE4A7521D14E /* Constraint.swift */; };
+		F267F42DBB5943CA6B2955F0A131B89C /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C254C466D6AD55373DB59BA7DD9919B0 /* ConstraintConstantTarget.swift */; };
+		F4243799CEF6D15AB64419EDC8F701B5 /* Pods-HYAlertControllerDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9992E8C64B5E14DAAA4B0835144163FA /* Pods-HYAlertControllerDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FC56D70FD6605DF9901B1886458BE8D5 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981EFDF75ECA70A7B9F14711C7F6EAD1 /* Debugging.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		94DC8A1AEAAFC62391BDC5D4BA4D3A92 /* PBXContainerItemProxy */ = {
+		B279CFE873521B0AF78A387CDFFC5B01 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 911EB92954471160A07DE237C4654866;
+			remoteGlobalIDString = B029691D53444F696C86D28E6C5A495C;
 			remoteInfo = HYAlertController;
 		};
-		B82550E24BD445C3ED931536FFB6D986 /* PBXContainerItemProxy */ = {
+		E66BC741A52049AA400D8A8B7974C173 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 34504A26475A34E6C2B424F9B7B64EBD;
+			remoteGlobalIDString = F376B145BEE8A88681B49144AD37ECCE;
 			remoteInfo = SnapKit;
 		};
-		D3D7681BC0EB79C4DE3792EF07431DF7 /* PBXContainerItemProxy */ = {
+		EA286FCA9C5177F4D0474A6BB1B51D16 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 34504A26475A34E6C2B424F9B7B64EBD;
+			remoteGlobalIDString = F376B145BEE8A88681B49144AD37ECCE;
 			remoteInfo = SnapKit;
 		};
 /* End PBXContainerItemProxy section */
@@ -103,26 +103,25 @@
 		4D9AFF266DC8FB1775CB7A69CEABA68A /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
 		4F456A1EB58901AD1EA5DACBD7C26150 /* ConstraintView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintView+Extensions.swift"; path = "Source/ConstraintView+Extensions.swift"; sourceTree = "<group>"; };
 		4F8661604F850747F909A252A25548C7 /* HYAlertController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HYAlertController-prefix.pch"; sourceTree = "<group>"; };
-		524D3227A9D53B2756EE742A5B4FD38B /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SnapKit.modulemap; sourceTree = "<group>"; };
+		524D3227A9D53B2756EE742A5B4FD38B /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SnapKit.modulemap; sourceTree = "<group>"; };
+		5466486B6900B61A6934317B0C1B9F82 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5BD046D17CB252618274ECD303E41D45 /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Source/ConstraintDescription.swift; sourceTree = "<group>"; };
 		5E33F25988CF165B46B0E34C01B83384 /* HYAlertCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HYAlertCell.swift; path = HYAlertController/HYAlertCell.swift; sourceTree = "<group>"; };
-		5EDD7F3DAE87B6A24AD8E2B347CD72FA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		5F907DBC4A39239B1E5A36F73A385724 /* HYAlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HYAlertView.swift; path = HYAlertController/HYAlertView.swift; sourceTree = "<group>"; };
 		6156C2064E9000AC7786AA6E8B6343BA /* HYAlertAction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HYAlertAction.swift; path = HYAlertController/HYAlertAction.swift; sourceTree = "<group>"; };
-		64B325F300E46DE01E998116833FACB7 /* HYAlertController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HYAlertController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64B325F300E46DE01E998116833FACB7 /* HYAlertController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HYAlertController.framework; path = HYAlertController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64DE9E7EE4604366A8B4C7F9451A89A1 /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Source/ConstraintMaker.swift; sourceTree = "<group>"; };
-		6637CE483B936552D3E514D3729083BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6910C03E214A062B4C0DC722E40E83D6 /* HYShareView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HYShareView.swift; path = HYAlertController/HYShareView.swift; sourceTree = "<group>"; };
 		79A74914C73CC7C5D9568D7C2CBB9A12 /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Source/ConstraintItem.swift; sourceTree = "<group>"; };
 		7BA660982F3EB4A69C0B97BA9AD26610 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7EA8F89139926CC0C96B27797214FDE3 /* HYShareTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HYShareTableViewCell.swift; path = HYAlertController/HYShareTableViewCell.swift; sourceTree = "<group>"; };
 		7EEE6651D5B3B81EED1491D42EF3B37E /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Source/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
 		82767E2E67061E6E0AFCC2A35A0DE822 /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriorityTarget.swift; path = Source/ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
-		843AC9E77ACA721130BB34FF7370F848 /* Pods-HYAlertControllerDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-HYAlertControllerDemo.modulemap"; sourceTree = "<group>"; };
+		843AC9E77ACA721130BB34FF7370F848 /* Pods-HYAlertControllerDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-HYAlertControllerDemo.modulemap"; sourceTree = "<group>"; };
 		8AC31CEAEB6072994569F51B13F61C29 /* ConstraintInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsets.swift; path = Source/ConstraintInsets.swift; sourceTree = "<group>"; };
 		9124911DC4D78DE6CB81C995697D7B10 /* HYAlertController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HYAlertController-dummy.m"; sourceTree = "<group>"; };
 		91E820176F203588853D70E88F2E1A2A /* UILayoutGuide+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutGuide+Extensions.swift"; path = "Source/UILayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		981EFDF75ECA70A7B9F14711C7F6EAD1 /* Debugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debugging.swift; path = Source/Debugging.swift; sourceTree = "<group>"; };
 		9992E8C64B5E14DAAA4B0835144163FA /* Pods-HYAlertControllerDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HYAlertControllerDemo-umbrella.h"; sourceTree = "<group>"; };
 		9E056EFBA3CF7359E1FE3C28599992F2 /* ConstraintMakerPriortizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerPriortizable.swift; path = Source/ConstraintMakerPriortizable.swift; sourceTree = "<group>"; };
@@ -134,7 +133,7 @@
 		AF0FE8B1214BFADF112626E2723F8D63 /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Source/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
 		B31F8F27DD4287A59EEC5D1F7D4EFE65 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B541A82658105D510E39FCD5E0468568 /* SnapKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-prefix.pch"; sourceTree = "<group>"; };
-		B69B31EE68FCFF277BE5C5225B021ADF /* HYAlertController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = HYAlertController.modulemap; sourceTree = "<group>"; };
+		B69B31EE68FCFF277BE5C5225B021ADF /* HYAlertController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = HYAlertController.modulemap; sourceTree = "<group>"; };
 		B854342025E5B17281F8CE4A7521D14E /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Source/Constraint.swift; sourceTree = "<group>"; };
 		C233E2F3BD92B512F5696C0FBA911AF2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C254C466D6AD55373DB59BA7DD9919B0 /* ConstraintConstantTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConstantTarget.swift; path = Source/ConstraintConstantTarget.swift; sourceTree = "<group>"; };
@@ -145,17 +144,18 @@
 		C67A2EB9518724D094B6045DBF66A24D /* Pods-HYAlertControllerDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HYAlertControllerDemo-acknowledgements.plist"; sourceTree = "<group>"; };
 		C6D22674D05583A89188A53278AFB27C /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerFinalizable.swift; path = Source/ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
 		CB9FCA57D2A2EAAC735A81E958BD0944 /* Pods-HYAlertControllerDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HYAlertControllerDemo-frameworks.sh"; sourceTree = "<group>"; };
-		D44588667CD52E87598B0A4A0FAA4699 /* Pods_HYAlertControllerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HYAlertControllerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D44588667CD52E87598B0A4A0FAA4699 /* Pods_HYAlertControllerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HYAlertControllerDemo.framework; path = "Pods-HYAlertControllerDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFF7A361D79B03CA6875C6C71AC35094 /* Pods-HYAlertControllerDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HYAlertControllerDemo-dummy.m"; sourceTree = "<group>"; };
 		E10C0C2655006F454AA2F107D550114D /* HYAlertPresentSlideUp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HYAlertPresentSlideUp.swift; path = HYAlertController/HYAlertPresentSlideUp.swift; sourceTree = "<group>"; };
 		E142C0AA036AE8B93F9A3DC9950E8A13 /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutSupport+Extensions.swift"; path = "Source/UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
 		E3021DC32718C6059179F2400B4892CA /* HYAlertDismissSlideDown.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HYAlertDismissSlideDown.swift; path = HYAlertController/HYAlertDismissSlideDown.swift; sourceTree = "<group>"; };
 		E31ACA54F0D517FFBD411D6225EE67DF /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
 		E7A5A4E7A2B6341D792197995FC5105E /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
+		F16A820AC64D80B3F11893402D57655C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		F4BB14D789F50DC0E5B38148229C9228 /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelatableTarget.swift; path = Source/ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
 		F705431FD00EAE357717B56C6379F4EC /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintViewDSL.swift; path = Source/ConstraintViewDSL.swift; sourceTree = "<group>"; };
 		F708C601DD1D1B7A43DBF74525CC0A93 /* HYTitleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HYTitleView.swift; path = HYAlertController/HYTitleView.swift; sourceTree = "<group>"; };
-		F8F20484722E98405B4F31CC928BF7BC /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8F20484722E98405B4F31CC928BF7BC /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB143E63477F19270953D4D885CBFCA4 /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMultiplierTarget.swift; path = Source/ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
 		FCE04D01DE791B2B470A826348D0F3C6 /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Source/ConstraintRelation.swift; sourceTree = "<group>"; };
 		FEA8EB6AF9E4009968E3950BE2088397 /* Pods-HYAlertControllerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HYAlertControllerDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -163,29 +163,29 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2EEA89A48109A33111C733AA65DEA9F5 /* Frameworks */ = {
+		35603B53C00B70832E075024DFD63FAB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8E61BF2D94C5E8E15DDEBFC719CF3D4 /* Foundation.framework in Frameworks */,
+				B117418BE886E21BEF39E06AB3C73BC6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CECF53051C061D2B7CC66737E716077C /* Frameworks */ = {
+		39096604D8AECFD8C5B8FE0F2E3F2BA4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3E0481EAF75948DC1E5520BF6D8DA5C /* Foundation.framework in Frameworks */,
+				378E885767A14AD5CFA9011635D35A91 /* Foundation.framework in Frameworks */,
+				BBAF4E5228B4A35C22EF2D230C50E43E /* SnapKit.framework in Frameworks */,
+				9AE134C760C4B54C391BFF86414C7722 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FB9ECB641791AFD70E08144306ADF811 /* Frameworks */ = {
+		BEFB5D42BF9BE9449B0A4F3C66C795DD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				703DEEF15B413662CC24C090F5284A51 /* Foundation.framework in Frameworks */,
-				18DD92C3AB80CAD2624F43599E61C3FB /* SnapKit.framework in Frameworks */,
-				4C5212F1DF1864B4BC669227D5209C15 /* UIKit.framework in Frameworks */,
+				DABA0BEC44876A6D3418051C7583E316 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,15 +204,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SnapKit";
-			sourceTree = "<group>";
-		};
-		190132B8F4B20DAA3E184ACF09AB0412 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				6637CE483B936552D3E514D3729083BF /* Foundation.framework */,
-				5EDD7F3DAE87B6A24AD8E2B347CD72FA /* UIKit.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		3C76E92AB6CAA49FED2DCD7641CB6297 /* SnapKit */ = {
@@ -251,6 +242,7 @@
 				E142C0AA036AE8B93F9A3DC9950E8A13 /* UILayoutSupport+Extensions.swift */,
 				1803072E0B32052E93D4F023A957D300 /* Support Files */,
 			);
+			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -277,7 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				B31F8F27DD4287A59EEC5D1F7D4EFE65 /* SnapKit.framework */,
-				190132B8F4B20DAA3E184ACF09AB0412 /* iOS */,
+				F88CE9F6EAD2F2BF4BA9612ABF291149 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -350,46 +342,93 @@
 				F708C601DD1D1B7A43DBF74525CC0A93 /* HYTitleView.swift */,
 				7FF01A8674C5631E1EF69C83D894371E /* Support Files */,
 			);
+			name = HYAlertController;
 			path = HYAlertController;
+			sourceTree = "<group>";
+		};
+		F88CE9F6EAD2F2BF4BA9612ABF291149 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5466486B6900B61A6934317B0C1B9F82 /* Foundation.framework */,
+				F16A820AC64D80B3F11893402D57655C /* UIKit.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		092FE981EB27B234956AD2FD66B0A0D4 /* Headers */ = {
+		D68F0CCC41069CBD5ABB6AB6756FCB1E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				984FB5DAC34D726155796DB5F8C8E505 /* Pods-HYAlertControllerDemo-umbrella.h in Headers */,
+				883B24B127E4E5510ABD325FB47978A4 /* HYAlertController-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		67F41A2327375C18C5FD6F48912753ED /* Headers */ = {
+		E684963F67A3AF7B8461F6DD462293F2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F50914669CA30C8AEFF0BA156BB5C9B /* SnapKit-umbrella.h in Headers */,
+				E50FDE8AA6BDC4B72608C8D4E5C30194 /* SnapKit-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F391D5844F548E963C5DD4F5ACF12DCE /* Headers */ = {
+		F39B4DA1A34EE9EA9FA12013D11664C1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFDE25ECD6E460C4272CF4DFD1264D84 /* HYAlertController-umbrella.h in Headers */,
+				F4243799CEF6D15AB64419EDC8F701B5 /* Pods-HYAlertControllerDemo-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		34504A26475A34E6C2B424F9B7B64EBD /* SnapKit */ = {
+		1776A9459E056EA067753D5AE2F15C23 /* Pods-HYAlertControllerDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 25C2ADA2D3BFB9C39DED1FDE5AAC735F /* Build configuration list for PBXNativeTarget "SnapKit" */;
+			buildConfigurationList = 605F78F165430B2B3318E4F15BC958D2 /* Build configuration list for PBXNativeTarget "Pods-HYAlertControllerDemo" */;
 			buildPhases = (
-				69581E5AF2F3C353D6A9598236E7A541 /* Sources */,
-				2EEA89A48109A33111C733AA65DEA9F5 /* Frameworks */,
-				67F41A2327375C18C5FD6F48912753ED /* Headers */,
+				9F4B9BAF0191A93561B656115661F8B6 /* Sources */,
+				35603B53C00B70832E075024DFD63FAB /* Frameworks */,
+				F39B4DA1A34EE9EA9FA12013D11664C1 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3FB3FB2EC75F7F9BFA94994CA6EA787 /* PBXTargetDependency */,
+				163303AA378974ADF52938AF2D60454B /* PBXTargetDependency */,
+			);
+			name = "Pods-HYAlertControllerDemo";
+			productName = "Pods-HYAlertControllerDemo";
+			productReference = D44588667CD52E87598B0A4A0FAA4699 /* Pods_HYAlertControllerDemo.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B029691D53444F696C86D28E6C5A495C /* HYAlertController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1B043F4D8761276CAD1A575E948A8B9 /* Build configuration list for PBXNativeTarget "HYAlertController" */;
+			buildPhases = (
+				335B9D05DA8883402CB1F571FFDC9C39 /* Sources */,
+				39096604D8AECFD8C5B8FE0F2E3F2BA4 /* Frameworks */,
+				D68F0CCC41069CBD5ABB6AB6756FCB1E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				87D7A908BA77649E76E3EB15806D4C01 /* PBXTargetDependency */,
+			);
+			name = HYAlertController;
+			productName = HYAlertController;
+			productReference = 64B325F300E46DE01E998116833FACB7 /* HYAlertController.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F376B145BEE8A88681B49144AD37ECCE /* SnapKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEC58C913E6CD0669A1C2F6460786826 /* Build configuration list for PBXNativeTarget "SnapKit" */;
+			buildPhases = (
+				61FD1CECA66B328C7F43F29062A9AD10 /* Sources */,
+				BEFB5D42BF9BE9449B0A4F3C66C795DD /* Frameworks */,
+				E684963F67A3AF7B8461F6DD462293F2 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -398,43 +437,6 @@
 			name = SnapKit;
 			productName = SnapKit;
 			productReference = F8F20484722E98405B4F31CC928BF7BC /* SnapKit.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		911EB92954471160A07DE237C4654866 /* HYAlertController */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 572F77E985F2A4E21CAFAB84F6E5A626 /* Build configuration list for PBXNativeTarget "HYAlertController" */;
-			buildPhases = (
-				408749C59675C0515124F5A55AC4C986 /* Sources */,
-				FB9ECB641791AFD70E08144306ADF811 /* Frameworks */,
-				F391D5844F548E963C5DD4F5ACF12DCE /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CC6E52EB4E70FA60F09C1711A740EF3C /* PBXTargetDependency */,
-			);
-			name = HYAlertController;
-			productName = HYAlertController;
-			productReference = 64B325F300E46DE01E998116833FACB7 /* HYAlertController.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		AB8FD34A7945029937F13221908A7208 /* Pods-HYAlertControllerDemo */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DF7D6CE1CC1D418AFDD4450375E0B4F5 /* Build configuration list for PBXNativeTarget "Pods-HYAlertControllerDemo" */;
-			buildPhases = (
-				41760E9D441B2E6CCF6C1A65DAFBA2B4 /* Sources */,
-				CECF53051C061D2B7CC66737E716077C /* Frameworks */,
-				092FE981EB27B234956AD2FD66B0A0D4 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E2A0D40BD3C27D00CC3F11CF1EAC6FD9 /* PBXTargetDependency */,
-				E07E890B2A83AF9809E77C125F924E9C /* PBXTargetDependency */,
-			);
-			name = "Pods-HYAlertControllerDemo";
-			productName = "Pods-HYAlertControllerDemo";
-			productReference = D44588667CD52E87598B0A4A0FAA4699 /* Pods_HYAlertControllerDemo.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -458,101 +460,101 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				911EB92954471160A07DE237C4654866 /* HYAlertController */,
-				AB8FD34A7945029937F13221908A7208 /* Pods-HYAlertControllerDemo */,
-				34504A26475A34E6C2B424F9B7B64EBD /* SnapKit */,
+				B029691D53444F696C86D28E6C5A495C /* HYAlertController */,
+				1776A9459E056EA067753D5AE2F15C23 /* Pods-HYAlertControllerDemo */,
+				F376B145BEE8A88681B49144AD37ECCE /* SnapKit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		408749C59675C0515124F5A55AC4C986 /* Sources */ = {
+		335B9D05DA8883402CB1F571FFDC9C39 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				886DBC63E3222E03216D3AAF4FA728EB /* HY_Constants.swift in Sources */,
-				8C361C3FB3AF0E3D3D9475B83A3EDA75 /* HYActionSheetView.swift in Sources */,
-				3AFBE8E2C169F37818FB2781B7BD326A /* HYAlertAction.swift in Sources */,
-				894A2436C9BC48153ACEF3409877D055 /* HYAlertCell.swift in Sources */,
-				3CAA56C94DE7687FA431918B46D891C9 /* HYAlertController-dummy.m in Sources */,
-				92E45BD30A22A619273C6F8992A79898 /* HYAlertController.swift in Sources */,
-				53986DABDB52B8377785FA1CC49D10CA /* HYAlertDismissSlideDown.swift in Sources */,
-				EBB7975391173E98E3DE71C96105A751 /* HYAlertPresentSlideUp.swift in Sources */,
-				456CF756361381FCE0237FF5248D418C /* HYAlertView.swift in Sources */,
-				212246A7306BF8252172D9C30ED476C6 /* HYShareCollectionCell.swift in Sources */,
-				C35B1AD54A1F62877E55A57B3BA87B77 /* HYShareTableViewCell.swift in Sources */,
-				F256603BEECB3694EC71AB0D61CB2919 /* HYShareView.swift in Sources */,
-				DEAB58396055671AD9FDD90C06FCF136 /* HYTitleView.swift in Sources */,
+				AB25EFEFEC33CEDC03E32E4B5966D298 /* HY_Constants.swift in Sources */,
+				D3561B6174A13D9BE39D957648F94EAA /* HYActionSheetView.swift in Sources */,
+				CE11E7011C767154E7DC550F748DC872 /* HYAlertAction.swift in Sources */,
+				0B00D8362DB940DFC4D9C684C6B03996 /* HYAlertCell.swift in Sources */,
+				309FE25F025970B45977C5A9015697D1 /* HYAlertController-dummy.m in Sources */,
+				7E6AFF1FBC67A26954334B03F34A375E /* HYAlertController.swift in Sources */,
+				0159588D4276EB5CB3E63633BEFA3632 /* HYAlertDismissSlideDown.swift in Sources */,
+				E74D73417FB63003DDF6B5DF5D8FD5D4 /* HYAlertPresentSlideUp.swift in Sources */,
+				BAD6AC41C8D857B2966315CC9DA2829D /* HYAlertView.swift in Sources */,
+				26F7E56C9440504677B03A92ADC3A720 /* HYShareCollectionCell.swift in Sources */,
+				99C803A8A6D2A47DC8F4B2C7047328EE /* HYShareTableViewCell.swift in Sources */,
+				7B2B0DB0E5F53E9F366F57B7AC44DF93 /* HYShareView.swift in Sources */,
+				6132668B5D78838E815D3FD3A75E4F79 /* HYTitleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		41760E9D441B2E6CCF6C1A65DAFBA2B4 /* Sources */ = {
+		61FD1CECA66B328C7F43F29062A9AD10 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				984AC611CA98B808482953A243622307 /* Pods-HYAlertControllerDemo-dummy.m in Sources */,
+				E89B9AEF1494D7653CFE9A8EE7DF387C /* Constraint.swift in Sources */,
+				DDECDDB6B4353AB75E0A702FF0F7BE45 /* ConstraintAttributes.swift in Sources */,
+				6346EF23219EA681FD8CFF61CF202977 /* ConstraintConfig.swift in Sources */,
+				F267F42DBB5943CA6B2955F0A131B89C /* ConstraintConstantTarget.swift in Sources */,
+				DD47387D7A5B8E7DC16FCCF1E63B55A8 /* ConstraintDescription.swift in Sources */,
+				6FE8BC59617C8B09939672396699D10F /* ConstraintDSL.swift in Sources */,
+				D1D1BD41BCD398EDD8B38C26D02B321A /* ConstraintInsets.swift in Sources */,
+				BFCE5239440445896372B89F9FAC03F4 /* ConstraintInsetTarget.swift in Sources */,
+				C4AC04B22EF6F3FFF5CCD3F223961F7B /* ConstraintItem.swift in Sources */,
+				D7A11FF590D9D7B7A8F0FABD2184657C /* ConstraintLayoutGuide.swift in Sources */,
+				68EE5A01B871BFAE2C6C49C25DCA37A6 /* ConstraintLayoutGuideDSL.swift in Sources */,
+				B4F91FB0178EDFC46C1B75B3EA0B9FB1 /* ConstraintLayoutSupport.swift in Sources */,
+				5F899E9553955E3CA62026C72527F772 /* ConstraintLayoutSupportDSL.swift in Sources */,
+				64AFC27505BF6603ECFB759FEB6F9B6D /* ConstraintMaker.swift in Sources */,
+				DB79A0483C979229DDCBDAADC2E7401D /* ConstraintMakerEditable.swift in Sources */,
+				ABF3CA6CADFFB682A155B41C5E9109D1 /* ConstraintMakerExtendable.swift in Sources */,
+				85FAA4A4C60AF279E3F93988E6C7CA81 /* ConstraintMakerFinalizable.swift in Sources */,
+				29D3D39922EE4B9E606B33D24D6E8198 /* ConstraintMakerPriortizable.swift in Sources */,
+				DDA3E70937C9CDE74612F084A83099CD /* ConstraintMakerRelatable.swift in Sources */,
+				32BC491446A0A4E80A7AC0A04E791D04 /* ConstraintMultiplierTarget.swift in Sources */,
+				D9C172256725FBD3BF6936D843597DFF /* ConstraintOffsetTarget.swift in Sources */,
+				D1549CA7CC98B56FB331910B9E82945D /* ConstraintPriorityTarget.swift in Sources */,
+				6561A9FC48C31B775FF24EEF552E01C5 /* ConstraintRelatableTarget.swift in Sources */,
+				18D695065BDF4536B692C338E8FD9A3D /* ConstraintRelation.swift in Sources */,
+				4E41BA8DD1FC44C41BBA864DE177C8A3 /* ConstraintView+Extensions.swift in Sources */,
+				0A69717CCB127EE143A55CC7530A4DE5 /* ConstraintView.swift in Sources */,
+				2D75E100924A3E0FE5A5151D93F80E8C /* ConstraintViewDSL.swift in Sources */,
+				FC56D70FD6605DF9901B1886458BE8D5 /* Debugging.swift in Sources */,
+				DEAE2B5D8C0AA2B404FAD05D43B9FBE7 /* LayoutConstraint.swift in Sources */,
+				2B9829C8B19F9851BBAA8357171A4832 /* SnapKit-dummy.m in Sources */,
+				CD13FAB785BFD1B946F4A1703BC174D1 /* UILayoutGuide+Extensions.swift in Sources */,
+				8D69B08F730AA6F3BC9C4613EE9875DE /* UILayoutSupport+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		69581E5AF2F3C353D6A9598236E7A541 /* Sources */ = {
+		9F4B9BAF0191A93561B656115661F8B6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28F68034A9024DBDA716117BB89DF614 /* Constraint.swift in Sources */,
-				F4468D406756489E983B52295ACC3648 /* ConstraintAttributes.swift in Sources */,
-				414358B94D712746E88198111828D015 /* ConstraintConfig.swift in Sources */,
-				AA7BB701D19A44E8512E040AC4044A07 /* ConstraintConstantTarget.swift in Sources */,
-				4B73200893E8FA742052AB04630170F4 /* ConstraintDescription.swift in Sources */,
-				15F6A3042ED5B1BB2B8F3EA9E04EA045 /* ConstraintDSL.swift in Sources */,
-				EDB50153575321E1A5D25AD93800E436 /* ConstraintInsets.swift in Sources */,
-				BDB929738F260C580DFB0A7D89F2C30C /* ConstraintInsetTarget.swift in Sources */,
-				805147AD285C8A6B4E2355718FC7E957 /* ConstraintItem.swift in Sources */,
-				CFD57922BB2F079D8C04CE91566A8D38 /* ConstraintLayoutGuide.swift in Sources */,
-				4C764CBA2232BCDFDCD23FB6138E932D /* ConstraintLayoutGuideDSL.swift in Sources */,
-				F0CC39F89CE1A8BEE4A6F54C83F6D9DC /* ConstraintLayoutSupport.swift in Sources */,
-				2C34C4D61184786744956BB14EF86DBC /* ConstraintLayoutSupportDSL.swift in Sources */,
-				D2FAA0C690B79038A434FCB40AB27818 /* ConstraintMaker.swift in Sources */,
-				B9D95EBE0825EC87933B22E93752890F /* ConstraintMakerEditable.swift in Sources */,
-				BBC40B6FDD9A47A072DB2A13A029C019 /* ConstraintMakerExtendable.swift in Sources */,
-				DCC827BACE8480057BB8DDA8F7EAED02 /* ConstraintMakerFinalizable.swift in Sources */,
-				80607B1C743CE26B9C9AE960272F2241 /* ConstraintMakerPriortizable.swift in Sources */,
-				40E4E5A46EE4131A9DD47B907E6B8F2B /* ConstraintMakerRelatable.swift in Sources */,
-				74C701210AFAB683D87D111B25AEF33D /* ConstraintMultiplierTarget.swift in Sources */,
-				A88B89B59756FCFC9377380252414F7C /* ConstraintOffsetTarget.swift in Sources */,
-				F31BBDFF238F50D603A21443EBAC28AF /* ConstraintPriorityTarget.swift in Sources */,
-				B7C511DAF9E72DB6669A7A192D7F1316 /* ConstraintRelatableTarget.swift in Sources */,
-				9C55EC3C3B63D84F0EDEEBBE69D977B2 /* ConstraintRelation.swift in Sources */,
-				05E2BCAAAB19AD562A6936EC8B579832 /* ConstraintView+Extensions.swift in Sources */,
-				1B265D807D2FA337EF423000CEE2BAB8 /* ConstraintView.swift in Sources */,
-				DC129A2DF520877425017FBE05D52E28 /* ConstraintViewDSL.swift in Sources */,
-				C25C13D5C652B061F7325549A05A53A5 /* Debugging.swift in Sources */,
-				2839E9866D61931192A9E297D9AFE793 /* LayoutConstraint.swift in Sources */,
-				9C04585820BCBF1E7C70BD421334FE3E /* SnapKit-dummy.m in Sources */,
-				653E9317BB8F2BEBB24ABFC3356B26E7 /* UILayoutGuide+Extensions.swift in Sources */,
-				F1546732E32FBC96C9A74536AFA2A977 /* UILayoutSupport+Extensions.swift in Sources */,
+				474F7C5046911FD09F0EA412A4C64EF6 /* Pods-HYAlertControllerDemo-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CC6E52EB4E70FA60F09C1711A740EF3C /* PBXTargetDependency */ = {
+		163303AA378974ADF52938AF2D60454B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SnapKit;
-			target = 34504A26475A34E6C2B424F9B7B64EBD /* SnapKit */;
-			targetProxy = B82550E24BD445C3ED931536FFB6D986 /* PBXContainerItemProxy */;
+			target = F376B145BEE8A88681B49144AD37ECCE /* SnapKit */;
+			targetProxy = E66BC741A52049AA400D8A8B7974C173 /* PBXContainerItemProxy */;
 		};
-		E07E890B2A83AF9809E77C125F924E9C /* PBXTargetDependency */ = {
+		87D7A908BA77649E76E3EB15806D4C01 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SnapKit;
-			target = 34504A26475A34E6C2B424F9B7B64EBD /* SnapKit */;
-			targetProxy = D3D7681BC0EB79C4DE3792EF07431DF7 /* PBXContainerItemProxy */;
+			target = F376B145BEE8A88681B49144AD37ECCE /* SnapKit */;
+			targetProxy = EA286FCA9C5177F4D0474A6BB1B51D16 /* PBXContainerItemProxy */;
 		};
-		E2A0D40BD3C27D00CC3F11CF1EAC6FD9 /* PBXTargetDependency */ = {
+		D3FB3FB2EC75F7F9BFA94994CA6EA787 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = HYAlertController;
-			target = 911EB92954471160A07DE237C4654866 /* HYAlertController */;
-			targetProxy = 94DC8A1AEAAFC62391BDC5D4BA4D3A92 /* PBXContainerItemProxy */;
+			target = B029691D53444F696C86D28E6C5A495C /* HYAlertController */;
+			targetProxy = B279CFE873521B0AF78A387CDFFC5B01 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -601,140 +603,7 @@
 			};
 			name = Debug;
 		};
-		232EC4DA9907840F554A7926E180CD90 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8E68DAAF5928F0E510266D2DFF45A95 /* HYAlertController.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/HYAlertController/HYAlertController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/HYAlertController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/HYAlertController/HYAlertController.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = HYAlertController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		237860962577DEE29C7EBAA62347DA6D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F6546CF879C11DBCFDF2BCF57742593 /* SnapKit.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SnapKit/SnapKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SnapKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SnapKit/SnapKit.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SnapKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		41FC1B53F6A825124E6F7A9AF934EEB4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8E68DAAF5928F0E510266D2DFF45A95 /* HYAlertController.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/HYAlertController/HYAlertController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/HYAlertController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/HYAlertController/HYAlertController.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = HYAlertController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		74ACECFFB3F3FBB907424083E11ED6A3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FFA6FF3CE8805A94B5CD765683CA3D0D /* Pods-HYAlertControllerDemo.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-HYAlertControllerDemo/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-HYAlertControllerDemo/Pods-HYAlertControllerDemo.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_HYAlertControllerDemo;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B4B980DA5136522FE57B03394801ADA4 /* Debug */ = {
+		3081C7B51C2EA826574EF43E5E68DE61 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FEA8EB6AF9E4009968E3950BE2088397 /* Pods-HYAlertControllerDemo.debug.xcconfig */;
 			buildSettings = {
@@ -770,7 +639,7 @@
 			};
 			name = Debug;
 		};
-		E3E4401E3F2E7A5CA9E4CED26EB9C1ED /* Release */ = {
+		776CF8F2D0145B5CE9702A5D4CD74BF2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3F6546CF879C11DBCFDF2BCF57742593 /* SnapKit.xcconfig */;
 			buildSettings = {
@@ -793,6 +662,104 @@
 				MODULEMAP_FILE = "Target Support Files/SnapKit/SnapKit.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = SnapKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A9593204C3EB4AE745B93487AC5D5FB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8E68DAAF5928F0E510266D2DFF45A95 /* HYAlertController.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/HYAlertController/HYAlertController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HYAlertController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/HYAlertController/HYAlertController.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = HYAlertController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BA7B45532F78D4C67EA15C950BFA2F91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F6546CF879C11DBCFDF2BCF57742593 /* SnapKit.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SnapKit/SnapKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SnapKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SnapKit/SnapKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SnapKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DB2FEE2C046787624B77467236A1AF52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8E68DAAF5928F0E510266D2DFF45A95 /* HYAlertController.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/HYAlertController/HYAlertController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HYAlertController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/HYAlertController/HYAlertController.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = HYAlertController;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -842,18 +809,44 @@
 			};
 			name = Release;
 		};
+		F71C809D1333354C16EEE718A43812A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFA6FF3CE8805A94B5CD765683CA3D0D /* Pods-HYAlertControllerDemo.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-HYAlertControllerDemo/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HYAlertControllerDemo/Pods-HYAlertControllerDemo.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_HYAlertControllerDemo;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		25C2ADA2D3BFB9C39DED1FDE5AAC735F /* Build configuration list for PBXNativeTarget "SnapKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				237860962577DEE29C7EBAA62347DA6D /* Debug */,
-				E3E4401E3F2E7A5CA9E4CED26EB9C1ED /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -863,20 +856,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		572F77E985F2A4E21CAFAB84F6E5A626 /* Build configuration list for PBXNativeTarget "HYAlertController" */ = {
+		605F78F165430B2B3318E4F15BC958D2 /* Build configuration list for PBXNativeTarget "Pods-HYAlertControllerDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				232EC4DA9907840F554A7926E180CD90 /* Debug */,
-				41FC1B53F6A825124E6F7A9AF934EEB4 /* Release */,
+				3081C7B51C2EA826574EF43E5E68DE61 /* Debug */,
+				F71C809D1333354C16EEE718A43812A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DF7D6CE1CC1D418AFDD4450375E0B4F5 /* Build configuration list for PBXNativeTarget "Pods-HYAlertControllerDemo" */ = {
+		A1B043F4D8761276CAD1A575E948A8B9 /* Build configuration list for PBXNativeTarget "HYAlertController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B4B980DA5136522FE57B03394801ADA4 /* Debug */,
-				74ACECFFB3F3FBB907424083E11ED6A3 /* Release */,
+				A9593204C3EB4AE745B93487AC5D5FB1 /* Debug */,
+				DB2FEE2C046787624B77467236A1AF52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEC58C913E6CD0669A1C2F6460786826 /* Build configuration list for PBXNativeTarget "SnapKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA7B45532F78D4C67EA15C950BFA2F91 /* Debug */,
+				776CF8F2D0145B5CE9702A5D4CD74BF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
