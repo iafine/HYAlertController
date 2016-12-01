@@ -11,8 +11,8 @@ import UIKit
 // MARK: - Header View
 class HYTitleView: UIView {
     lazy var titleLabel: UILabel = {
-        let label: UILabel = UILabel()
-        label.font = UIFont.systemFont(ofSize: HY_Constants.titleFont)
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: HYConstants.titleFont)
         label.textAlignment = .center
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
@@ -20,8 +20,8 @@ class HYTitleView: UIView {
     }()
 
     lazy var messageLabel: UILabel = {
-        let label: UILabel = UILabel()
-        label.font = UIFont.systemFont(ofSize: HY_Constants.messageFont)
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: HYConstants.messageFont)
         label.textColor = UIColor.lightGray
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -30,7 +30,7 @@ class HYTitleView: UIView {
     }()
 
     lazy var seperatorView: UIView = {
-        let view: UIView = UIView()
+        let view = UIView()
         view.backgroundColor = UIColor(red: 206 / 255, green: 206 / 255, blue: 206 / 255, alpha: 1)
         return view
     }()
@@ -49,8 +49,8 @@ class HYTitleView: UIView {
 // MARK: - LifeCycle
 extension HYTitleView {
     fileprivate func initUI() {
-        self.addSubview(self.titleLabel)
-        self.addSubview(self.messageLabel)
+        addSubview(self.titleLabel)
+        addSubview(self.messageLabel)
         //        self.addSubview(self.seperatorView)
     }
 
@@ -80,10 +80,10 @@ extension HYTitleView {
     class func titleViewHeight(title: String, message: String, width: CGFloat) -> CGFloat {
         var titleHeight: CGFloat = 15
         if title.characters.count > 0 {
-            titleHeight += title.heightWithConstrainedWidth(width: width - 40, font: UIFont.systemFont(ofSize: HY_Constants.titleFont)) + 1
+            titleHeight += title.heightWithConstrainedWidth(width: width - 40, font: UIFont.systemFont(ofSize: HYConstants.titleFont)) + 1
         }
         if message.characters.count > 0 {
-            titleHeight += message.heightWithConstrainedWidth(width: width - 40, font: UIFont.systemFont(ofSize: HY_Constants.messageFont)) + 1
+            titleHeight += message.heightWithConstrainedWidth(width: width - 40, font: UIFont.systemFont(ofSize: HYConstants.messageFont)) + 1
         }
         return titleHeight
     }

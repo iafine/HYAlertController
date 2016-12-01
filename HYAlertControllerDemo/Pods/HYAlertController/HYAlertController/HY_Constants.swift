@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HY_Constants: UIView {
+class HYConstants: UIView {
 
     static let ScreenWidth = UIScreen.main.bounds.size.width // 屏幕宽度
     static let ScreenHeight = UIScreen.main.bounds.size.height  // 屏幕高度
