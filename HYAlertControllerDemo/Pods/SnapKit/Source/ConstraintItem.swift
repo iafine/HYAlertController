@@ -27,21 +27,19 @@
     import AppKit
 #endif
 
-
 public class ConstraintItem: Equatable {
-    
+
     internal weak var target: AnyObject?
     internal let attributes: ConstraintAttributes
-    
+
     internal init(target: AnyObject?, attributes: ConstraintAttributes) {
         self.target = target
         self.attributes = attributes
     }
-    
+
     internal var view: ConstraintView? {
         return self.target as? ConstraintView
     }
-    
 }
 
 public func ==(lhs: ConstraintItem, rhs: ConstraintItem) -> Bool {
@@ -49,13 +47,13 @@ public func ==(lhs: ConstraintItem, rhs: ConstraintItem) -> Bool {
     guard lhs !== rhs else {
         return true
     }
-    
+
     // must both have valid targets and identical attributes
     guard let target1 = lhs.target,
-          let target2 = rhs.target,
-          target1 === target2 && lhs.attributes == rhs.attributes else {
-            return false
+        let target2 = rhs.target,
+        target1 === target2 && lhs.attributes == rhs.attributes else {
+        return false
     }
-    
+
     return true
 }

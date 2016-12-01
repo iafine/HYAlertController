@@ -10,25 +10,25 @@ import UIKit
 
 class HYShareCollectionCell: UICollectionViewCell {
     lazy var cellIcon: UIImageView = {
-        let imageView: UIImageView = UIImageView ()
+        let imageView: UIImageView = UIImageView()
         return imageView
     }()
-    
+
     lazy var titleView: UITextView = {
-        let text: UITextView = UITextView ()
+        let text: UITextView = UITextView()
         text.textAlignment = .center
         text.font = UIFont.systemFont(ofSize: 11)
         text.textAlignment = .center
         text.isUserInteractionEnabled = false
         return text
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         initCellUI()
         initCellLayout()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -39,13 +39,13 @@ extension HYShareCollectionCell {
     class func ID() -> String {
         return "HYShareCollectionCell"
     }
-    
+
     class func cellSize() -> CGSize {
-        return CGSize (width: HY_Constants.shareItemWidth, height: HY_Constants.shareItemHeight)
+        return CGSize(width: HY_Constants.shareItemWidth, height: HY_Constants.shareItemHeight)
     }
-    
+
     class func cellInset() -> UIEdgeInsets {
-        return UIEdgeInsets (top: HY_Constants.shareItemPadding, left: HY_Constants.shareItemPadding, bottom: HY_Constants.shareItemPadding, right: HY_Constants.shareItemPadding)
+        return UIEdgeInsets(top: HY_Constants.shareItemPadding, left: HY_Constants.shareItemPadding, bottom: HY_Constants.shareItemPadding, right: HY_Constants.shareItemPadding)
     }
 }
 
@@ -55,7 +55,7 @@ extension HYShareCollectionCell {
         self.addSubview(self.titleView)
         self.addSubview(self.cellIcon)
     }
-    
+
     fileprivate func initCellLayout() {
         self.cellIcon.snp.makeConstraints { (make) in
             make.left.equalTo(self.snp.left).offset(10)
@@ -63,7 +63,7 @@ extension HYShareCollectionCell {
             make.right.equalTo(self.snp.right).offset(-10)
             make.height.equalTo(self.cellIcon.snp.width)
         }
-        
+
         self.titleView.snp.makeConstraints { (make) in
             make.left.equalTo(self.snp.left)
             make.top.equalTo(self.cellIcon.snp.bottom).offset(5)

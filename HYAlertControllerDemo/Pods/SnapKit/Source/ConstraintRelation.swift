@@ -27,15 +27,14 @@
     import AppKit
 #endif
 
-
 internal enum ConstraintRelation: Int {
     case equal = 1
     case lessThanOrEqual
     case greaterThanOrEqual
-    
+
     internal var layoutRelation: NSLayoutRelation {
         get {
-            switch(self) {
+            switch (self) {
             case .equal:
                 return .equal
             case .lessThanOrEqual:

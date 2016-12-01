@@ -27,9 +27,8 @@
     import AppKit
 #endif
 
-
 public class ConstraintDescription {
-    
+
     internal let view: ConstraintView
     internal var attributes: ConstraintAttributes
     internal var relation: ConstraintRelation? = nil
@@ -41,12 +40,12 @@ public class ConstraintDescription {
     internal var priority: ConstraintPriorityTarget = 1000.0
     internal lazy var constraint: Constraint? = {
         guard let relation = self.relation,
-              let related = self.related,
-              let sourceLocation = self.sourceLocation else {
+            let related = self.related,
+            let sourceLocation = self.sourceLocation else {
             return nil
         }
         let from = ConstraintItem(target: self.view, attributes: self.attributes)
-        
+
         return Constraint(
             from: from,
             to: related,
@@ -58,12 +57,11 @@ public class ConstraintDescription {
             priority: self.priority
         )
     }()
-    
+
     // MARK: Initialization
-    
+
     internal init(view: ConstraintView, attributes: ConstraintAttributes) {
         self.view = view
         self.attributes = attributes
     }
-    
 }

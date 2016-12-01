@@ -14,31 +14,31 @@ protocol HYActionSheetViewDelegate {
 }
 
 class HYActionSheetView: UIView {
-    
+
     lazy var sheetTable: UITableView = {
-        let tableView: UITableView = UITableView (frame: CGRect.zero, style: .plain)
+        let tableView: UITableView = UITableView(frame: CGRect.zero, style: .plain)
         tableView.backgroundColor = UIColor.white
         tableView.isScrollEnabled = false
         return tableView
     }()
-    
+
     lazy var titleView: HYTitleView = {
-        let view: HYTitleView = HYTitleView (frame: CGRect.zero)
+        let view: HYTitleView = HYTitleView(frame: CGRect.zero)
         return view
     }()
-    
-    var sheetTitle: String = String ()
-    var sheetMessage: String = String ()
+
+    var sheetTitle: String = String()
+    var sheetMessage: String = String()
     var delegate: HYActionSheetViewDelegate?
-    fileprivate var sheetDataArray: NSArray = NSArray ()
-    fileprivate var cancelDataArray: NSArray = NSArray ()
-    
+    fileprivate var sheetDataArray: NSArray = NSArray()
+    fileprivate var cancelDataArray: NSArray = NSArray()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+
         initUI()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -51,24 +51,24 @@ extension HYActionSheetView {
         self.sheetTable.dataSource = self
         self.addSubview(self.sheetTable)
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+
         self.sheetTable.frame = self.bounds
-        
+
         if self.sheetTitle.characters.count > 0 || self.sheetMessage.characters.count > 0 {
             self.titleView.refrenshTitleView(title: self.sheetTitle,
-                                             message: self.sheetMessage)
-            self.titleView.frame = CGRect (x: 0,
-                                           y: 0,
-                                           width: self.bounds.size.width,
-                                           height: HYTitleView.titleViewHeight(title: self.sheetTitle,
-                                                                               message: self.sheetMessage,
-                                                                               width: self.bounds.size.width))
+                message: self.sheetMessage)
+            self.titleView.frame = CGRect(x: 0,
+                y: 0,
+                width: self.bounds.size.width,
+                height: HYTitleView.titleViewHeight(title: self.sheetTitle,
+                    message: self.sheetMessage,
+                    width: self.bounds.size.width))
             self.sheetTable.tableHeaderView = self.titleView
-        }else {
-            self.sheetTable.tableHeaderView = UIView ()
+        } else {
+            self.sheetTable.tableHeaderView = UIView()
         }
     }
 }
@@ -78,7 +78,7 @@ extension HYActionSheetView {
     open func refreshDate(dataArray: NSArray, cancelArray: NSArray, title: String, message: String) {
         self.sheetDataArray = dataArray
         self.cancelDataArray = cancelArray
-        
+
         self.sheetTable.reloadData()
     }
 }
@@ -88,15 +88,15 @@ extension HYActionSheetView: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return self.sheetDataArray.count
-        }else {
+        } else {
             return 1
         }
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell: HYAlertCell = HYAlertCell.cellWithTableView(tableView: tableView)
@@ -107,13 +107,13 @@ extension HYActionSheetView: UITableViewDataSource {
             }
             cell.cellIcon.image = action.image
             return cell
-        }else {
+        } else {
             let cell: HYAlertCell = HYAlertCell.cellWithTableView(tableView: tableView)
             if self.cancelDataArray.count > 0 {
                 let action: HYAlertAction = self.cancelDataArray.object(at: indexPath.row) as! HYAlertAction
                 cell.titleLabel.text = action.title
                 cell.cellIcon.image = action.image
-            }else {
+            } else {
                 cell.titleLabel.text = HY_Constants.defaultCancelText
             }
             return cell
@@ -129,22 +129,22 @@ extension HYActionSheetView: UITableViewDelegate {
         }
         return 0.1
     }
-    
+
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.1
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return HYAlertCell.cellHeight()
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+
         if indexPath.section == 0 {
             let action: HYAlertAction = self.sheetDataArray.object(at: indexPath.row) as! HYAlertAction
             action.myHandler(action)
-        }else {
+        } else {
             if self.cancelDataArray.count > 0 {
                 let action: HYAlertAction = self.cancelDataArray.object(at: indexPath.row) as! HYAlertAction
                 action.myHandler(action)
@@ -153,4 +153,3 @@ extension HYActionSheetView: UITableViewDelegate {
         delegate?.clickSheetItemHandler()
     }
 }
-
