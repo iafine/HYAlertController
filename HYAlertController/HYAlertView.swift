@@ -113,7 +113,7 @@ extension HYAlertView: UITableViewDataSource {
                 cell.titleLabel.text = action.title
                 cell.cellIcon.image = action.image
             } else {
-                cell.titleLabel.text = HY_Constants.defaultCancelText
+                cell.titleLabel.text = HYConstants.defaultCancelText
             }
             return cell
         }
@@ -134,7 +134,7 @@ extension HYAlertView: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return HYAlertCell.cellHeight()
+        return HYAlertCell.cellHeight
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

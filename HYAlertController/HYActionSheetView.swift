@@ -114,7 +114,7 @@ extension HYActionSheetView: UITableViewDataSource {
                 cell.titleLabel.text = action.title
                 cell.cellIcon.image = action.image
             } else {
-                cell.titleLabel.text = HY_Constants.defaultCancelText
+                cell.titleLabel.text = HYConstants.defaultCancelText
             }
             return cell
         }
@@ -124,10 +124,7 @@ extension HYActionSheetView: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension HYActionSheetView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 1 {
-            return 10
-        }
-        return 0.1
+        return section == 1 ? 10 : 0.1
     }
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -135,7 +132,7 @@ extension HYActionSheetView: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return HYAlertCell.cellHeight()
+        return HYAlertCell.cellHeight
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

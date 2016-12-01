@@ -41,11 +41,11 @@ extension HYShareCollectionCell {
     }
 
     class func cellSize() -> CGSize {
-        return CGSize(width: HY_Constants.shareItemWidth, height: HY_Constants.shareItemHeight)
+        return CGSize(width: HYConstants.shareItemWidth, height: HYConstants.shareItemHeight)
     }
 
     class func cellInset() -> UIEdgeInsets {
-        return UIEdgeInsets(top: HY_Constants.shareItemPadding, left: HY_Constants.shareItemPadding, bottom: HY_Constants.shareItemPadding, right: HY_Constants.shareItemPadding)
+        return UIEdgeInsets(top: HYConstants.shareItemPadding, left: HYConstants.shareItemPadding, bottom: HYConstants.shareItemPadding, right: HYConstants.shareItemPadding)
     }
 }
 

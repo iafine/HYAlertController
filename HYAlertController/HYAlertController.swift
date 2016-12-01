@@ -47,9 +47,9 @@ public class HYAlertController: UIViewController {
     lazy var dimBackgroundView: UIView = {
         let view: UIView = UIView(frame: CGRect(x: 0,
             y: 0,
-            width: HY_Constants.ScreenWidth,
-            height: HY_Constants.ScreenHeight))
-        view.backgroundColor = UIColor(white: 0, alpha: HY_Constants.dimBackgroundAlpha)
+            width: HYConstants.ScreenWidth,
+            height: HYConstants.ScreenHeight))
+        view.backgroundColor = UIColor(white: 0, alpha: HYConstants.dimBackgroundAlpha)
         view.alpha = 0
 
         // 添加手势监听
@@ -92,41 +92,41 @@ extension HYAlertController {
             if self.alertTitle.characters.count > 0 || self.alertMessage.characters.count > 0 {
                 tableHeight += HYTitleView.titleViewHeight(title: self.alertTitle,
                     message: self.alertMessage,
-                    width: HY_Constants.ScreenWidth)
+                    width: HYConstants.ScreenWidth)
             }
             let newTableFrame: CGRect = CGRect(x: 0,
-                y: HY_Constants.ScreenHeight - tableHeight,
-                width: HY_Constants.ScreenWidth,
+                y: HYConstants.ScreenHeight - tableHeight,
+                width: HYConstants.ScreenWidth,
                 height: tableHeight)
             self.alertHeight = tableHeight
             self.shareView.shareTitle = self.alertTitle
             self.shareView.shareMessage = self.alertMessage
             self.shareView.frame = newTableFrame
         } else if self.alertStyle == .actionSheet {
-            var tableHeight: CGFloat = HYAlertCell.cellHeight() * CGFloat(self.actionArray.count) + HYAlertCell.cellHeight() + 10
+            var tableHeight: CGFloat = HYAlertCell.cellHeight * CGFloat(self.actionArray.count) + HYAlertCell.cellHeight + 10
             if self.alertTitle.characters.count > 0 || self.alertMessage.characters.count > 0 {
                 tableHeight += HYTitleView.titleViewHeight(title: self.alertTitle,
                     message: self.alertMessage,
-                    width: HY_Constants.ScreenWidth)
+                    width: HYConstants.ScreenWidth)
             }
             let newTableFrame: CGRect = CGRect(x: 0,
-                y: HY_Constants.ScreenHeight - tableHeight,
-                width: HY_Constants.ScreenWidth,
+                y: HYConstants.ScreenHeight - tableHeight,
+                width: HYConstants.ScreenWidth,
                 height: tableHeight)
             self.alertHeight = tableHeight
             self.sheetView.sheetTitle = self.alertTitle
             self.sheetView.sheetMessage = self.alertMessage
             self.sheetView.frame = newTableFrame
         } else {
-            var tableHeight: CGFloat = HYAlertCell.cellHeight() * CGFloat(self.actionArray.count) + HYAlertCell.cellHeight() + 10
+            var tableHeight: CGFloat = HYAlertCell.cellHeight * CGFloat(self.actionArray.count) + HYAlertCell.cellHeight + 10
             if self.alertTitle.characters.count > 0 || self.alertMessage.characters.count > 0 {
                 tableHeight += HYTitleView.titleViewHeight(title: self.alertTitle,
                     message: self.alertMessage,
-                    width: HY_Constants.ScreenWidth - HY_Constants.alertSpec)
+                    width: HYConstants.ScreenWidth - HYConstants.alertSpec)
             }
             let newTableFrame: CGRect = CGRect(x: 0,
                 y: 0,
-                width: HY_Constants.ScreenWidth - HY_Constants.alertSpec,
+                width: HYConstants.ScreenWidth - HYConstants.alertSpec,
                 height: tableHeight)
             self.alertHeight = tableHeight
             self.alertView.alertTitle = self.alertTitle

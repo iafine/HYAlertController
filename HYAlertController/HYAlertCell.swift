@@ -11,7 +11,7 @@ import SnapKit
 
 class HYAlertCell: UITableViewCell {
     lazy var titleLabel: UILabel = {
-        let label: UILabel = UILabel()
+        let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = UIColor.darkText
@@ -26,17 +26,17 @@ class HYAlertCell: UITableViewCell {
 
 // MARK: - Class Methods
 extension HYAlertCell {
-    class func ID() -> String {
+    class var ID: String {
         return "HYAlertCell"
     }
 
-    class func cellHeight() -> CGFloat {
-        return HY_Constants.alertCellheight
+    class var cellHeight: CGFloat {
+        return HYConstants.alertCellheight
     }
 
     class func cellWithTableView(tableView: UITableView) -> HYAlertCell {
         // 修改cell类型为定义类型
-        var cell: HYAlertCell? = tableView.dequeueReusableCell(withIdentifier: ID()) as! HYAlertCell?
+        var cell = tableView.dequeueReusableCell(withIdentifier: ID) as! HYAlertCell?
         if cell == nil {
             cell = HYAlertCell()
             cell?.initCellUI()
@@ -50,12 +50,12 @@ extension HYAlertCell {
 extension HYAlertCell {
     fileprivate func initCellUI() {
 
-        self.preservesSuperviewLayoutMargins = false
-        self.separatorInset = UIEdgeInsets.zero
-        self.layoutMargins = UIEdgeInsets.zero
+        preservesSuperviewLayoutMargins = false
+        separatorInset = UIEdgeInsets.zero
+        layoutMargins = UIEdgeInsets.zero
 
-        self.addSubview(self.titleLabel)
-        self.addSubview(self.cellIcon)
+        addSubview(titleLabel)
+        addSubview(cellIcon)
     }
 
     fileprivate func initCellLayout() {

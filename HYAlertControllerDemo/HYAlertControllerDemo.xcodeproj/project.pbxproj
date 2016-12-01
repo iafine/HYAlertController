@@ -7,101 +7,181 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4645D89F6BB43B1DB8A3D657 /* Pods_HYAlertControllerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8962321BAD29FD009C1F4ED /* Pods_HYAlertControllerDemo.framework */; };
-		96C30B0D1DDDAD4500BECB35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C30B0C1DDDAD4500BECB35 /* AppDelegate.swift */; };
-		96C30B0F1DDDAD4500BECB35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C30B0E1DDDAD4500BECB35 /* ViewController.swift */; };
-		96C30B121DDDAD4500BECB35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C30B101DDDAD4500BECB35 /* Main.storyboard */; };
-		96C30B141DDDAD4500BECB35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96C30B131DDDAD4500BECB35 /* Assets.xcassets */; };
-		96C30B171DDDAD4500BECB35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C30B151DDDAD4500BECB35 /* LaunchScreen.storyboard */; };
+		D88975EC1DF00CD2005384F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88975EB1DF00CD2005384F4 /* AppDelegate.swift */; };
+		D88975EE1DF00CD2005384F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88975ED1DF00CD2005384F4 /* ViewController.swift */; };
+		D88975F11DF00CD2005384F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D88975EF1DF00CD2005384F4 /* Main.storyboard */; };
+		D88975F31DF00CD2005384F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D88975F21DF00CD2005384F4 /* Assets.xcassets */; };
+		D88975F61DF00CD2005384F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D88975F41DF00CD2005384F4 /* LaunchScreen.storyboard */; };
+		D88976011DF00CD2005384F4 /* HYAlertControllerDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88976001DF00CD2005384F4 /* HYAlertControllerDemoUITests.swift */; };
+		D88976181DF00DA8005384F4 /* HYConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D889760C1DF00DA8005384F4 /* HYConstants.swift */; };
+		D88976191DF00DA8005384F4 /* HYActionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D889760D1DF00DA8005384F4 /* HYActionSheetView.swift */; };
+		D889761A1DF00DA8005384F4 /* HYAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D889760E1DF00DA8005384F4 /* HYAlertAction.swift */; };
+		D889761B1DF00DA8005384F4 /* HYAlertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D889760F1DF00DA8005384F4 /* HYAlertCell.swift */; };
+		D889761C1DF00DA8005384F4 /* HYAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88976101DF00DA8005384F4 /* HYAlertController.swift */; };
+		D889761D1DF00DA8005384F4 /* HYAlertDismissSlideDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88976111DF00DA8005384F4 /* HYAlertDismissSlideDown.swift */; };
+		D889761E1DF00DA8005384F4 /* HYAlertPresentSlideUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88976121DF00DA8005384F4 /* HYAlertPresentSlideUp.swift */; };
+		D889761F1DF00DA8005384F4 /* HYAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88976131DF00DA8005384F4 /* HYAlertView.swift */; };
+		D88976201DF00DA8005384F4 /* HYShareCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88976141DF00DA8005384F4 /* HYShareCollectionCell.swift */; };
+		D88976211DF00DA8005384F4 /* HYShareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88976151DF00DA8005384F4 /* HYShareTableViewCell.swift */; };
+		D88976221DF00DA8005384F4 /* HYShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88976161DF00DA8005384F4 /* HYShareView.swift */; };
+		D88976231DF00DA8005384F4 /* HYTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88976171DF00DA8005384F4 /* HYTitleView.swift */; };
+		D88976271DF00F01005384F4 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88976261DF00F01005384F4 /* SnapKit.framework */; };
+		D88976281DF00F05005384F4 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88976261DF00F01005384F4 /* SnapKit.framework */; };
+		D88976291DF00F05005384F4 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D88976261DF00F01005384F4 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D88975FD1DF00CD2005384F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D88975E01DF00CD2005384F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D88975E71DF00CD2005384F4;
+			remoteInfo = HYAlertControllerDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D889762A1DF00F05005384F4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D88976291DF00F05005384F4 /* SnapKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		826299CD49BD0AEF5BC31FD9 /* Pods-HYAlertControllerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYAlertControllerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYAlertControllerDemo/Pods-HYAlertControllerDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		895AC2AAAAC46E3C094981CB /* Pods-HYAlertControllerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYAlertControllerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-HYAlertControllerDemo/Pods-HYAlertControllerDemo.release.xcconfig"; sourceTree = "<group>"; };
-		96C30B091DDDAD4500BECB35 /* HYAlertControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HYAlertControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		96C30B0C1DDDAD4500BECB35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		96C30B0E1DDDAD4500BECB35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		96C30B111DDDAD4500BECB35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		96C30B131DDDAD4500BECB35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		96C30B161DDDAD4500BECB35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		96C30B181DDDAD4500BECB35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A8962321BAD29FD009C1F4ED /* Pods_HYAlertControllerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HYAlertControllerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D88975E81DF00CD2005384F4 /* HYAlertControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HYAlertControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D88975EB1DF00CD2005384F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D88975ED1DF00CD2005384F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D88975F01DF00CD2005384F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D88975F21DF00CD2005384F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D88975F51DF00CD2005384F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D88975F71DF00CD2005384F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D88975FC1DF00CD2005384F4 /* HYAlertControllerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HYAlertControllerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D88976001DF00CD2005384F4 /* HYAlertControllerDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HYAlertControllerDemoUITests.swift; sourceTree = "<group>"; };
+		D88976021DF00CD2005384F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D889760C1DF00DA8005384F4 /* HYConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYConstants.swift; sourceTree = "<group>"; };
+		D889760D1DF00DA8005384F4 /* HYActionSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYActionSheetView.swift; sourceTree = "<group>"; };
+		D889760E1DF00DA8005384F4 /* HYAlertAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertAction.swift; sourceTree = "<group>"; };
+		D889760F1DF00DA8005384F4 /* HYAlertCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertCell.swift; sourceTree = "<group>"; };
+		D88976101DF00DA8005384F4 /* HYAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertController.swift; sourceTree = "<group>"; };
+		D88976111DF00DA8005384F4 /* HYAlertDismissSlideDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertDismissSlideDown.swift; sourceTree = "<group>"; };
+		D88976121DF00DA8005384F4 /* HYAlertPresentSlideUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertPresentSlideUp.swift; sourceTree = "<group>"; };
+		D88976131DF00DA8005384F4 /* HYAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertView.swift; sourceTree = "<group>"; };
+		D88976141DF00DA8005384F4 /* HYShareCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYShareCollectionCell.swift; sourceTree = "<group>"; };
+		D88976151DF00DA8005384F4 /* HYShareTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYShareTableViewCell.swift; sourceTree = "<group>"; };
+		D88976161DF00DA8005384F4 /* HYShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYShareView.swift; sourceTree = "<group>"; };
+		D88976171DF00DA8005384F4 /* HYTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYTitleView.swift; sourceTree = "<group>"; };
+		D88976261DF00F01005384F4 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		96C30B061DDDAD4500BECB35 /* Frameworks */ = {
+		D88975E51DF00CD2005384F4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4645D89F6BB43B1DB8A3D657 /* Pods_HYAlertControllerDemo.framework in Frameworks */,
+				D88976271DF00F01005384F4 /* SnapKit.framework in Frameworks */,
+				D88976281DF00F05005384F4 /* SnapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D88975F91DF00CD2005384F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4CE2C2B408485975BA908293 /* Frameworks */ = {
+		D88975DF1DF00CD2005384F4 = {
 			isa = PBXGroup;
 			children = (
-				A8962321BAD29FD009C1F4ED /* Pods_HYAlertControllerDemo.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5BF758534A6576F3C2ECD4D6 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				826299CD49BD0AEF5BC31FD9 /* Pods-HYAlertControllerDemo.debug.xcconfig */,
-				895AC2AAAAC46E3C094981CB /* Pods-HYAlertControllerDemo.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		96C30B001DDDAD4500BECB35 = {
-			isa = PBXGroup;
-			children = (
-				96C30B0B1DDDAD4500BECB35 /* HYAlertControllerDemo */,
-				96C30B0A1DDDAD4500BECB35 /* Products */,
-				5BF758534A6576F3C2ECD4D6 /* Pods */,
-				4CE2C2B408485975BA908293 /* Frameworks */,
+				D88975EA1DF00CD2005384F4 /* HYAlertControllerDemo */,
+				D88975FF1DF00CD2005384F4 /* HYAlertControllerDemoUITests */,
+				D88975E91DF00CD2005384F4 /* Products */,
+				D88976251DF00F01005384F4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		96C30B0A1DDDAD4500BECB35 /* Products */ = {
+		D88975E91DF00CD2005384F4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				96C30B091DDDAD4500BECB35 /* HYAlertControllerDemo.app */,
+				D88975E81DF00CD2005384F4 /* HYAlertControllerDemo.app */,
+				D88975FC1DF00CD2005384F4 /* HYAlertControllerDemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		96C30B0B1DDDAD4500BECB35 /* HYAlertControllerDemo */ = {
+		D88975EA1DF00CD2005384F4 /* HYAlertControllerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				96C30B0C1DDDAD4500BECB35 /* AppDelegate.swift */,
-				96C30B0E1DDDAD4500BECB35 /* ViewController.swift */,
-				96C30B101DDDAD4500BECB35 /* Main.storyboard */,
-				96C30B131DDDAD4500BECB35 /* Assets.xcassets */,
-				96C30B151DDDAD4500BECB35 /* LaunchScreen.storyboard */,
-				96C30B181DDDAD4500BECB35 /* Info.plist */,
+				D889760B1DF00DA8005384F4 /* HYAlertController */,
+				D88975EB1DF00CD2005384F4 /* AppDelegate.swift */,
+				D88975ED1DF00CD2005384F4 /* ViewController.swift */,
+				D88975EF1DF00CD2005384F4 /* Main.storyboard */,
+				D88975F21DF00CD2005384F4 /* Assets.xcassets */,
+				D88975F41DF00CD2005384F4 /* LaunchScreen.storyboard */,
+				D88975F71DF00CD2005384F4 /* Info.plist */,
 			);
 			path = HYAlertControllerDemo;
+			sourceTree = "<group>";
+		};
+		D88975FF1DF00CD2005384F4 /* HYAlertControllerDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D88976001DF00CD2005384F4 /* HYAlertControllerDemoUITests.swift */,
+				D88976021DF00CD2005384F4 /* Info.plist */,
+			);
+			path = HYAlertControllerDemoUITests;
+			sourceTree = "<group>";
+		};
+		D889760B1DF00DA8005384F4 /* HYAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				D889760C1DF00DA8005384F4 /* HYConstants.swift */,
+				D889760D1DF00DA8005384F4 /* HYActionSheetView.swift */,
+				D889760E1DF00DA8005384F4 /* HYAlertAction.swift */,
+				D889760F1DF00DA8005384F4 /* HYAlertCell.swift */,
+				D88976101DF00DA8005384F4 /* HYAlertController.swift */,
+				D88976111DF00DA8005384F4 /* HYAlertDismissSlideDown.swift */,
+				D88976121DF00DA8005384F4 /* HYAlertPresentSlideUp.swift */,
+				D88976131DF00DA8005384F4 /* HYAlertView.swift */,
+				D88976141DF00DA8005384F4 /* HYShareCollectionCell.swift */,
+				D88976151DF00DA8005384F4 /* HYShareTableViewCell.swift */,
+				D88976161DF00DA8005384F4 /* HYShareView.swift */,
+				D88976171DF00DA8005384F4 /* HYTitleView.swift */,
+			);
+			name = HYAlertController;
+			path = ../../HYAlertController;
+			sourceTree = "<group>";
+		};
+		D88976251DF00F01005384F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D88976261DF00F01005384F4 /* SnapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		96C30B081DDDAD4500BECB35 /* HYAlertControllerDemo */ = {
+		D88975E71DF00CD2005384F4 /* HYAlertControllerDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 96C30B1B1DDDAD4500BECB35 /* Build configuration list for PBXNativeTarget "HYAlertControllerDemo" */;
+			buildConfigurationList = D88976051DF00CD2005384F4 /* Build configuration list for PBXNativeTarget "HYAlertControllerDemo" */;
 			buildPhases = (
-				BBFA77F568310E4234C3DB50 /* [CP] Check Pods Manifest.lock */,
-				96C30B051DDDAD4500BECB35 /* Sources */,
-				96C30B061DDDAD4500BECB35 /* Frameworks */,
-				96C30B071DDDAD4500BECB35 /* Resources */,
-				8FB412E2AEB7999AFEE5AC0D /* [CP] Embed Pods Frameworks */,
-				33D2BE3B823EF38116BB695B /* [CP] Copy Pods Resources */,
-				D88975DE1DF00823005384F4 /* ShellScript */,
+				D88975E41DF00CD2005384F4 /* Sources */,
+				D88975E51DF00CD2005384F4 /* Frameworks */,
+				D88975E61DF00CD2005384F4 /* Resources */,
+				D88976241DF00E1B005384F4 /* ShellScript */,
+				D889762A1DF00F05005384F4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -109,26 +189,49 @@
 			);
 			name = HYAlertControllerDemo;
 			productName = HYAlertControllerDemo;
-			productReference = 96C30B091DDDAD4500BECB35 /* HYAlertControllerDemo.app */;
+			productReference = D88975E81DF00CD2005384F4 /* HYAlertControllerDemo.app */;
 			productType = "com.apple.product-type.application";
+		};
+		D88975FB1DF00CD2005384F4 /* HYAlertControllerDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D88976081DF00CD2005384F4 /* Build configuration list for PBXNativeTarget "HYAlertControllerDemoUITests" */;
+			buildPhases = (
+				D88975F81DF00CD2005384F4 /* Sources */,
+				D88975F91DF00CD2005384F4 /* Frameworks */,
+				D88975FA1DF00CD2005384F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D88975FE1DF00CD2005384F4 /* PBXTargetDependency */,
+			);
+			name = HYAlertControllerDemoUITests;
+			productName = HYAlertControllerDemoUITests;
+			productReference = D88975FC1DF00CD2005384F4 /* HYAlertControllerDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		96C30B011DDDAD4500BECB35 /* Project object */ = {
+		D88975E01DF00CD2005384F4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
 				LastUpgradeCheck = 0810;
-				ORGANIZATIONNAME = hyyy;
+				ORGANIZATIONNAME = "伯驹 黄";
 				TargetAttributes = {
-					96C30B081DDDAD4500BECB35 = {
+					D88975E71DF00CD2005384F4 = {
 						CreatedOnToolsVersion = 8.1;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
+					};
+					D88975FB1DF00CD2005384F4 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D88975E71DF00CD2005384F4;
 					};
 				};
 			};
-			buildConfigurationList = 96C30B041DDDAD4500BECB35 /* Build configuration list for PBXProject "HYAlertControllerDemo" */;
+			buildConfigurationList = D88975E31DF00CD2005384F4 /* Build configuration list for PBXProject "HYAlertControllerDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -136,76 +239,39 @@
 				en,
 				Base,
 			);
-			mainGroup = 96C30B001DDDAD4500BECB35;
-			productRefGroup = 96C30B0A1DDDAD4500BECB35 /* Products */;
+			mainGroup = D88975DF1DF00CD2005384F4;
+			productRefGroup = D88975E91DF00CD2005384F4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				96C30B081DDDAD4500BECB35 /* HYAlertControllerDemo */,
+				D88975E71DF00CD2005384F4 /* HYAlertControllerDemo */,
+				D88975FB1DF00CD2005384F4 /* HYAlertControllerDemoUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		96C30B071DDDAD4500BECB35 /* Resources */ = {
+		D88975E61DF00CD2005384F4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96C30B171DDDAD4500BECB35 /* LaunchScreen.storyboard in Resources */,
-				96C30B141DDDAD4500BECB35 /* Assets.xcassets in Resources */,
-				96C30B121DDDAD4500BECB35 /* Main.storyboard in Resources */,
+				D88975F61DF00CD2005384F4 /* LaunchScreen.storyboard in Resources */,
+				D88975F31DF00CD2005384F4 /* Assets.xcassets in Resources */,
+				D88975F11DF00CD2005384F4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D88975FA1DF00CD2005384F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		33D2BE3B823EF38116BB695B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HYAlertControllerDemo/Pods-HYAlertControllerDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8FB412E2AEB7999AFEE5AC0D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HYAlertControllerDemo/Pods-HYAlertControllerDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BBFA77F568310E4234C3DB50 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		D88975DE1DF00823005384F4 /* ShellScript */ = {
+		D88976241DF00E1B005384F4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -221,30 +287,58 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		96C30B051DDDAD4500BECB35 /* Sources */ = {
+		D88975E41DF00CD2005384F4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96C30B0F1DDDAD4500BECB35 /* ViewController.swift in Sources */,
-				96C30B0D1DDDAD4500BECB35 /* AppDelegate.swift in Sources */,
+				D88976211DF00DA8005384F4 /* HYShareTableViewCell.swift in Sources */,
+				D88976221DF00DA8005384F4 /* HYShareView.swift in Sources */,
+				D88976201DF00DA8005384F4 /* HYShareCollectionCell.swift in Sources */,
+				D88975EE1DF00CD2005384F4 /* ViewController.swift in Sources */,
+				D88976191DF00DA8005384F4 /* HYActionSheetView.swift in Sources */,
+				D889761E1DF00DA8005384F4 /* HYAlertPresentSlideUp.swift in Sources */,
+				D889761A1DF00DA8005384F4 /* HYAlertAction.swift in Sources */,
+				D889761F1DF00DA8005384F4 /* HYAlertView.swift in Sources */,
+				D88975EC1DF00CD2005384F4 /* AppDelegate.swift in Sources */,
+				D88976181DF00DA8005384F4 /* HYConstants.swift in Sources */,
+				D889761C1DF00DA8005384F4 /* HYAlertController.swift in Sources */,
+				D889761D1DF00DA8005384F4 /* HYAlertDismissSlideDown.swift in Sources */,
+				D88976231DF00DA8005384F4 /* HYTitleView.swift in Sources */,
+				D889761B1DF00DA8005384F4 /* HYAlertCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D88975F81DF00CD2005384F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D88976011DF00CD2005384F4 /* HYAlertControllerDemoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D88975FE1DF00CD2005384F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D88975E71DF00CD2005384F4 /* HYAlertControllerDemo */;
+			targetProxy = D88975FD1DF00CD2005384F4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
-		96C30B101DDDAD4500BECB35 /* Main.storyboard */ = {
+		D88975EF1DF00CD2005384F4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				96C30B111DDDAD4500BECB35 /* Base */,
+				D88975F01DF00CD2005384F4 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		96C30B151DDDAD4500BECB35 /* LaunchScreen.storyboard */ = {
+		D88975F41DF00CD2005384F4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				96C30B161DDDAD4500BECB35 /* Base */,
+				D88975F51DF00CD2005384F4 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -252,7 +346,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		96C30B191DDDAD4500BECB35 /* Debug */ = {
+		D88976031DF00CD2005384F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -301,7 +395,7 @@
 			};
 			name = Debug;
 		};
-		96C30B1A1DDDAD4500BECB35 /* Release */ = {
+		D88976041DF00CD2005384F4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -343,56 +437,95 @@
 			};
 			name = Release;
 		};
-		96C30B1C1DDDAD4500BECB35 /* Debug */ = {
+		D88976061DF00CD2005384F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 826299CD49BD0AEF5BC31FD9 /* Pods-HYAlertControllerDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = HYAlertControllerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyyy.HYAlertControllerDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.Surge.HYAlertControllerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		96C30B1D1DDDAD4500BECB35 /* Release */ = {
+		D88976071DF00CD2005384F4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 895AC2AAAAC46E3C094981CB /* Pods-HYAlertControllerDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = HYAlertControllerDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyyy.HYAlertControllerDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.Surge.HYAlertControllerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		D88976091DF00CD2005384F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = HYAlertControllerDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.Surge.HYAlertControllerDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = HYAlertControllerDemo;
+			};
+			name = Debug;
+		};
+		D889760A1DF00CD2005384F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = HYAlertControllerDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.Surge.HYAlertControllerDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = HYAlertControllerDemo;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		96C30B041DDDAD4500BECB35 /* Build configuration list for PBXProject "HYAlertControllerDemo" */ = {
+		D88975E31DF00CD2005384F4 /* Build configuration list for PBXProject "HYAlertControllerDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				96C30B191DDDAD4500BECB35 /* Debug */,
-				96C30B1A1DDDAD4500BECB35 /* Release */,
+				D88976031DF00CD2005384F4 /* Debug */,
+				D88976041DF00CD2005384F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		96C30B1B1DDDAD4500BECB35 /* Build configuration list for PBXNativeTarget "HYAlertControllerDemo" */ = {
+		D88976051DF00CD2005384F4 /* Build configuration list for PBXNativeTarget "HYAlertControllerDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				96C30B1C1DDDAD4500BECB35 /* Debug */,
-				96C30B1D1DDDAD4500BECB35 /* Release */,
+				D88976061DF00CD2005384F4 /* Debug */,
+				D88976071DF00CD2005384F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D88976081DF00CD2005384F4 /* Build configuration list for PBXNativeTarget "HYAlertControllerDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D88976091DF00CD2005384F4 /* Debug */,
+				D889760A1DF00CD2005384F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 96C30B011DDDAD4500BECB35 /* Project object */;
+	rootObject = D88975E01DF00CD2005384F4 /* Project object */;
 }

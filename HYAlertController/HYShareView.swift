@@ -22,7 +22,7 @@ class HYShareView: UIView {
 
     lazy var cancelButton: UIButton = {
         let button: UIButton = UIButton(type: UIButtonType.custom)
-        button.frame = CGRect(x: 0, y: 0, width: HY_Constants.ScreenWidth, height: 44)
+        button.frame = CGRect(x: 0, y: 0, width: HYConstants.ScreenWidth, height: 44)
         button.setTitle("取消", for: .normal)
         button.setTitleColor(UIColor.darkText, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14)

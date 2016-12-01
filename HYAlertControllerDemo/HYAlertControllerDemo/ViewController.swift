@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import HYAlertController
 
 struct Constant {
     static let ScreenWidth: CGFloat = UIScreen.main.bounds.size.width
@@ -17,36 +16,36 @@ struct Constant {
 }
 
 class ViewController: UIViewController {
-
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: CGRect(x: 0,
-            y: 0,
-            width: Constant.ScreenWidth,
-            height: Constant.ScreenHeight),
-        style: .plain)
+                                                  y: 0,
+                                                  width: Constant.ScreenWidth,
+                                                  height: Constant.ScreenHeight),
+                                    style: .plain)
         tableView.backgroundColor = UIColor.white
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constant.cellIdentifier)
         return tableView
     }()
-
+    
     lazy var dataArray: Array = { () -> [Array<String>] in
         let array: Array = [["Alert style without title and message",
-            "Alert style with title",
-            "Alert style with message",
-            "Alert style with title and message",
-            "Alert style without action",
-            "Alert style with imageAction"],
-        ["Sheet style without title and message",
-            "Sheet style with title",
-            "Sheet style with message",
-            "Sheet style with title and message",
-            "Sheet style without action",
-            "Sheet style with imageAction"],
-        ["Share style with one line",
-            "Share style with multi line",
-            "Share style with title",
-            "Share style with message",
-            "Share style with title and message"]]
+                             "Alert style with title",
+                             "Alert style with message",
+                             "Alert style with title and message",
+                             "Alert style without action",
+                             "Alert style with imageAction"],
+                            ["Sheet style without title and message",
+                             "Sheet style with title",
+                             "Sheet style with message",
+                             "Sheet style with title and message",
+                             "Sheet style without action",
+                             "Sheet style with imageAction"],
+                            ["Share style with one line",
+                             "Share style with multi line",
+                             "Share style with title",
+                             "Share style with message",
+                             "Share style with title and message"]]
         return array
     }()
 }
@@ -57,12 +56,12 @@ extension ViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         self.title = "HYAlertControllerDemo"
-
+        
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.view.addSubview(self.tableView)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -74,12 +73,12 @@ extension ViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.dataArray.count
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let rowArray: Array = self.dataArray[section]
         return rowArray.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: Constant.cellIdentifier)!
         let rowArray: Array = self.dataArray[indexPath.section]
@@ -93,15 +92,15 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10
     }
-
+    
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.1
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constant.cellHeight
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.section == 0 {
@@ -110,27 +109,27 @@ extension ViewController: UITableViewDelegate {
             case 0:
                 showAlertStyle()
                 break
-
+                
             case 1:
                 showAlertStyleWithTitle()
                 break
-
+                
             case 2:
                 showAlertStyleWithWithMessage()
                 break
-
+                
             case 3:
                 showAlertStyleWithWithTitleAndMessage()
                 break
-
+                
             case 4:
                 showAlertStyleWithoutAction()
                 break
-
+                
             case 5:
                 showAlertStyleWithImageAction()
                 break
-
+                
             default:
                 break
             }
@@ -140,27 +139,27 @@ extension ViewController: UITableViewDelegate {
             case 0:
                 showSheetStyle()
                 break
-
+                
             case 1:
                 showSheetStyleWithTitle()
                 break
-
+                
             case 2:
                 showSheetStyleWithWithMessage()
                 break
-
+                
             case 3:
                 showSheetStyleWithWithTitleAndMessage()
                 break
-
+                
             case 4:
                 showSheetStyleWithoutAction()
                 break
-
+                
             case 5:
                 showSheetStyleWithImageAction()
                 break
-
+                
             default:
                 break
             }
@@ -170,23 +169,23 @@ extension ViewController: UITableViewDelegate {
             case 0:
                 showShareStyleOneLine()
                 break
-
+                
             case 1:
                 showShareStyleMultiLine()
                 break
-
+                
             case 2:
                 showShareStyleWithTitle()
                 break
-
+                
             case 3:
                 showShareStyleWithMessage()
                 break
-
+                
             case 4:
                 showShareStyleWithTitleAndMessage()
                 break
-
+                
             default:
                 break
             }
@@ -216,7 +215,7 @@ extension ViewController {
         alertVC.addAction(action: cancelAction)
         self.present(alertVC, animated: true, completion: nil)
     }
-
+    
     fileprivate func showAlertStyleWithTitle() {
         let alertVC = HYAlertController(title: "Title", message: nil, style: .alert)
         let oneAction = HYAlertAction(title: "One Action", style: .normal, handler: { (action) in
@@ -237,7 +236,7 @@ extension ViewController {
         alertVC.addAction(action: cancelAction)
         self.present(alertVC, animated: true, completion: nil)
     }
-
+    
     fileprivate func showAlertStyleWithWithMessage() {
         let alertVC = HYAlertController(title: nil, message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .alert)
         let oneAction = HYAlertAction(title: "One Action", style: .normal, handler: { (action) in
@@ -258,7 +257,7 @@ extension ViewController {
         alertVC.addAction(action: cancelAction)
         self.present(alertVC, animated: true, completion: nil)
     }
-
+    
     fileprivate func showAlertStyleWithWithTitleAndMessage() {
         let alertVC = HYAlertController(title: "Title", message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .alert)
         let oneAction = HYAlertAction(title: "One Action", style: .normal, handler: { (action) in
@@ -279,12 +278,12 @@ extension ViewController {
         alertVC.addAction(action: cancelAction)
         self.present(alertVC, animated: true, completion: nil)
     }
-
+    
     fileprivate func showAlertStyleWithoutAction() {
         let alertVC = HYAlertController(title: "Title", message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .alert)
         self.present(alertVC, animated: true, completion: nil)
     }
-
+    
     fileprivate func showAlertStyleWithImageAction() {
         let alertVC = HYAlertController(title: "Title", message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .alert)
         let oneAction = HYAlertAction(title: "Facebook Action", image: UIImage(named: "facebook")!, style: .normal, handler: {
@@ -328,7 +327,7 @@ extension ViewController {
         alertVC.addAction(action: cancelAction)
         self.present(alertVC, animated: true, completion: nil)
     }
-
+    
     fileprivate func showSheetStyleWithTitle() {
         let alertVC: HYAlertController = HYAlertController(title: "Title", message: nil, style: .actionSheet)
         let oneAction = HYAlertAction(title: "One Action", style: .normal, handler: { (action) in
@@ -349,7 +348,7 @@ extension ViewController {
         alertVC.addAction(action: cancelAction)
         self.present(alertVC, animated: true, completion: nil)
     }
-
+    
     fileprivate func showSheetStyleWithWithMessage() {
         let alertVC: HYAlertController = HYAlertController(title: nil, message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .actionSheet)
         let oneAction = HYAlertAction(title: "One Action", style: .normal, handler: { (action) in
@@ -370,7 +369,7 @@ extension ViewController {
         alertVC.addAction(action: cancelAction)
         self.present(alertVC, animated: true, completion: nil)
     }
-
+    
     fileprivate func showSheetStyleWithWithTitleAndMessage() {
         let alertVC: HYAlertController = HYAlertController(title: "Title", message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .actionSheet)
         let oneAction = HYAlertAction(title: "One Action", style: .normal, handler: { (action) in
@@ -391,12 +390,12 @@ extension ViewController {
         alertVC.addAction(action: cancelAction)
         self.present(alertVC, animated: true, completion: nil)
     }
-
+    
     fileprivate func showSheetStyleWithoutAction() {
         let alertVC: HYAlertController = HYAlertController(title: "Title", message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .actionSheet)
         self.present(alertVC, animated: true, completion: nil)
     }
-
+    
     fileprivate func showSheetStyleWithImageAction() {
         let alertVC: HYAlertController = HYAlertController(title: "Title", message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .actionSheet)
         let oneAction = HYAlertAction(title: "Facebook Action", image: UIImage(named: "facebook")!, style: .normal, handler: {
@@ -449,7 +448,7 @@ extension ViewController {
         alertVC.addShareActions(actions: [oneAction, twoAction, threeAction, fourAction, fiveAction, sixAction])
         self.present(alertVC, animated: true, completion: nil)
     }
-
+    
     fileprivate func showShareStyleMultiLine() {
         let alertVC: HYAlertController = HYAlertController(title: nil, message: nil, style: .shareSheet)
         let facebookAction = HYAlertAction(title: "Facebook", image: UIImage(named: "facebook")!, style: .normal, handler: {
@@ -476,7 +475,7 @@ extension ViewController {
             (action) in
             print(action.title)
         })
-
+        
         let wechatAction = HYAlertAction(title: "Wechat", image: UIImage(named: "wechat")!, style: .normal, handler: {
             (action) in
             print(action.title)
@@ -501,12 +500,12 @@ extension ViewController {
             (action) in
             print(action.title)
         })
-
+        
         alertVC.addShareActions(actions: [facebookAction, twitterAction, snapchatAction, instagramAction, pinterestAction, lineAction])
         alertVC.addShareActions(actions: [wechatAction, momentAction, qqAction, qzoneAction, sinaAction, alipayAction])
         self.present(alertVC, animated: true, completion: nil)
     }
-
+    
     fileprivate func showShareStyleWithTitle() {
         let alertVC: HYAlertController = HYAlertController(title: "Title", message: nil, style: .shareSheet)
         let facebookAction = HYAlertAction(title: "Facebook", image: UIImage(named: "facebook")!, style: .normal, handler: {
@@ -533,7 +532,7 @@ extension ViewController {
             (action) in
             print(action.title)
         })
-
+        
         let wechatAction = HYAlertAction(title: "Wechat", image: UIImage(named: "wechat")!, style: .normal, handler: {
             (action) in
             print(action.title)
@@ -558,12 +557,12 @@ extension ViewController {
             (action) in
             print(action.title)
         })
-
+        
         alertVC.addShareActions(actions: [facebookAction, twitterAction, snapchatAction, instagramAction, pinterestAction, lineAction])
         alertVC.addShareActions(actions: [wechatAction, momentAction, qqAction, qzoneAction, sinaAction, alipayAction])
         self.present(alertVC, animated: true, completion: nil)
     }
-
+    
     fileprivate func showShareStyleWithMessage() {
         let alertVC: HYAlertController = HYAlertController(title: nil, message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .shareSheet)
         let facebookAction = HYAlertAction(title: "Facebook", image: UIImage(named: "facebook")!, style: .normal, handler: {
@@ -590,7 +589,7 @@ extension ViewController {
             (action) in
             print(action.title)
         })
-
+        
         let wechatAction = HYAlertAction(title: "Wechat", image: UIImage(named: "wechat")!, style: .normal, handler: {
             (action) in
             print(action.title)
@@ -615,12 +614,12 @@ extension ViewController {
             (action) in
             print(action.title)
         })
-
+        
         alertVC.addShareActions(actions: [facebookAction, twitterAction, snapchatAction, instagramAction, pinterestAction, lineAction])
         alertVC.addShareActions(actions: [wechatAction, momentAction, qqAction, qzoneAction, sinaAction, alipayAction])
         self.present(alertVC, animated: true, completion: nil)
     }
-
+    
     fileprivate func showShareStyleWithTitleAndMessage() {
         let alertVC: HYAlertController = HYAlertController(title: "Title", message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .shareSheet)
         let facebookAction = HYAlertAction(title: "Facebook", image: UIImage(named: "facebook")!, style: .normal, handler: {
@@ -647,7 +646,7 @@ extension ViewController {
             (action) in
             print(action.title)
         })
-
+        
         let wechatAction = HYAlertAction(title: "Wechat", image: UIImage(named: "wechat")!, style: .normal, handler: {
             (action) in
             print(action.title)
@@ -672,7 +671,7 @@ extension ViewController {
             (action) in
             print(action.title)
         })
-
+        
         alertVC.addShareActions(actions: [facebookAction, twitterAction, snapchatAction, instagramAction, pinterestAction, lineAction])
         alertVC.addShareActions(actions: [wechatAction, momentAction, qqAction, qzoneAction, sinaAction, alipayAction])
         self.present(alertVC, animated: true, completion: nil)

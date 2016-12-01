@@ -12,7 +12,7 @@ class HYAlertPresentSlideUp: NSObject, UIViewControllerAnimatedTransitioning {
 
     // MARK: - UIViewControllerAnimatedTransitioning
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return HY_Constants.presentAnimateDuration
+        return HYConstants.presentAnimateDuration
     }
 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {

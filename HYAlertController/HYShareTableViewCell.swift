@@ -36,7 +36,7 @@ extension HYShareTableViewCell {
     }
 
     class func cellHeight() -> CGFloat {
-        return HY_Constants.shareItemHeight + HY_Constants.shareItemPadding * 2
+        return HYConstants.shareItemHeight + HYConstants.shareItemPadding * 2
     }
 
     class func cellWithTableView(tableView: UITableView) -> HYShareTableViewCell {
