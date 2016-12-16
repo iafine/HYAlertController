@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D84325AD1E03CD85005D80E6 /* HYActionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84325A11E03CD85005D80E6 /* HYActionSheetView.swift */; };
+		D84325AE1E03CD85005D80E6 /* HYAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84325A21E03CD85005D80E6 /* HYAlertAction.swift */; };
+		D84325AF1E03CD85005D80E6 /* HYAlertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84325A31E03CD85005D80E6 /* HYAlertCell.swift */; };
+		D84325B01E03CD85005D80E6 /* HYAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84325A41E03CD85005D80E6 /* HYAlertController.swift */; };
+		D84325B11E03CD85005D80E6 /* HYAlertDismissSlideDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84325A51E03CD85005D80E6 /* HYAlertDismissSlideDown.swift */; };
+		D84325B21E03CD85005D80E6 /* HYAlertPresentSlideUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84325A61E03CD85005D80E6 /* HYAlertPresentSlideUp.swift */; };
+		D84325B31E03CD85005D80E6 /* HYAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84325A71E03CD85005D80E6 /* HYAlertView.swift */; };
+		D84325B41E03CD85005D80E6 /* HYConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84325A81E03CD85005D80E6 /* HYConstants.swift */; };
+		D84325B51E03CD85005D80E6 /* HYShareCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84325A91E03CD85005D80E6 /* HYShareCollectionCell.swift */; };
+		D84325B61E03CD85005D80E6 /* HYShareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84325AA1E03CD85005D80E6 /* HYShareTableViewCell.swift */; };
+		D84325B71E03CD85005D80E6 /* HYShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84325AB1E03CD85005D80E6 /* HYShareView.swift */; };
+		D84325B81E03CD85005D80E6 /* HYTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84325AC1E03CD85005D80E6 /* HYTitleView.swift */; };
 		D88975EC1DF00CD2005384F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88975EB1DF00CD2005384F4 /* AppDelegate.swift */; };
 		D88975EE1DF00CD2005384F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88975ED1DF00CD2005384F4 /* ViewController.swift */; };
 		D88975F11DF00CD2005384F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D88975EF1DF00CD2005384F4 /* Main.storyboard */; };
 		D88975F31DF00CD2005384F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D88975F21DF00CD2005384F4 /* Assets.xcassets */; };
 		D88975F61DF00CD2005384F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D88975F41DF00CD2005384F4 /* LaunchScreen.storyboard */; };
 		D88976011DF00CD2005384F4 /* HYAlertControllerDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88976001DF00CD2005384F4 /* HYAlertControllerDemoUITests.swift */; };
-		D88976181DF00DA8005384F4 /* HYConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D889760C1DF00DA8005384F4 /* HYConstants.swift */; };
-		D88976191DF00DA8005384F4 /* HYActionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D889760D1DF00DA8005384F4 /* HYActionSheetView.swift */; };
-		D889761A1DF00DA8005384F4 /* HYAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D889760E1DF00DA8005384F4 /* HYAlertAction.swift */; };
-		D889761B1DF00DA8005384F4 /* HYAlertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D889760F1DF00DA8005384F4 /* HYAlertCell.swift */; };
-		D889761C1DF00DA8005384F4 /* HYAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88976101DF00DA8005384F4 /* HYAlertController.swift */; };
-		D889761D1DF00DA8005384F4 /* HYAlertDismissSlideDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88976111DF00DA8005384F4 /* HYAlertDismissSlideDown.swift */; };
-		D889761E1DF00DA8005384F4 /* HYAlertPresentSlideUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88976121DF00DA8005384F4 /* HYAlertPresentSlideUp.swift */; };
-		D889761F1DF00DA8005384F4 /* HYAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88976131DF00DA8005384F4 /* HYAlertView.swift */; };
-		D88976201DF00DA8005384F4 /* HYShareCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88976141DF00DA8005384F4 /* HYShareCollectionCell.swift */; };
-		D88976211DF00DA8005384F4 /* HYShareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88976151DF00DA8005384F4 /* HYShareTableViewCell.swift */; };
-		D88976221DF00DA8005384F4 /* HYShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88976161DF00DA8005384F4 /* HYShareView.swift */; };
-		D88976231DF00DA8005384F4 /* HYTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88976171DF00DA8005384F4 /* HYTitleView.swift */; };
 		D88976271DF00F01005384F4 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88976261DF00F01005384F4 /* SnapKit.framework */; };
 		D88976281DF00F05005384F4 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88976261DF00F01005384F4 /* SnapKit.framework */; };
 		D88976291DF00F05005384F4 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D88976261DF00F01005384F4 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -55,6 +55,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D84325A11E03CD85005D80E6 /* HYActionSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYActionSheetView.swift; sourceTree = "<group>"; };
+		D84325A21E03CD85005D80E6 /* HYAlertAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertAction.swift; sourceTree = "<group>"; };
+		D84325A31E03CD85005D80E6 /* HYAlertCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertCell.swift; sourceTree = "<group>"; };
+		D84325A41E03CD85005D80E6 /* HYAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertController.swift; sourceTree = "<group>"; };
+		D84325A51E03CD85005D80E6 /* HYAlertDismissSlideDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertDismissSlideDown.swift; sourceTree = "<group>"; };
+		D84325A61E03CD85005D80E6 /* HYAlertPresentSlideUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertPresentSlideUp.swift; sourceTree = "<group>"; };
+		D84325A71E03CD85005D80E6 /* HYAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertView.swift; sourceTree = "<group>"; };
+		D84325A81E03CD85005D80E6 /* HYConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYConstants.swift; sourceTree = "<group>"; };
+		D84325A91E03CD85005D80E6 /* HYShareCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYShareCollectionCell.swift; sourceTree = "<group>"; };
+		D84325AA1E03CD85005D80E6 /* HYShareTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYShareTableViewCell.swift; sourceTree = "<group>"; };
+		D84325AB1E03CD85005D80E6 /* HYShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYShareView.swift; sourceTree = "<group>"; };
+		D84325AC1E03CD85005D80E6 /* HYTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYTitleView.swift; sourceTree = "<group>"; };
 		D88975E81DF00CD2005384F4 /* HYAlertControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HYAlertControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D88975EB1DF00CD2005384F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D88975ED1DF00CD2005384F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,18 +77,6 @@
 		D88975FC1DF00CD2005384F4 /* HYAlertControllerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HYAlertControllerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D88976001DF00CD2005384F4 /* HYAlertControllerDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HYAlertControllerDemoUITests.swift; sourceTree = "<group>"; };
 		D88976021DF00CD2005384F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D889760C1DF00DA8005384F4 /* HYConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYConstants.swift; sourceTree = "<group>"; };
-		D889760D1DF00DA8005384F4 /* HYActionSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYActionSheetView.swift; sourceTree = "<group>"; };
-		D889760E1DF00DA8005384F4 /* HYAlertAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertAction.swift; sourceTree = "<group>"; };
-		D889760F1DF00DA8005384F4 /* HYAlertCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertCell.swift; sourceTree = "<group>"; };
-		D88976101DF00DA8005384F4 /* HYAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertController.swift; sourceTree = "<group>"; };
-		D88976111DF00DA8005384F4 /* HYAlertDismissSlideDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertDismissSlideDown.swift; sourceTree = "<group>"; };
-		D88976121DF00DA8005384F4 /* HYAlertPresentSlideUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertPresentSlideUp.swift; sourceTree = "<group>"; };
-		D88976131DF00DA8005384F4 /* HYAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertView.swift; sourceTree = "<group>"; };
-		D88976141DF00DA8005384F4 /* HYShareCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYShareCollectionCell.swift; sourceTree = "<group>"; };
-		D88976151DF00DA8005384F4 /* HYShareTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYShareTableViewCell.swift; sourceTree = "<group>"; };
-		D88976161DF00DA8005384F4 /* HYShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYShareView.swift; sourceTree = "<group>"; };
-		D88976171DF00DA8005384F4 /* HYTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYTitleView.swift; sourceTree = "<group>"; };
 		D88976261DF00F01005384F4 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +100,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D84325A01E03CD85005D80E6 /* HYAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				D84325A11E03CD85005D80E6 /* HYActionSheetView.swift */,
+				D84325A21E03CD85005D80E6 /* HYAlertAction.swift */,
+				D84325A31E03CD85005D80E6 /* HYAlertCell.swift */,
+				D84325A41E03CD85005D80E6 /* HYAlertController.swift */,
+				D84325A51E03CD85005D80E6 /* HYAlertDismissSlideDown.swift */,
+				D84325A61E03CD85005D80E6 /* HYAlertPresentSlideUp.swift */,
+				D84325A71E03CD85005D80E6 /* HYAlertView.swift */,
+				D84325A81E03CD85005D80E6 /* HYConstants.swift */,
+				D84325A91E03CD85005D80E6 /* HYShareCollectionCell.swift */,
+				D84325AA1E03CD85005D80E6 /* HYShareTableViewCell.swift */,
+				D84325AB1E03CD85005D80E6 /* HYShareView.swift */,
+				D84325AC1E03CD85005D80E6 /* HYTitleView.swift */,
+			);
+			path = HYAlertController;
+			sourceTree = SOURCE_ROOT;
+		};
 		D88975DF1DF00CD2005384F4 = {
 			isa = PBXGroup;
 			children = (
@@ -122,7 +141,7 @@
 		D88975EA1DF00CD2005384F4 /* HYAlertControllerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				D889760B1DF00DA8005384F4 /* HYAlertController */,
+				D84325A01E03CD85005D80E6 /* HYAlertController */,
 				D88975EB1DF00CD2005384F4 /* AppDelegate.swift */,
 				D88975ED1DF00CD2005384F4 /* ViewController.swift */,
 				D88975EF1DF00CD2005384F4 /* Main.storyboard */,
@@ -140,26 +159,6 @@
 				D88976021DF00CD2005384F4 /* Info.plist */,
 			);
 			path = HYAlertControllerDemoUITests;
-			sourceTree = "<group>";
-		};
-		D889760B1DF00DA8005384F4 /* HYAlertController */ = {
-			isa = PBXGroup;
-			children = (
-				D889760C1DF00DA8005384F4 /* HYConstants.swift */,
-				D889760D1DF00DA8005384F4 /* HYActionSheetView.swift */,
-				D889760E1DF00DA8005384F4 /* HYAlertAction.swift */,
-				D889760F1DF00DA8005384F4 /* HYAlertCell.swift */,
-				D88976101DF00DA8005384F4 /* HYAlertController.swift */,
-				D88976111DF00DA8005384F4 /* HYAlertDismissSlideDown.swift */,
-				D88976121DF00DA8005384F4 /* HYAlertPresentSlideUp.swift */,
-				D88976131DF00DA8005384F4 /* HYAlertView.swift */,
-				D88976141DF00DA8005384F4 /* HYShareCollectionCell.swift */,
-				D88976151DF00DA8005384F4 /* HYShareTableViewCell.swift */,
-				D88976161DF00DA8005384F4 /* HYShareView.swift */,
-				D88976171DF00DA8005384F4 /* HYTitleView.swift */,
-			);
-			name = HYAlertController;
-			path = ../../HYAlertController;
 			sourceTree = "<group>";
 		};
 		D88976251DF00F01005384F4 /* Frameworks */ = {
@@ -291,20 +290,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D88976211DF00DA8005384F4 /* HYShareTableViewCell.swift in Sources */,
-				D88976221DF00DA8005384F4 /* HYShareView.swift in Sources */,
-				D88976201DF00DA8005384F4 /* HYShareCollectionCell.swift in Sources */,
+				D84325B61E03CD85005D80E6 /* HYShareTableViewCell.swift in Sources */,
+				D84325B71E03CD85005D80E6 /* HYShareView.swift in Sources */,
+				D84325B51E03CD85005D80E6 /* HYShareCollectionCell.swift in Sources */,
+				D84325AF1E03CD85005D80E6 /* HYAlertCell.swift in Sources */,
+				D84325AD1E03CD85005D80E6 /* HYActionSheetView.swift in Sources */,
+				D84325B41E03CD85005D80E6 /* HYConstants.swift in Sources */,
+				D84325AE1E03CD85005D80E6 /* HYAlertAction.swift in Sources */,
+				D84325B11E03CD85005D80E6 /* HYAlertDismissSlideDown.swift in Sources */,
+				D84325B31E03CD85005D80E6 /* HYAlertView.swift in Sources */,
 				D88975EE1DF00CD2005384F4 /* ViewController.swift in Sources */,
-				D88976191DF00DA8005384F4 /* HYActionSheetView.swift in Sources */,
-				D889761E1DF00DA8005384F4 /* HYAlertPresentSlideUp.swift in Sources */,
-				D889761A1DF00DA8005384F4 /* HYAlertAction.swift in Sources */,
-				D889761F1DF00DA8005384F4 /* HYAlertView.swift in Sources */,
 				D88975EC1DF00CD2005384F4 /* AppDelegate.swift in Sources */,
-				D88976181DF00DA8005384F4 /* HYConstants.swift in Sources */,
-				D889761C1DF00DA8005384F4 /* HYAlertController.swift in Sources */,
-				D889761D1DF00DA8005384F4 /* HYAlertDismissSlideDown.swift in Sources */,
-				D88976231DF00DA8005384F4 /* HYTitleView.swift in Sources */,
-				D889761B1DF00DA8005384F4 /* HYAlertCell.swift in Sources */,
+				D84325B21E03CD85005D80E6 /* HYAlertPresentSlideUp.swift in Sources */,
+				D84325B81E03CD85005D80E6 /* HYTitleView.swift in Sources */,
+				D84325B01E03CD85005D80E6 /* HYAlertController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

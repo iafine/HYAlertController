@@ -24,8 +24,8 @@ public class HYAlertController: UIViewController {
     var alertMessage: String
     var alertStyle: HYAlertControllerStyle
 
-    fileprivate var actionArray: NSMutableArray = NSMutableArray()
-    fileprivate var cancelActionArray: NSMutableArray = NSMutableArray()
+    fileprivate var actionArray: [[HYAlertAction]] = [[]]
+    fileprivate var cancelActionArray: [HYAlertAction] = []
 
     var alertHeight: CGFloat = CGFloat()
 
@@ -161,22 +161,22 @@ extension HYAlertController {
 extension HYAlertController {
     open func addAction(action: HYAlertAction) {
         if action.style == .cancel {
-            self.cancelActionArray.add(action)
+            cancelActionArray.append(action)
         } else {
-            self.actionArray.add(action)
+            actionArray.append([action])
         }
         if self.alertStyle == .actionSheet {
-            self.sheetView.refreshDate(dataArray: self.actionArray, cancelArray: self.cancelActionArray, title: self.alertTitle, message: self.alertMessage)
+            sheetView.refreshDate(dataArray: actionArray[0], cancelArray: cancelActionArray, title: alertTitle, message: alertMessage)
         } else if self.alertStyle == .alert {
-            self.alertView.refreshDate(dataArray: self.actionArray, cancelArray: self.cancelActionArray, title: self.alertTitle, message: self.alertMessage)
+            alertView.refreshDate(dataArray: actionArray[0], cancelArray: self.cancelActionArray, title: alertTitle, message: alertMessage)
         } else {
         }
     }
 
     /// 添加必须是元素为HYAlertAction的数组，调用几次该方法，分享显示几行
-    open func addShareActions(actions: Array<HYAlertAction>) {
-        self.actionArray.add(actions)
-        self.shareView.refreshDate(dataArray: self.actionArray, cancelArray: self.cancelActionArray, title: self.alertTitle, message: self.alertMessage)
+    open func addShareActions(actions: [HYAlertAction]) {
+        actionArray += [actions]
+        shareView.refreshDate(dataArray: actionArray, cancelArray: cancelActionArray, title: alertTitle, message: alertMessage)
     }
 }
 
@@ -225,9 +225,9 @@ extension HYAlertController {
 extension HYAlertController {
     // 取消视图显示和控制器加载
     fileprivate func dismiss() {
-        self.actionArray.removeAllObjects()
-        self.cancelActionArray.removeAllObjects()
+        actionArray.removeAll()
+        cancelActionArray.removeAll()
 
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }

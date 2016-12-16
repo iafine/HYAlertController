@@ -38,8 +38,8 @@ class HYShareView: UIView {
     var shareTitle: String = String()
     var shareMessage: String = String()
     var delegate: HYShareViewDelegate?
-    fileprivate var shareDataArray: NSArray = NSArray()
-    fileprivate var cancelDataArray: NSArray = NSArray()
+    fileprivate var shareDataArray: [[HYAlertAction]] = []
+    fileprivate var cancelDataArray: [HYAlertAction] = []
     /// 存储各个collectionView的偏移量
     fileprivate var contentOffsetDictionary: NSMutableDictionary = NSMutableDictionary()
 
@@ -86,7 +86,7 @@ extension HYShareView {
 
 // MARK: - Public Methods
 extension HYShareView {
-    open func refreshDate(dataArray: NSArray, cancelArray: NSArray, title: String, message: String) {
+    open func refreshDate(dataArray: [[HYAlertAction]], cancelArray: [HYAlertAction], title: String, message: String) {
         self.shareDataArray = dataArray
         self.cancelDataArray = cancelArray
 
@@ -148,9 +148,9 @@ extension HYShareView: UITableViewDelegate {
 // MARK: - UICollectionViewDelegate
 extension HYShareView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let collectionDataArray: NSArray = self.shareDataArray.object(at: collectionView.tag) as! NSArray
+        let collectionDataArray = self.shareDataArray[collectionView.tag]
 
-        let action: HYAlertAction = collectionDataArray.object(at: indexPath.row) as! HYAlertAction
+        let action = collectionDataArray[indexPath.row]
         action.myHandler(action)
 
         delegate?.clickedShareItemHandler()
@@ -161,8 +161,7 @@ extension HYShareView: UICollectionViewDelegate {
 extension HYShareView: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let collectionDataArray: NSArray = self.shareDataArray.object(at: section) as! NSArray
-        return collectionDataArray.count
+        return shareDataArray[section].count
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -170,11 +169,11 @@ extension HYShareView: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: HYShareCollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: HYShareCollectionCell.ID(), for: indexPath) as! HYShareCollectionCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HYShareCollectionCell.ID(), for: indexPath) as! HYShareCollectionCell
 
-        let collectionDataArray: NSArray = self.shareDataArray.object(at: collectionView.tag) as! NSArray
+        let collectionDataArray = shareDataArray[collectionView.tag]
 
-        let action: HYAlertAction = collectionDataArray.object(at: indexPath.row) as! HYAlertAction
+        let action = collectionDataArray[indexPath.row]
         cell.cellIcon.image = action.image
         cell.titleView.text = action.title
         return cell
@@ -185,7 +184,7 @@ extension HYShareView: UICollectionViewDataSource {
 extension HYShareView {
     @objc fileprivate func clickedCancelBtnHandler() {
         if self.cancelDataArray.count > 0 {
-            let action: HYAlertAction = self.cancelDataArray.object(at: 0) as! HYAlertAction
+            let action = self.cancelDataArray[0]
             action.myHandler(action)
         }
         delegate?.clickedShareItemHandler()

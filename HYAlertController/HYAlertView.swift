@@ -30,8 +30,8 @@ class HYAlertView: UIView {
     var alertTitle: String = String()
     var alertMessage: String = String()
     var delegate: HYAlertViewDelegate?
-    fileprivate var alertDataArray: NSArray = NSArray()
-    fileprivate var cancelDataArray: NSArray = NSArray()
+    fileprivate var alertDataArray: [HYAlertAction] = []
+    fileprivate var cancelDataArray: [HYAlertAction] = []
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -74,7 +74,7 @@ extension HYAlertView {
 
 // MARK: - Public Methods
 extension HYAlertView {
-    open func refreshDate(dataArray: NSArray, cancelArray: NSArray, title: String, message: String) {
+    open func refreshDate(dataArray: [HYAlertAction], cancelArray: [HYAlertAction], title: String, message: String) {
         self.alertDataArray = dataArray
         self.cancelDataArray = cancelArray
 
@@ -99,7 +99,7 @@ extension HYAlertView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell: HYAlertCell = HYAlertCell.cellWithTableView(tableView: tableView)
-            let action: HYAlertAction = self.alertDataArray.object(at: indexPath.row) as! HYAlertAction
+            let action: HYAlertAction = alertDataArray[indexPath.row]
             cell.titleLabel.text = action.title
             if action.style == .destructive {
                 cell.titleLabel.textColor = UIColor.red
@@ -109,7 +109,7 @@ extension HYAlertView: UITableViewDataSource {
         } else {
             let cell: HYAlertCell = HYAlertCell.cellWithTableView(tableView: tableView)
             if self.cancelDataArray.count > 0 {
-                let action: HYAlertAction = self.cancelDataArray.object(at: indexPath.row) as! HYAlertAction
+                let action: HYAlertAction = cancelDataArray[indexPath.row]
                 cell.titleLabel.text = action.title
                 cell.cellIcon.image = action.image
             } else {
@@ -141,11 +141,11 @@ extension HYAlertView: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
 
         if indexPath.section == 0 {
-            let action: HYAlertAction = self.alertDataArray.object(at: indexPath.row) as! HYAlertAction
+            let action: HYAlertAction = alertDataArray[indexPath.row]
             action.myHandler(action)
         } else {
             if self.cancelDataArray.count > 0 {
-                let action: HYAlertAction = self.cancelDataArray.object(at: indexPath.row) as! HYAlertAction
+                let action: HYAlertAction = cancelDataArray[indexPath.row]
                 action.myHandler(action)
             }
         }
