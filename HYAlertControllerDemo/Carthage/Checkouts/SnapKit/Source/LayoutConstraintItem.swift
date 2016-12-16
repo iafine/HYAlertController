@@ -27,58 +27,56 @@
     import AppKit
 #endif
 
-
 public protocol LayoutConstraintItem: class {
 }
 
 @available(iOS 9.0, OSX 10.11, *)
-extension ConstraintLayoutGuide : LayoutConstraintItem {
+extension ConstraintLayoutGuide: LayoutConstraintItem {
 }
 
-extension ConstraintView : LayoutConstraintItem {
+extension ConstraintView: LayoutConstraintItem {
 }
-
 
 extension LayoutConstraintItem {
-    
+
     internal func prepare() {
         if let view = self as? ConstraintView {
             view.translatesAutoresizingMaskIntoConstraints = false
         }
     }
-    
+
     internal var superview: ConstraintView? {
         if let view = self as? ConstraintView {
             return view.superview
         }
-        
+
         if #available(iOS 9.0, OSX 10.11, *), let guide = self as? ConstraintLayoutGuide {
             return guide.owningView
         }
-        
+
         return nil
     }
     internal var constraints: [Constraint] {
         return self.constraintsHashTable.allObjects
     }
-    
+
     internal func add(constraints: [Constraint]) {
         let hashTable = self.constraintsHashTable
         for constraint in constraints {
             hashTable.add(constraint)
         }
     }
-    
+
     internal func remove(constraints: [Constraint]) {
         let hashTable = self.constraintsHashTable
         for constraint in constraints {
             hashTable.remove(constraint)
         }
     }
-    
+
     private var constraintsHashTable: NSHashTable<Constraint> {
         let constraints: NSHashTable<Constraint>
-        
+
         if let existing = objc_getAssociatedObject(self, &constraintsKey) as? NSHashTable<Constraint> {
             constraints = existing
         } else {
@@ -86,8 +84,6 @@ extension LayoutConstraintItem {
             objc_setAssociatedObject(self, &constraintsKey, constraints, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
         return constraints
-        
     }
-    
 }
 private var constraintsKey: UInt8 = 0

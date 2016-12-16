@@ -13,27 +13,27 @@ class ListViewController: UITableViewController {
 
     let kCellIdentifier = "CellIdentifier"
     let demos = ["Simple Layout", "Basic UIScrollView"]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.title = "SnapKit iOS Demos"
-        
+
         self.tableView?.registerClass(UITableViewCell.self, forCellReuseIdentifier: kCellIdentifier)
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier)! as UITableViewCell
-        
+
         cell.textLabel?.text = demos[indexPath.row]
-        
+
         return cell
     }
-    
+
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return demos.count
     }
-    
+
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 0 {
             let viewController = SimpleLayoutViewController()
@@ -44,4 +44,3 @@ class ListViewController: UITableViewController {
         }
     }
 }
-

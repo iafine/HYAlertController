@@ -94,5 +94,4 @@ class SimpleLayoutViewController: UIViewController {
 
         super.updateViewConstraints()
     }
-
 }

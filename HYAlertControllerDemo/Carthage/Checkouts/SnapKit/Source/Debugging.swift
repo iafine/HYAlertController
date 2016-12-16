@@ -28,34 +28,34 @@
 #endif
 
 public extension LayoutConstraint {
-    
+
     override public var description: String {
         var description = "<"
-        
+
         description += descriptionForObject(self)
-        
+
         if let firstItem = conditionalOptional(from: self.firstItem) {
             description += " \(descriptionForObject(firstItem))"
         }
-        
+
         if self.firstAttribute != .notAnAttribute {
             description += ".\(descriptionForAttribute(self.firstAttribute))"
         }
-        
+
         description += " \(descriptionForRelation(self.relation))"
-        
+
         if let secondItem = self.secondItem {
             description += " \(descriptionForObject(secondItem))"
         }
-        
+
         if self.secondAttribute != .notAnAttribute {
             description += ".\(descriptionForAttribute(self.secondAttribute))"
         }
-        
+
         if self.multiplier != 1.0 {
             description += " * \(self.multiplier)"
         }
-        
+
         if self.secondAttribute == .notAnAttribute {
             description += " \(self.constant)"
         } else {
@@ -65,66 +65,65 @@ public extension LayoutConstraint {
                 description += " - \(abs(self.constant))"
             }
         }
-        
+
         if self.priority != 1000.0 {
             description += " ^\(self.priority)"
         }
-        
+
         description += ">"
-        
+
         return description
     }
-    
 }
 
 private func descriptionForRelation(_ relation: NSLayoutRelation) -> String {
     switch relation {
-    case .equal:                return "=="
-    case .greaterThanOrEqual:   return ">="
-    case .lessThanOrEqual:      return "<="
+    case .equal: return "=="
+    case .greaterThanOrEqual: return ">="
+    case .lessThanOrEqual: return "<="
     }
 }
 
 private func descriptionForAttribute(_ attribute: NSLayoutAttribute) -> String {
     #if os(iOS) || os(tvOS)
         switch attribute {
-        case .notAnAttribute:       return "notAnAttribute"
-        case .top:                  return "top"
-        case .left:                 return "left"
-        case .bottom:               return "bottom"
-        case .right:                return "right"
-        case .leading:              return "leading"
-        case .trailing:             return "trailing"
-        case .width:                return "width"
-        case .height:               return "height"
-        case .centerX:              return "centerX"
-        case .centerY:              return "centerY"
-        case .lastBaseline:         return "lastBaseline"
-        case .firstBaseline:        return "firstBaseline"
-        case .topMargin:            return "topMargin"
-        case .leftMargin:           return "leftMargin"
-        case .bottomMargin:         return "bottomMargin"
-        case .rightMargin:          return "rightMargin"
-        case .leadingMargin:        return "leadingMargin"
-        case .trailingMargin:       return "trailingMargin"
+        case .notAnAttribute: return "notAnAttribute"
+        case .top: return "top"
+        case .left: return "left"
+        case .bottom: return "bottom"
+        case .right: return "right"
+        case .leading: return "leading"
+        case .trailing: return "trailing"
+        case .width: return "width"
+        case .height: return "height"
+        case .centerX: return "centerX"
+        case .centerY: return "centerY"
+        case .lastBaseline: return "lastBaseline"
+        case .firstBaseline: return "firstBaseline"
+        case .topMargin: return "topMargin"
+        case .leftMargin: return "leftMargin"
+        case .bottomMargin: return "bottomMargin"
+        case .rightMargin: return "rightMargin"
+        case .leadingMargin: return "leadingMargin"
+        case .trailingMargin: return "trailingMargin"
         case .centerXWithinMargins: return "centerXWithinMargins"
         case .centerYWithinMargins: return "centerYWithinMargins"
         }
     #else
         switch attribute {
-        case .notAnAttribute:       return "notAnAttribute"
-        case .top:                  return "top"
-        case .left:                 return "left"
-        case .bottom:               return "bottom"
-        case .right:                return "right"
-        case .leading:              return "leading"
-        case .trailing:             return "trailing"
-        case .width:                return "width"
-        case .height:               return "height"
-        case .centerX:              return "centerX"
-        case .centerY:              return "centerY"
-        case .lastBaseline:         return "lastBaseline"
-        case .firstBaseline:        return "firstBaseline"
+        case .notAnAttribute: return "notAnAttribute"
+        case .top: return "top"
+        case .left: return "left"
+        case .bottom: return "bottom"
+        case .right: return "right"
+        case .leading: return "leading"
+        case .trailing: return "trailing"
+        case .width: return "width"
+        case .height: return "height"
+        case .centerX: return "centerX"
+        case .centerY: return "centerY"
+        case .lastBaseline: return "lastBaseline"
+        case .firstBaseline: return "firstBaseline"
         }
     #endif
 }
@@ -140,9 +139,9 @@ private func conditionalOptional<T>(from object: T) -> Optional<T> {
 private func descriptionForObject(_ object: AnyObject) -> String {
     let pointerDescription = String(format: "%p", UInt(bitPattern: ObjectIdentifier(object)))
     var desc = ""
-    
+
     desc += type(of: object).description()
-    
+
     if let object = object as? ConstraintView {
         desc += ":\(object.snp.label() ?? pointerDescription)"
     } else if let object = object as? LayoutConstraint {
@@ -150,11 +149,11 @@ private func descriptionForObject(_ object: AnyObject) -> String {
     } else {
         desc += ":\(pointerDescription)"
     }
-    
+
     if let object = object as? LayoutConstraint, let file = object.constraint?.sourceLocation.0, let line = object.constraint?.sourceLocation.1 {
         desc += "@\((file as NSString).lastPathComponent)#\(line)"
     }
-    
+
     desc += ""
     return desc
 }

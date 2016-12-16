@@ -11,10 +11,10 @@ import UIKit
 class BasicUIScrollViewController: UIViewController {
 
     var didSetupConstraints = false
-    
-    let scrollView  = UIScrollView()
+
+    let scrollView = UIScrollView()
     let contentView = UIView()
-    
+
     let label: UILabel = {
         let label = UILabel()
         label.backgroundColor = .blueColor()
@@ -29,39 +29,39 @@ class BasicUIScrollViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.whiteColor()
-        
+
         view.addSubview(scrollView)
-        
+
         contentView.backgroundColor = UIColor.lightGrayColor()
         scrollView.addSubview(contentView)
         contentView.addSubview(label)
-        
+
         view.setNeedsUpdateConstraints()
     }
-    
+
     override func updateViewConstraints() {
-        
-        if (!didSetupConstraints) {
-            
+
+        if !didSetupConstraints {
+
             scrollView.snp_makeConstraints { make in
                 make.edges.equalTo(view).inset(UIEdgeInsetsZero)
             }
-            
+
             contentView.snp_makeConstraints { make in
                 make.edges.equalTo(scrollView).inset(UIEdgeInsetsZero)
                 make.width.equalTo(scrollView)
             }
-            
+
             label.snp_makeConstraints { make in
                 make.top.equalTo(contentView).inset(20)
                 make.leading.equalTo(contentView).inset(20)
                 make.trailing.equalTo(contentView).inset(20)
                 make.bottom.equalTo(contentView).inset(20)
             }
-            
+
             didSetupConstraints = true
         }
-        
+
         super.updateViewConstraints()
     }
 }
