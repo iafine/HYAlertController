@@ -16,15 +16,14 @@ protocol HYActionSheetViewDelegate: class {
 class HYActionSheetView: UIView {
 
     lazy var sheetTable: UITableView = {
-        let tableView: UITableView = UITableView(frame: CGRect.zero, style: .plain)
+        let tableView: UITableView = UITableView(frame: .zero, style: .plain)
         tableView.backgroundColor = UIColor.white
         tableView.isScrollEnabled = false
         return tableView
     }()
 
     lazy var titleView: HYTitleView = {
-        let view = HYTitleView(frame: CGRect.zero)
-        return view
+        return HYTitleView(frame: .zero)
     }()
 
     var sheetTitle = ""
@@ -57,18 +56,18 @@ extension HYActionSheetView {
 
         sheetTable.frame = bounds
 
-        if self.sheetTitle.characters.count > 0 || self.sheetMessage.characters.count > 0 {
+        if !sheetTitle.isEmpty || !sheetMessage.isEmpty {
             self.titleView.refrenshTitleView(title: self.sheetTitle,
-                message: self.sheetMessage)
+                message: sheetMessage)
             self.titleView.frame = CGRect(x: 0,
                 y: 0,
                 width: bounds.width,
-                height: HYTitleView.titleViewHeight(title: self.sheetTitle,
-                    message: self.sheetMessage,
-                    width: self.bounds.size.width))
-            self.sheetTable.tableHeaderView = self.titleView
+                height: HYTitleView.titleViewHeight(title: sheetTitle,
+                    message: sheetMessage,
+                    width: bounds.width))
+            sheetTable.tableHeaderView = titleView
         } else {
-            self.sheetTable.tableHeaderView = UIView()
+            sheetTable.tableHeaderView = UIView()
         }
     }
 }
@@ -139,11 +138,11 @@ extension HYActionSheetView: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
 
         if indexPath.section == 0 {
-            let action: HYAlertAction = sheetDataArray[indexPath.row]
+            let action = sheetDataArray[indexPath.row]
             action.myHandler(action)
         } else {
-            if self.cancelDataArray.count > 0 {
-                let action: HYAlertAction = cancelDataArray[indexPath.row]
+            if !cancelDataArray.isEmpty {
+                let action = cancelDataArray[indexPath.row]
                 action.myHandler(action)
             }
         }

@@ -11,7 +11,7 @@ import UIKit
 // MARK: - Header View
 class HYTitleView: UIView {
     lazy var titleLabel: UILabel = {
-        let label: UILabel = UILabel()
+        let label = UILabel()
         label.font = UIFont.systemFont(ofSize: HYConstants.titleFont)
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -20,7 +20,7 @@ class HYTitleView: UIView {
     }()
 
     lazy var messageLabel: UILabel = {
-        let label: UILabel = UILabel()
+        let label = UILabel()
         label.font = UIFont.systemFont(ofSize: HYConstants.messageFont)
         label.textColor = UIColor.lightGray
         label.textAlignment = .center
@@ -30,7 +30,7 @@ class HYTitleView: UIView {
     }()
 
     lazy var seperatorView: UIView = {
-        let view: UIView = UIView()
+        let view = UIView()
         view.backgroundColor = UIColor(red: 206 / 255, green: 206 / 255, blue: 206 / 255, alpha: 1)
         return view
     }()

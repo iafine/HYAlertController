@@ -9,8 +9,8 @@
 import UIKit
 
 struct Constant {
-    static let ScreenWidth: CGFloat = UIScreen.main.bounds.size.width
-    static let ScreenHeight: CGFloat = UIScreen.main.bounds.size.height
+    static let ScreenWidth: CGFloat = UIScreen.main.bounds.width
+    static let ScreenHeight: CGFloat = UIScreen.main.bounds.height
     static let cellIdentifier: String = "cell"
     static let cellHeight: CGFloat = 44
 }
@@ -28,38 +28,43 @@ class ViewController: UIViewController {
         return tableView
     }()
 
-    lazy var dataArray: Array = { () -> [Array<String>] in
-        let array: Array = [["Alert style without title and message",
+    lazy var dataArray: [[String]]  = [
+        [
+            "Alert style without title and message",
             "Alert style with title",
             "Alert style with message",
             "Alert style with title and message",
             "Alert style without action",
-            "Alert style with imageAction"],
-        ["Sheet style without title and message",
+            "Alert style with imageAction"
+        ],
+       [
+            "Sheet style without title and message",
             "Sheet style with title",
             "Sheet style with message",
             "Sheet style with title and message",
             "Sheet style without action",
-            "Sheet style with imageAction"],
-        ["Share style with one line",
+            "Sheet style with imageAction"
+        ],
+       [
+            "Share style with one line",
             "Share style with multi line",
             "Share style with title",
             "Share style with message",
-            "Share style with title and message"]]
-        return array
-    }()
+            "Share style with title and message"
+        ]
+    ]
 }
 
 // MARK: - LifeCycle
 extension ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white
-        self.title = "HYAlertControllerDemo"
+        view.backgroundColor = UIColor.white
+        title = "HYAlertControllerDemo"
 
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
-        self.view.addSubview(self.tableView)
+        tableView.dataSource = self
+        tableView.delegate = self
+        view.addSubview(self.tableView)
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,12 +76,11 @@ extension ViewController {
 // MARK: - UITableViewDataSource
 extension ViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.dataArray.count
+        return dataArray.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let rowArray: Array = self.dataArray[section]
-        return rowArray.count
+        return dataArray[section].count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -674,6 +678,6 @@ extension ViewController {
 
         alertVC.addShareActions(actions: [facebookAction, twitterAction, snapchatAction, instagramAction, pinterestAction, lineAction])
         alertVC.addShareActions(actions: [wechatAction, momentAction, qqAction, qzoneAction, sinaAction, alipayAction])
-        self.present(alertVC, animated: true, completion: nil)
+        present(alertVC, animated: true, completion: nil)
     }
 }
