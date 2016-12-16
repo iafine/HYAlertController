@@ -121,7 +121,7 @@ extension HYShareView: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return HYShareTableViewCell.cellHeight()
+        return HYShareTableViewCell.cellHeight
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -184,7 +184,7 @@ extension HYShareView: UICollectionViewDataSource {
 extension HYShareView {
     @objc fileprivate func clickedCancelBtnHandler() {
         if self.cancelDataArray.count > 0 {
-            let action = self.cancelDataArray[0]
+            let action = cancelDataArray[0]
             action.myHandler(action)
         }
         delegate?.clickedShareItemHandler()

@@ -19,8 +19,7 @@ class HYAlertCell: UITableViewCell {
     }()
 
     lazy var cellIcon: UIImageView = {
-        let imageView: UIImageView = UIImageView()
-        return imageView
+        return UIImageView()
     }()
 }
 
@@ -60,17 +59,17 @@ extension HYAlertCell {
 
     fileprivate func initCellLayout() {
         self.titleLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(self.snp.left)
-            make.top.equalTo(self.snp.top)
-            make.right.equalTo(self.snp.right)
-            make.bottom.equalTo(self.snp.bottom)
+            make.left.equalTo(snp.left)
+            make.top.equalTo(snp.top)
+            make.right.equalTo(snp.right)
+            make.bottom.equalTo(snp.bottom)
         }
 
         self.cellIcon.snp.makeConstraints { (make) in
-            make.left.equalTo(self.snp.left).offset(20)
-            make.top.equalTo(self.snp.top).offset(10)
-            make.bottom.equalTo(self.snp.bottom).offset(-10)
-            make.width.equalTo(self.cellIcon.snp.height)
+            make.left.equalTo(snp.left).offset(20)
+            make.top.equalTo(snp.top).offset(10)
+            make.bottom.equalTo(snp.bottom).offset(-10)
+            make.width.equalTo(cellIcon.snp.height)
         }
     }
 }

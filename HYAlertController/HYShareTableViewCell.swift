@@ -31,17 +31,17 @@ class HYShareTableViewCell: UITableViewCell {
 
 // MARK: - Class Methods
 extension HYShareTableViewCell {
-    class func ID() -> String {
+    class var ID: String {
         return "HYShareTableViewCell"
     }
 
-    class func cellHeight() -> CGFloat {
+    class var cellHeight: CGFloat {
         return HYConstants.shareItemHeight + HYConstants.shareItemPadding * 2
     }
 
     class func cellWithTableView(tableView: UITableView) -> HYShareTableViewCell {
         // 修改cell类型为定义类型
-        var cell: HYShareTableViewCell? = tableView.dequeueReusableCell(withIdentifier: ID()) as? HYShareTableViewCell
+        var cell: HYShareTableViewCell? = tableView.dequeueReusableCell(withIdentifier: ID) as? HYShareTableViewCell
         if cell == nil {
             cell = HYShareTableViewCell()
             cell?.initCellUI()

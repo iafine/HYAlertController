@@ -27,21 +27,18 @@ public class HYAlertController: UIViewController {
     fileprivate var actionArray: [[HYAlertAction]] = [[]]
     fileprivate var cancelActionArray: [HYAlertAction] = []
 
-    var alertHeight: CGFloat = CGFloat()
+    var alertHeight: CGFloat = 0
 
     lazy var shareView: HYShareView = {
-        let view: HYShareView = HYShareView(frame: CGRect.zero)
-        return view
+        return HYShareView(frame: .zero)
     }()
 
     lazy var sheetView: HYActionSheetView = {
-        let view: HYActionSheetView = HYActionSheetView(frame: CGRect.zero)
-        return view
+        return HYActionSheetView(frame: .zero)
     }()
 
     lazy var alertView: HYAlertView = {
-        let view: HYAlertView = HYAlertView(frame: CGRect.zero)
-        return view
+        return HYAlertView(frame: .zero)
     }()
 
     lazy var dimBackgroundView: UIView = {
@@ -53,21 +50,21 @@ public class HYAlertController: UIViewController {
         view.alpha = 0
 
         // 添加手势监听
-        let tapGR: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(clickedBgViewHandler))
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(clickedBgViewHandler))
         view.addGestureRecognizer(tapGR)
         return view
     }()
 
     public init(title: String?, message: String?, style: HYAlertControllerStyle) {
-        self.alertTitle = (title ?? "").isEmpty ? "" : title!
-        self.alertMessage = (message ?? "").isEmpty ? "" : message!
-        self.alertStyle = style
+        alertTitle = title ?? ""
+        alertMessage = message ?? ""
+        alertStyle = style
         super.init(nibName: nil, bundle: nil)
 
         // 自定义转场动画
-        self.transitioningDelegate = self
-        self.modalPresentationStyle = UIModalPresentationStyle.custom
-        self.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+        transitioningDelegate = self
+        modalPresentationStyle = UIModalPresentationStyle.custom
+        modalTransitionStyle = UIModalTransitionStyle.coverVertical
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -79,7 +76,7 @@ public class HYAlertController: UIViewController {
 extension HYAlertController {
     override public func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.clear
+        view.backgroundColor = UIColor.clear
 
         initUI()
     }
@@ -88,10 +85,10 @@ extension HYAlertController {
         super.viewDidLayoutSubviews()
 
         if self.alertStyle == .shareSheet {
-            var tableHeight: CGFloat = HYShareTableViewCell.cellHeight() * CGFloat(self.actionArray.count) + 44
-            if self.alertTitle.characters.count > 0 || self.alertMessage.characters.count > 0 {
-                tableHeight += HYTitleView.titleViewHeight(title: self.alertTitle,
-                    message: self.alertMessage,
+            var tableHeight = HYShareTableViewCell.cellHeight * CGFloat(actionArray.count) + 44
+            if !alertTitle.isEmpty || !alertMessage.isEmpty {
+                tableHeight += HYTitleView.titleViewHeight(title: alertTitle,
+                    message: alertMessage,
                     width: HYConstants.ScreenWidth)
             }
             let newTableFrame: CGRect = CGRect(x: 0,
