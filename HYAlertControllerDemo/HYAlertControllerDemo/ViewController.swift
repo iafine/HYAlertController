@@ -621,7 +621,7 @@ extension ViewController {
     }
 
     fileprivate func showShareStyleWithTitleAndMessage() {
-        let alertVC: HYAlertController = HYAlertController(title: "Title", message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .shareSheet)
+        let alertVC = HYAlertController(title: "Title", message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .shareSheet)
         let facebookAction = HYAlertAction(title: "Facebook", image: UIImage(named: "facebook")!, style: .normal, handler: {
             (action) in
             print(action.title)
