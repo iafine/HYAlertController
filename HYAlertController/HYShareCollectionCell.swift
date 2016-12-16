@@ -36,15 +36,15 @@ class HYShareCollectionCell: UICollectionViewCell {
 
 // MARK: - Class Methods
 extension HYShareCollectionCell {
-    class func ID() -> String {
+    class var ID: String {
         return "HYShareCollectionCell"
     }
 
-    class func cellSize() -> CGSize {
+    class var cellSize: CGSize {
         return CGSize(width: HYConstants.shareItemWidth, height: HYConstants.shareItemHeight)
     }
 
-    class func cellInset() -> UIEdgeInsets {
+    class var cellInset: UIEdgeInsets {
         return UIEdgeInsets(top: HYConstants.shareItemPadding, left: HYConstants.shareItemPadding, bottom: HYConstants.shareItemPadding, right: HYConstants.shareItemPadding)
     }
 }

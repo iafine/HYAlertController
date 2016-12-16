@@ -16,9 +16,9 @@ class HYAlertPresentSlideUp: NSObject, UIViewControllerAnimatedTransitioning {
     }
 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        let toVC: HYAlertController = transitionContext.viewController(forKey: .to) as! HYAlertController
-        let fromVC: UIViewController = transitionContext.viewController(forKey: .from)!
-        let containerView: UIView = transitionContext.containerView
+        guard let toVC = transitionContext.viewController(forKey: .to) as? HYAlertController else { return }
+        let fromVC = transitionContext.viewController(forKey: .from)!
+        let containerView = transitionContext.containerView
 
         // start animation status
         toVC.dimBackgroundView.alpha = 0

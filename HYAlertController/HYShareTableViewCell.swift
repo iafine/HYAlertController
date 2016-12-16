@@ -12,11 +12,11 @@ class HYShareTableViewCell: UITableViewCell {
 
     lazy var collectionView: UICollectionView = {
         let collectionLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        collectionLayout.itemSize = HYShareCollectionCell.cellSize()
-        collectionLayout.sectionInset = HYShareCollectionCell.cellInset()
+        collectionLayout.itemSize = HYShareCollectionCell.cellSize
+        collectionLayout.sectionInset = HYShareCollectionCell.cellInset
         collectionLayout.scrollDirection = .horizontal
         let collection: UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: collectionLayout)
-        collection.register(HYShareCollectionCell.self, forCellWithReuseIdentifier: HYShareCollectionCell.ID())
+        collection.register(HYShareCollectionCell.self, forCellWithReuseIdentifier: HYShareCollectionCell.ID)
         collection.backgroundColor = UIColor.white
         collection.showsHorizontalScrollIndicator = false
         return collection
@@ -53,13 +53,13 @@ extension HYShareTableViewCell {
 
 // MARK: - Public Methods
 extension HYShareTableViewCell {
-    func setCollectionViewDataSourceDelegate(collectionDataSource: UICollectionViewDataSource, collectionDelegate: UICollectionViewDelegate, indexPath: NSIndexPath) {
-        self.collectionView.dataSource = collectionDataSource
-        self.collectionView.delegate = collectionDelegate
-        self.collectionView.tag = indexPath.row
-        self.collectionView.setContentOffset(self.collectionView.contentOffset, animated: false)
+    func setCollectionViewDataSourceDelegate(collectionDataSource: UICollectionViewDataSource, collectionDelegate: UICollectionViewDelegate, indexPath: IndexPath) {
+        collectionView.dataSource = collectionDataSource
+        collectionView.delegate = collectionDelegate
+        collectionView.tag = indexPath.row
+        collectionView.setContentOffset(collectionView.contentOffset, animated: false)
 
-        self.collectionView.reloadData()
+        collectionView.reloadData()
     }
 }
 

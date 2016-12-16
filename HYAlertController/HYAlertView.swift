@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol HYAlertViewDelegate {
+protocol HYAlertViewDelegate: class {
     /// 点击事件
     func clickAlertItemHandler()
 }
@@ -29,7 +29,7 @@ class HYAlertView: UIView {
 
     var alertTitle: String = String()
     var alertMessage: String = String()
-    var delegate: HYAlertViewDelegate?
+    weak var delegate: HYAlertViewDelegate?
     fileprivate var alertDataArray: [HYAlertAction] = []
     fileprivate var cancelDataArray: [HYAlertAction] = []
 

@@ -16,7 +16,9 @@ class HYAlertDismissSlideDown: NSObject, UIViewControllerAnimatedTransitioning {
     }
 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        let fromVC: HYAlertController = transitionContext.viewController(forKey: .from) as! HYAlertController
+        guard let fromVC = transitionContext.viewController(forKey: .from) as? HYAlertController else {
+            return
+        }
 
         // start animation status
         fromVC.dimBackgroundView.alpha = 1

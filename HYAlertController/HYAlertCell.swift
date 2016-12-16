@@ -36,7 +36,7 @@ extension HYAlertCell {
 
     class func cellWithTableView(tableView: UITableView) -> HYAlertCell {
         // 修改cell类型为定义类型
-        var cell = tableView.dequeueReusableCell(withIdentifier: ID) as! HYAlertCell?
+        var cell = tableView.dequeueReusableCell(withIdentifier: ID) as? HYAlertCell
         if cell == nil {
             cell = HYAlertCell()
             cell?.initCellUI()

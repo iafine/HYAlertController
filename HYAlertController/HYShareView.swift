@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol HYShareViewDelegate {
+protocol HYShareViewDelegate: class {
     // 点击分享item事件
     func clickedShareItemHandler()
 }
@@ -37,11 +37,11 @@ class HYShareView: UIView {
 
     var shareTitle: String = String()
     var shareMessage: String = String()
-    var delegate: HYShareViewDelegate?
+    weak var delegate: HYShareViewDelegate?
     fileprivate var shareDataArray: [[HYAlertAction]] = []
     fileprivate var cancelDataArray: [HYAlertAction] = []
     /// 存储各个collectionView的偏移量
-    fileprivate var contentOffsetDictionary: NSMutableDictionary = NSMutableDictionary()
+    fileprivate var contentOffsetDictionary: [Int: CGFloat] = [:]
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -57,10 +57,10 @@ class HYShareView: UIView {
 // MARK: - LifeCycle
 extension HYShareView {
     fileprivate func initUI() {
-        self.shareTable.delegate = self
-        self.shareTable.dataSource = self
-        self.shareTable.tableFooterView = self.cancelButton
-        self.addSubview(self.shareTable)
+        shareTable.delegate = self
+        shareTable.dataSource = self
+        shareTable.tableFooterView = cancelButton
+        addSubview(self.shareTable)
     }
 
     override func layoutSubviews() {
@@ -73,11 +73,11 @@ extension HYShareView {
                 message: self.shareMessage)
             self.titleView.frame = CGRect(x: 0,
                 y: 0,
-                width: self.bounds.size.width,
+                width: bounds.width,
                 height: HYTitleView.titleViewHeight(title: self.shareTitle,
                     message: self.shareMessage,
                     width: self.bounds.size.width))
-            self.shareTable.tableHeaderView = self.titleView
+            self.shareTable.tableHeaderView = titleView
         } else {
             self.shareTable.tableHeaderView = UIView()
         }
@@ -128,20 +128,20 @@ extension HYShareView: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let shareCell: HYShareTableViewCell = cell as! HYShareTableViewCell
-        shareCell.setCollectionViewDataSourceDelegate(collectionDataSource: self, collectionDelegate: self, indexPath: indexPath as NSIndexPath)
+        let shareCell = cell as? HYShareTableViewCell
+        shareCell?.setCollectionViewDataSourceDelegate(collectionDataSource: self, collectionDelegate: self, indexPath: indexPath)
 
-        let index: Int = shareCell.collectionView.tag
-        if let horizontalOffset: CGFloat = self.contentOffsetDictionary.object(forKey: index) as? CGFloat {
-            shareCell.collectionView.contentOffset = CGPoint(x: horizontalOffset, y: 0)
+        let index = shareCell?.collectionView.tag ?? 0
+        if let horizontalOffset = contentOffsetDictionary[index] {
+            shareCell?.collectionView.contentOffset = CGPoint(x: horizontalOffset, y: 0)
         }
     }
 
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let shareCell: HYShareTableViewCell = cell as! HYShareTableViewCell
-        let index: Int = shareCell.collectionView.tag
-        let horizontalOffset: CGFloat = shareCell.collectionView.contentOffset.x
-        self.contentOffsetDictionary.setObject(horizontalOffset, forKey: index as NSCopying)
+        let shareCell = cell as? HYShareTableViewCell
+        let index = shareCell?.collectionView.tag ?? 0
+        let horizontalOffset = shareCell?.collectionView.contentOffset.x ?? 0
+        contentOffsetDictionary[index] = horizontalOffset
     }
 }
 
@@ -169,14 +169,14 @@ extension HYShareView: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HYShareCollectionCell.ID(), for: indexPath) as! HYShareCollectionCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HYShareCollectionCell.ID, for: indexPath) as? HYShareCollectionCell
 
         let collectionDataArray = shareDataArray[collectionView.tag]
 
         let action = collectionDataArray[indexPath.row]
-        cell.cellIcon.image = action.image
-        cell.titleView.text = action.title
-        return cell
+        cell?.cellIcon.image = action.image
+        cell?.titleView.text = action.title
+        return cell!
     }
 }
 
