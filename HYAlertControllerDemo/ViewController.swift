@@ -142,28 +142,16 @@ extension ViewController: UITableViewDelegate {
             switch indexPath.row {
             case 0:
                 showSheetStyle()
-                break
-
             case 1:
                 showSheetStyleWithTitle()
-                break
-
             case 2:
                 showSheetStyleWithWithMessage()
-                break
-
             case 3:
                 showSheetStyleWithWithTitleAndMessage()
-                break
-
             case 4:
                 showSheetStyleWithoutAction()
-                break
-
             case 5:
                 showSheetStyleWithImageAction()
-                break
-
             default:
                 break
             }
@@ -172,24 +160,14 @@ extension ViewController: UITableViewDelegate {
             switch indexPath.row {
             case 0:
                 showShareStyleOneLine()
-                break
-
             case 1:
                 showShareStyleMultiLine()
-                break
-
             case 2:
                 showShareStyleWithTitle()
-                break
-
             case 3:
                 showShareStyleWithMessage()
-                break
-
             case 4:
                 showShareStyleWithTitleAndMessage()
-                break
-
             default:
                 break
             }

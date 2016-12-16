@@ -48,7 +48,7 @@ extension HYAlertView {
     fileprivate func initUI() {
         alertTable.delegate = self
         alertTable.dataSource = self
-        addSubview(self.alertTable)
+        addSubview(alertTable)
     }
 
     override func layoutSubviews() {
@@ -87,34 +87,28 @@ extension HYAlertView: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return alertDataArray.count
-        } else {
-            return 1
-        }
+        return section == 0 ? alertDataArray.count : 1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = HYAlertCell.cellWithTableView(tableView: tableView)
         if indexPath.section == 0 {
-            let cell: HYAlertCell = HYAlertCell.cellWithTableView(tableView: tableView)
-            let action: HYAlertAction = alertDataArray[indexPath.row]
+            let action = alertDataArray[indexPath.row]
             cell.titleLabel.text = action.title
+            cell.cellIcon.image = action.image
             if action.style == .destructive {
                 cell.titleLabel.textColor = UIColor.red
             }
-            cell.cellIcon.image = action.image
-            return cell
         } else {
-            let cell: HYAlertCell = HYAlertCell.cellWithTableView(tableView: tableView)
-            if self.cancelDataArray.count > 0 {
-                let action: HYAlertAction = cancelDataArray[indexPath.row]
+            if !cancelDataArray.isEmpty {
+                let action = cancelDataArray[indexPath.row]
                 cell.titleLabel.text = action.title
                 cell.cellIcon.image = action.image
             } else {
                 cell.titleLabel.text = HYConstants.defaultCancelText
             }
-            return cell
         }
+        return cell
     }
 }
 
