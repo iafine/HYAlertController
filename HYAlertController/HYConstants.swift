@@ -10,8 +10,8 @@ import UIKit
 
 class HYConstants: UIView {
 
-    static let ScreenWidth = UIScreen.main.bounds.size.width // 屏幕宽度
-    static let ScreenHeight = UIScreen.main.bounds.size.height  // 屏幕高度
+    static let ScreenWidth = UIScreen.main.bounds.width // 屏幕宽度
+    static let ScreenHeight = UIScreen.main.bounds.height  // 屏幕高度
 
     static let alertCellheight: CGFloat = 44  // AlertCell的高度
     static let alertSpec: CGFloat = 40      // AlertCell距离屏幕边的间距

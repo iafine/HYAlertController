@@ -58,35 +58,35 @@ class SimpleLayoutViewController: UIViewController {
 
     override func updateViewConstraints() {
 
-        if (!didSetupConstraints) {
+        if !didSetupConstraints {
 
             blackView.snp_makeConstraints { make in
                 make.center.equalTo(view)
-                make.size.equalTo(CGSizeMake(100.0, 100.0))
+                make.size.equalTo(CGSize(width: 100.0, height: 100.0))
             }
 
             redView.snp_makeConstraints { make in
                 make.top.equalTo(blackView.snp_bottom).offset(20.0)
                 make.right.equalTo(blackView.snp_left).offset(-20.0)
-                make.size.equalTo(CGSizeMake(100.0, 100.0))
+                make.size.equalTo(CGSize(width: 100.0, height: 100.0))
             }
 
             yellowView.snp_makeConstraints { make in
                 make.top.equalTo(blackView.snp_bottom).offset(20.0)
                 make.left.equalTo(blackView.snp_right).offset(20.0)
-                make.size.equalTo(CGSizeMake(100.0, 100.0))
+                make.size.equalTo(CGSize(width: 100.0, height: 100.0))
             }
 
             blueView.snp_makeConstraints { make in
                 make.bottom.equalTo(blackView.snp_top).offset(-20.0)
                 make.left.equalTo(blackView.snp_right).offset(20.0)
-                make.size.equalTo(CGSizeMake(100.0, 100.0))
+                make.size.equalTo(CGSize(width: 100.0, height: 100.0))
             }
 
             greenView.snp_makeConstraints { make in
                 make.bottom.equalTo(blackView.snp_top).offset(-20.0)
                 make.right.equalTo(blackView.snp_left).offset(-20.0)
-                make.size.equalTo(CGSizeMake(100.0, 100.0))
+                make.size.equalTo(CGSize(width: 100.0, height: 100.0))
             }
 
             didSetupConstraints = true
