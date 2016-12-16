@@ -238,7 +238,7 @@ extension ViewController {
         alertVC.addAction(action: twoAction)
         alertVC.addAction(action: threeAction)
         alertVC.addAction(action: cancelAction)
-        self.present(alertVC, animated: true, completion: nil)
+        present(alertVC, animated: true, completion: nil)
     }
 
     fileprivate func showAlertStyleWithWithMessage() {
@@ -259,7 +259,7 @@ extension ViewController {
         alertVC.addAction(action: twoAction)
         alertVC.addAction(action: threeAction)
         alertVC.addAction(action: cancelAction)
-        self.present(alertVC, animated: true, completion: nil)
+        present(alertVC, animated: true, completion: nil)
     }
 
     fileprivate func showAlertStyleWithWithTitleAndMessage() {

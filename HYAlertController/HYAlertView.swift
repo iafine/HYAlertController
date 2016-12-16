@@ -16,19 +16,18 @@ protocol HYAlertViewDelegate: class {
 class HYAlertView: UIView {
 
     lazy var alertTable: UITableView = {
-        let tableView: UITableView = UITableView(frame: CGRect.zero, style: .plain)
+        let tableView = UITableView(frame: .zero, style: .plain)
         tableView.backgroundColor = UIColor.white
         tableView.isScrollEnabled = false
         return tableView
     }()
 
     lazy var titleView: HYTitleView = {
-        let view: HYTitleView = HYTitleView(frame: CGRect.zero)
-        return view
+        return HYTitleView(frame: .zero)
     }()
 
-    var alertTitle: String = String()
-    var alertMessage: String = String()
+    var alertTitle = ""
+    var alertMessage = ""
     weak var delegate: HYAlertViewDelegate?
     fileprivate var alertDataArray: [HYAlertAction] = []
     fileprivate var cancelDataArray: [HYAlertAction] = []
@@ -47,38 +46,37 @@ class HYAlertView: UIView {
 // MARK: - LifeCycle
 extension HYAlertView {
     fileprivate func initUI() {
-        self.alertTable.delegate = self
-        self.alertTable.dataSource = self
-        self.addSubview(self.alertTable)
+        alertTable.delegate = self
+        alertTable.dataSource = self
+        addSubview(self.alertTable)
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        if self.alertTitle.characters.count > 0 || self.alertMessage.characters.count > 0 {
-            self.titleView.refrenshTitleView(title: self.alertTitle,
-                message: self.alertMessage)
+        if !alertTitle.isEmpty || !alertMessage.isEmpty {
+            self.titleView.refrenshTitleView(title: alertTitle,
+                message: alertMessage)
             self.titleView.frame = CGRect(x: 0,
                 y: 0,
-                width: self.bounds.size.width,
-                height: HYTitleView.titleViewHeight(title: self.alertTitle,
-                    message: self.alertMessage,
-                    width: self.bounds.size.width))
-            self.alertTable.tableHeaderView = self.titleView
+                width: bounds.width,
+                height: HYTitleView.titleViewHeight(title: alertTitle,
+                    message: alertMessage,
+                    width: bounds.width))
+            alertTable.tableHeaderView = titleView
         } else {
             self.alertTable.tableHeaderView = UIView()
         }
-        self.alertTable.frame = self.bounds
+        alertTable.frame = bounds
     }
 }
 
 // MARK: - Public Methods
 extension HYAlertView {
     open func refreshDate(dataArray: [HYAlertAction], cancelArray: [HYAlertAction], title: String, message: String) {
-        self.alertDataArray = dataArray
-        self.cancelDataArray = cancelArray
-
-        self.alertTable.reloadData()
+        alertDataArray = dataArray
+        cancelDataArray = cancelArray
+        alertTable.reloadData()
     }
 }
 
@@ -90,7 +88,7 @@ extension HYAlertView: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return self.alertDataArray.count
+            return alertDataArray.count
         } else {
             return 1
         }
@@ -123,10 +121,7 @@ extension HYAlertView: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension HYAlertView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 1 {
-            return 10
-        }
-        return 0.1
+        return section == 1 ? 10 : 0.1
     }
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -141,11 +136,11 @@ extension HYAlertView: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
 
         if indexPath.section == 0 {
-            let action: HYAlertAction = alertDataArray[indexPath.row]
+            let action = alertDataArray[indexPath.row]
             action.myHandler(action)
         } else {
-            if self.cancelDataArray.count > 0 {
-                let action: HYAlertAction = cancelDataArray[indexPath.row]
+            if !cancelDataArray.isEmpty {
+                let action = cancelDataArray[indexPath.row]
                 action.myHandler(action)
             }
         }

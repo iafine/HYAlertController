@@ -77,7 +77,6 @@ extension HYActionSheetView {
     open func refreshDate(dataArray: [HYAlertAction], cancelArray: [HYAlertAction], title: String, message: String) {
         sheetDataArray = dataArray
         cancelDataArray = cancelArray
-
         sheetTable.reloadData()
     }
 }

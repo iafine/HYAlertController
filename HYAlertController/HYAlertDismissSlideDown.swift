@@ -26,8 +26,8 @@ class HYAlertDismissSlideDown: NSObject, UIViewControllerAnimatedTransitioning {
         if fromVC.alertStyle == .alert {
             fromVC.view.alpha = 1
         }
-        let duration: TimeInterval = transitionDuration(using: transitionContext)
-        let finalY: CGFloat = fromVC.view.frame.size.height
+        let duration = transitionDuration(using: transitionContext)
+        let finalY = fromVC.view.frame.size.height
 
         // 执行动画
         UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.0, options: .curveEaseInOut, animations: {

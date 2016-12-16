@@ -10,8 +10,7 @@ import UIKit
 
 class HYShareCollectionCell: UICollectionViewCell {
     lazy var cellIcon: UIImageView = {
-        let imageView: UIImageView = UIImageView()
-        return imageView
+        return UIImageView()
     }()
 
     lazy var titleView: UITextView = {
@@ -52,8 +51,8 @@ extension HYShareCollectionCell {
 // MARK: - Private Methods
 extension HYShareCollectionCell {
     fileprivate func initCellUI() {
-        self.addSubview(self.titleView)
-        self.addSubview(self.cellIcon)
+        addSubview(titleView)
+        addSubview(cellIcon)
     }
 
     fileprivate func initCellLayout() {

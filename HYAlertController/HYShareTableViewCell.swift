@@ -11,7 +11,7 @@ import UIKit
 class HYShareTableViewCell: UITableViewCell {
 
     lazy var collectionView: UICollectionView = {
-        let collectionLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        let collectionLayout = UICollectionViewFlowLayout()
         collectionLayout.itemSize = HYShareCollectionCell.cellSize
         collectionLayout.sectionInset = HYShareCollectionCell.cellInset
         collectionLayout.scrollDirection = .horizontal
@@ -25,7 +25,7 @@ class HYShareTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        self.collectionView.frame = self.contentView.bounds
+        collectionView.frame = self.contentView.bounds
     }
 }
 
@@ -66,8 +66,8 @@ extension HYShareTableViewCell {
 // MARK: - Private Methods
 extension HYShareTableViewCell {
     fileprivate func initCellUI() {
-        self.backgroundColor = UIColor.lightGray
-        self.contentView.addSubview(self.collectionView)
+        backgroundColor = UIColor.lightGray
+        contentView.addSubview(collectionView)
     }
 
     fileprivate func initCellLayout() {
