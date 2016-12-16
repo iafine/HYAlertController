@@ -1,20 +1,39 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Gist
+ @huangboju
+ Unwatch 1
+  Star 0
+  Fork 0 huangboju/Libertine
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Pulse  Graphs  Settings
+Branch: master Find file Copy pathLibertine/.swiftlint.yml
+3b29db5  15 days ago
+@huangboju huangboju Update .swiftlint.yml
+1 contributor
+RawBlameHistory     
+53 lines (52 sloc)  1.49 KB
 disabled_rules: # rule identifiers to exclude from running
-  #
   - cyclomatic_complexity
   - fixme
+  - function_body_length
+  - function_parameter_count
   - todo
   - valid_docs
-  - function_body_length
+  - variable_name
+  - type_name
 opt_in_rules: # some rules are only opt-in
   #- empty_count
-  #  - missing_docs
   # Find all the available rules by running:
   # swiftlint rules
 included: # paths to include during linting. `--path` is ignored if present.
-  - HYAlertController
+  - Source
+  - HYAlertControllerDemo/HYAlertControllerDemo
 excluded: # paths to ignore during linting. Takes precedence over `included`.
   # - Carthage
-  #  - Pods
+  # - Pods
   - Source/ExcludedFolder
   - Source/ExcludedFile.swift
 # configurable rules can be customized from this configuration file
@@ -48,3 +67,5 @@ variable_name:
     - URL
     - GlobalAPIKey
 reporter: "xcode" # reporter type (xcode, json, csv, checkstyle)
+Contact GitHub API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Status Help
