@@ -134,84 +134,85 @@ extension ViewController {
     func showAlertStyleWithoutTitleAndMessage() {
         let alertVC = HYAlertController(title: nil, message: nil, style: .alert)
         let oneAction = HYAlertAction(title: "One Action", style: .normal, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let twoAction = HYAlertAction(title: "Two Action", style: .normal, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let threeAction = HYAlertAction(title: "Three Action", style: .destructive, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let cancelAction = HYAlertAction(title: "Cancel Action", style: .cancel, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
-        alertVC.addAction(action: oneAction)
-        alertVC.addAction(action: twoAction)
-        alertVC.addAction(action: threeAction)
-        alertVC.addAction(action: cancelAction)
+
+        alertVC.add(oneAction)
+        alertVC.add(twoAction)
+        alertVC.add(threeAction)
+        alertVC.add(cancelAction)
         self.present(alertVC, animated: true, completion: nil)
     }
 
     func showAlertStyleWithTitle() {
         let alertVC = HYAlertController(title: "Title", message: nil, style: .alert)
         let oneAction = HYAlertAction(title: "One Action", style: .normal, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let twoAction = HYAlertAction(title: "Two Action", style: .normal, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let threeAction = HYAlertAction(title: "Three Action", style: .destructive, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let cancelAction = HYAlertAction(title: "Cancel Action", style: .cancel, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
-        alertVC.addAction(action: oneAction)
-        alertVC.addAction(action: twoAction)
-        alertVC.addAction(action: threeAction)
-        alertVC.addAction(action: cancelAction)
+        alertVC.add(oneAction)
+        alertVC.add(twoAction)
+        alertVC.add(threeAction)
+        alertVC.add(cancelAction)
         present(alertVC, animated: true, completion: nil)
     }
 
     func showAlertStyleWithMessage() {
         let alertVC = HYAlertController(title: nil, message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .alert)
         let oneAction = HYAlertAction(title: "One Action", style: .normal, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let twoAction = HYAlertAction(title: "Two Action", style: .normal, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let threeAction = HYAlertAction(title: "Three Action", style: .destructive, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let cancelAction = HYAlertAction(title: "Cancel Action", style: .cancel, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
-        alertVC.addAction(action: oneAction)
-        alertVC.addAction(action: twoAction)
-        alertVC.addAction(action: threeAction)
-        alertVC.addAction(action: cancelAction)
+        alertVC.add(oneAction)
+        alertVC.add(twoAction)
+        alertVC.add(threeAction)
+        alertVC.add(cancelAction)
         present(alertVC, animated: true, completion: nil)
     }
 
     func showAlertStyleWithTitleAndMessage() {
         let alertVC = HYAlertController(title: "Title", message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .alert)
         let oneAction = HYAlertAction(title: "One Action", style: .normal, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let twoAction = HYAlertAction(title: "Two Action", style: .normal, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let threeAction = HYAlertAction(title: "Three Action", style: .destructive, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let cancelAction = HYAlertAction(title: "Cancel Action", style: .cancel, handler: { (action) in
-            print(action.title)
+            print(action.title  as Any)
         })
-        alertVC.addAction(action: oneAction)
-        alertVC.addAction(action: twoAction)
-        alertVC.addAction(action: threeAction)
-        alertVC.addAction(action: cancelAction)
+        alertVC.add(oneAction)
+        alertVC.add(twoAction)
+        alertVC.add(threeAction)
+        alertVC.add(cancelAction)
         self.present(alertVC, animated: true, completion: nil)
     }
 
@@ -224,19 +225,19 @@ extension ViewController {
         let alertVC = HYAlertController(title: "Title", message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .alert)
         let oneAction = HYAlertAction(title: "Facebook Action", image: UIImage(named: "facebook")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let twoAction = HYAlertAction(title: "Twitter Action", image: UIImage(named: "twitter")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let threeAction = HYAlertAction(title: "Snapchat Action", image: UIImage(named: "snapchat")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
-        alertVC.addAction(action: oneAction)
-        alertVC.addAction(action: twoAction)
-        alertVC.addAction(action: threeAction)
+        alertVC.add(oneAction)
+        alertVC.add(twoAction)
+        alertVC.add(threeAction)
         self.present(alertVC, animated: true, completion: nil)
     }
 }
@@ -246,84 +247,84 @@ extension ViewController {
     func showSheetStyleWithoutTitleAndMessage() {
         let alertVC = HYAlertController(title: nil, message: nil, style: .actionSheet)
         let oneAction = HYAlertAction(title: "One Action", style: .normal, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let twoAction = HYAlertAction(title: "Two Action", style: .normal, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let threeAction = HYAlertAction(title: "Three Action", style: .destructive, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let cancelAction = HYAlertAction(title: "Cancel Action", style: .cancel, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
-        alertVC.addAction(action: oneAction)
-        alertVC.addAction(action: twoAction)
-        alertVC.addAction(action: threeAction)
-        alertVC.addAction(action: cancelAction)
+        alertVC.add(oneAction)
+        alertVC.add(twoAction)
+        alertVC.add(threeAction)
+        alertVC.add(cancelAction)
         self.present(alertVC, animated: true, completion: nil)
     }
 
     func showSheetStyleWithTitle() {
         let alertVC: HYAlertController = HYAlertController(title: "Title", message: nil, style: .actionSheet)
         let oneAction = HYAlertAction(title: "One Action", style: .normal, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let twoAction = HYAlertAction(title: "Two Action", style: .normal, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let threeAction = HYAlertAction(title: "Three Action", style: .destructive, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let cancelAction = HYAlertAction(title: "Cancel Action", style: .cancel, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
-        alertVC.addAction(action: oneAction)
-        alertVC.addAction(action: twoAction)
-        alertVC.addAction(action: threeAction)
-        alertVC.addAction(action: cancelAction)
+        alertVC.add(oneAction)
+        alertVC.add(twoAction)
+        alertVC.add(threeAction)
+        alertVC.add(cancelAction)
         self.present(alertVC, animated: true, completion: nil)
     }
 
     func showSheetStyleWithMessage() {
         let alertVC: HYAlertController = HYAlertController(title: nil, message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .actionSheet)
         let oneAction = HYAlertAction(title: "One Action", style: .normal, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let twoAction = HYAlertAction(title: "Two Action", style: .normal, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let threeAction = HYAlertAction(title: "Three Action", style: .destructive, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let cancelAction = HYAlertAction(title: "Cancel Action", style: .cancel, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
-        alertVC.addAction(action: oneAction)
-        alertVC.addAction(action: twoAction)
-        alertVC.addAction(action: threeAction)
-        alertVC.addAction(action: cancelAction)
+        alertVC.add(oneAction)
+        alertVC.add(twoAction)
+        alertVC.add(threeAction)
+        alertVC.add(cancelAction)
         self.present(alertVC, animated: true, completion: nil)
     }
 
     func showSheetStyleWithTitleAndMessage() {
         let alertVC = HYAlertController(title: "Title", message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .actionSheet)
         let oneAction = HYAlertAction(title: "One Action", style: .normal, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let twoAction = HYAlertAction(title: "Two Action", style: .normal, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let threeAction = HYAlertAction(title: "Three Action", style: .destructive, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let cancelAction = HYAlertAction(title: "Cancel Action", style: .cancel, handler: { (action) in
-            print(action.title)
+            print(action.title as Any)
         })
-        alertVC.addAction(action: oneAction)
-        alertVC.addAction(action: twoAction)
-        alertVC.addAction(action: threeAction)
-        alertVC.addAction(action: cancelAction)
+        alertVC.add(oneAction)
+        alertVC.add(twoAction)
+        alertVC.add(threeAction)
+        alertVC.add(cancelAction)
         self.present(alertVC, animated: true, completion: nil)
     }
 
@@ -336,19 +337,19 @@ extension ViewController {
         let alertVC: HYAlertController = HYAlertController(title: "Title", message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .actionSheet)
         let oneAction = HYAlertAction(title: "Facebook Action", image: UIImage(named: "facebook")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let twoAction = HYAlertAction(title: "Twitter Action", image: UIImage(named: "twitter")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let threeAction = HYAlertAction(title: "Snapchat Action", image: UIImage(named: "snapchat")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
-        alertVC.addAction(action: oneAction)
-        alertVC.addAction(action: twoAction)
-        alertVC.addAction(action: threeAction)
+        alertVC.add(oneAction)
+        alertVC.add(twoAction)
+        alertVC.add(threeAction)
         self.present(alertVC, animated: true, completion: nil)
     }
 }
@@ -359,27 +360,27 @@ extension ViewController {
         let alertVC: HYAlertController = HYAlertController(title: nil, message: nil, style: .shareSheet)
         let oneAction = HYAlertAction(title: "Facebook", image: UIImage(named: "facebook")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let twoAction = HYAlertAction(title: "Twitter", image: UIImage(named: "twitter")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let threeAction = HYAlertAction(title: "Snapchat", image: UIImage(named: "snapchat")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let fourAction = HYAlertAction(title: "Instagram", image: UIImage(named: "instagram")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let fiveAction = HYAlertAction(title: "Pinterest", image: UIImage(named: "pinterest")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let sixAction = HYAlertAction(title: "Line", image: UIImage(named: "line")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         alertVC.addShareActions(actions: [oneAction, twoAction, threeAction, fourAction, fiveAction, sixAction])
         self.present(alertVC, animated: true, completion: nil)
@@ -389,52 +390,52 @@ extension ViewController {
         let alertVC: HYAlertController = HYAlertController(title: nil, message: nil, style: .shareSheet)
         let facebookAction = HYAlertAction(title: "Facebook", image: UIImage(named: "facebook")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let twitterAction = HYAlertAction(title: "Twitter", image: UIImage(named: "twitter")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let snapchatAction = HYAlertAction(title: "Snapchat", image: UIImage(named: "snapchat")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let instagramAction = HYAlertAction(title: "Instagram", image: UIImage(named: "instagram")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let pinterestAction = HYAlertAction(title: "Pinterest", image: UIImage(named: "pinterest")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let lineAction = HYAlertAction(title: "Line", image: UIImage(named: "line")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
 
         let wechatAction = HYAlertAction(title: "Wechat", image: UIImage(named: "wechat")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let momentAction = HYAlertAction(title: "Moment", image: UIImage(named: "wechat_moment")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let qqAction = HYAlertAction(title: "QQ", image: UIImage(named: "qq")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let qzoneAction = HYAlertAction(title: "Qzone", image: UIImage(named: "qzone")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let sinaAction = HYAlertAction(title: "Sina", image: UIImage(named: "sina")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let alipayAction = HYAlertAction(title: "Alipay", image: UIImage(named: "alipay")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
 
         alertVC.addShareActions(actions: [facebookAction, twitterAction, snapchatAction, instagramAction, pinterestAction, lineAction])
@@ -446,52 +447,52 @@ extension ViewController {
         let alertVC: HYAlertController = HYAlertController(title: "Title", message: nil, style: .shareSheet)
         let facebookAction = HYAlertAction(title: "Facebook", image: UIImage(named: "facebook")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let twitterAction = HYAlertAction(title: "Twitter", image: UIImage(named: "twitter")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let snapchatAction = HYAlertAction(title: "Snapchat", image: UIImage(named: "snapchat")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let instagramAction = HYAlertAction(title: "Instagram", image: UIImage(named: "instagram")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let pinterestAction = HYAlertAction(title: "Pinterest", image: UIImage(named: "pinterest")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let lineAction = HYAlertAction(title: "Line", image: UIImage(named: "line")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
 
         let wechatAction = HYAlertAction(title: "Wechat", image: UIImage(named: "wechat")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let momentAction = HYAlertAction(title: "Moment", image: UIImage(named: "wechat_moment")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let qqAction = HYAlertAction(title: "QQ", image: UIImage(named: "qq")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let qzoneAction = HYAlertAction(title: "Qzone", image: UIImage(named: "qzone")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let sinaAction = HYAlertAction(title: "Sina", image: UIImage(named: "sina")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let alipayAction = HYAlertAction(title: "Alipay", image: UIImage(named: "alipay")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
 
         alertVC.addShareActions(actions: [facebookAction, twitterAction, snapchatAction, instagramAction, pinterestAction, lineAction])
@@ -503,52 +504,52 @@ extension ViewController {
         let alertVC: HYAlertController = HYAlertController(title: nil, message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .shareSheet)
         let facebookAction = HYAlertAction(title: "Facebook", image: UIImage(named: "facebook")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let twitterAction = HYAlertAction(title: "Twitter", image: UIImage(named: "twitter")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let snapchatAction = HYAlertAction(title: "Snapchat", image: UIImage(named: "snapchat")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let instagramAction = HYAlertAction(title: "Instagram", image: UIImage(named: "instagram")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let pinterestAction = HYAlertAction(title: "Pinterest", image: UIImage(named: "pinterest")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let lineAction = HYAlertAction(title: "Line", image: UIImage(named: "line")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
 
         let wechatAction = HYAlertAction(title: "Wechat", image: UIImage(named: "wechat")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let momentAction = HYAlertAction(title: "Moment", image: UIImage(named: "wechat_moment")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let qqAction = HYAlertAction(title: "QQ", image: UIImage(named: "qq")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let qzoneAction = HYAlertAction(title: "Qzone", image: UIImage(named: "qzone")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let sinaAction = HYAlertAction(title: "Sina", image: UIImage(named: "sina")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let alipayAction = HYAlertAction(title: "Alipay", image: UIImage(named: "alipay")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
 
         alertVC.addShareActions(actions: [facebookAction, twitterAction, snapchatAction, instagramAction, pinterestAction, lineAction])
@@ -560,52 +561,52 @@ extension ViewController {
         let alertVC = HYAlertController(title: "Title", message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .shareSheet)
         let facebookAction = HYAlertAction(title: "Facebook", image: UIImage(named: "facebook")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let twitterAction = HYAlertAction(title: "Twitter", image: UIImage(named: "twitter")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let snapchatAction = HYAlertAction(title: "Snapchat", image: UIImage(named: "snapchat")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let instagramAction = HYAlertAction(title: "Instagram", image: UIImage(named: "instagram")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let pinterestAction = HYAlertAction(title: "Pinterest", image: UIImage(named: "pinterest")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let lineAction = HYAlertAction(title: "Line", image: UIImage(named: "line")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
 
         let wechatAction = HYAlertAction(title: "Wechat", image: UIImage(named: "wechat")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let momentAction = HYAlertAction(title: "Moment", image: UIImage(named: "wechat_moment")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let qqAction = HYAlertAction(title: "QQ", image: UIImage(named: "qq")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let qzoneAction = HYAlertAction(title: "Qzone", image: UIImage(named: "qzone")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let sinaAction = HYAlertAction(title: "Sina", image: UIImage(named: "sina")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
         let alipayAction = HYAlertAction(title: "Alipay", image: UIImage(named: "alipay")!, style: .normal, handler: {
             (action) in
-            print(action.title)
+            print(action.title as Any)
         })
 
         alertVC.addShareActions(actions: [facebookAction, twitterAction, snapchatAction, instagramAction, pinterestAction, lineAction])

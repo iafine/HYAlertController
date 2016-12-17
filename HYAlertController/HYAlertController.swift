@@ -153,7 +153,7 @@ extension HYAlertController {
 
 // MARK: - Public Methods
 extension HYAlertController {
-    open func addAction(action: HYAlertAction) {
+    open func add(_ action: HYAlertAction) {
         if action.style == .cancel {
             cancelActionArray.append(action)
         } else {
