@@ -73,7 +73,7 @@ extension HYAlertView {
 
 // MARK: - Public Methods
 extension HYAlertView {
-    open func refreshDate(dataArray: [HYAlertAction], cancelArray: [HYAlertAction], title: String?, message: String?) {
+    open func refreshData(dataArray: [HYAlertAction], cancelArray: [HYAlertAction], title: String?, message: String?) {
         alertDataArray = dataArray
         cancelDataArray = cancelArray
         alertTable.reloadData()

@@ -57,7 +57,7 @@ extension HYActionSheetView {
         sheetTable.frame = bounds
 
         if sheetTitle != nil || sheetMessage != nil {
-            titleView.refrenshTitleView(title: self.sheetTitle,
+            titleView.refrenshTitleView(title: sheetTitle,
                 message: sheetMessage)
             titleView.frame = CGRect(x: 0,
                 y: 0,
@@ -74,7 +74,7 @@ extension HYActionSheetView {
 
 // MARK: - Public Methods
 extension HYActionSheetView {
-    open func refreshDate(dataArray: [HYAlertAction], cancelArray: [HYAlertAction], title: String?, message: String?) {
+    open func refreshData(dataArray: [HYAlertAction], cancelArray: [HYAlertAction], title: String?, message: String?) {
         sheetDataArray = dataArray
         cancelDataArray = cancelArray
 

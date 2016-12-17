@@ -56,8 +56,8 @@ public class HYAlertController: UIViewController {
     }()
 
     public init(title: String?, message: String?, style: HYAlertControllerStyle) {
-        alertTitle = title ?? ""
-        alertMessage = message ?? ""
+        alertTitle = title
+        alertMessage = message
         alertStyle = style
         super.init(nibName: nil, bundle: nil)
 
@@ -91,7 +91,7 @@ extension HYAlertController {
                     message: alertMessage,
                     width: HYConstants.ScreenWidth)
             }
-            let newTableFrame: CGRect = CGRect(x: 0,
+            let newTableFrame = CGRect(x: 0,
                 y: HYConstants.ScreenHeight - tableHeight,
                 width: HYConstants.ScreenWidth,
                 height: tableHeight)
@@ -100,13 +100,13 @@ extension HYAlertController {
             shareView.shareMessage = alertMessage
             shareView.frame = newTableFrame
         } else if alertStyle == .actionSheet {
-            var tableHeight: CGFloat = HYAlertCell.cellHeight * CGFloat(actionArray.count) + HYAlertCell.cellHeight + 10
+            var tableHeight = HYAlertCell.cellHeight * CGFloat(actionArray.count) + HYAlertCell.cellHeight + 10
             if alertTitle != nil || alertMessage != nil {
                 tableHeight += HYTitleView.titleViewHeight(title: alertTitle,
                     message: alertMessage,
                     width: HYConstants.ScreenWidth)
             }
-            let newTableFrame: CGRect = CGRect(x: 0,
+            let newTableFrame = CGRect(x: 0,
                 y: HYConstants.ScreenHeight - tableHeight,
                 width: HYConstants.ScreenWidth,
                 height: tableHeight)
@@ -118,7 +118,7 @@ extension HYAlertController {
             var tableHeight = HYAlertCell.cellHeight * CGFloat(actionArray.count) + HYAlertCell.cellHeight + 10
             if alertTitle != nil || alertMessage != nil {
                 tableHeight += HYTitleView.titleViewHeight(title: self.alertTitle,
-                    message: self.alertMessage,
+                    message: alertMessage,
                     width: HYConstants.ScreenWidth - HYConstants.alertSpec)
             }
             let newTableFrame = CGRect(x: 0,
@@ -159,9 +159,9 @@ extension HYAlertController {
             actionArray[0].append(action)
         }
         if alertStyle == .actionSheet {
-            sheetView.refreshDate(dataArray: actionArray[0], cancelArray: cancelActionArray, title: alertTitle, message: alertMessage)
+            sheetView.refreshData(dataArray: actionArray[0], cancelArray: cancelActionArray, title: alertTitle, message: alertMessage)
         } else if alertStyle == .alert {
-            alertView.refreshDate(dataArray: actionArray[0], cancelArray: cancelActionArray, title: alertTitle, message: alertMessage)
+            alertView.refreshData(dataArray: actionArray[0], cancelArray: cancelActionArray, title: alertTitle, message: alertMessage)
         } else {
         }
     }
