@@ -156,7 +156,11 @@ extension HYAlertController {
         if action.style == .cancel {
             cancelActionArray.append(action)
         } else {
-            actionArray[0].append(action)
+            if actionArray.isEmpty {
+                actionArray.append([action])
+            } else {
+                actionArray[0].append(action)
+            }
         }
         if alertStyle == .actionSheet {
             sheetView.refreshData(dataArray: actionArray[0], cancelArray: cancelActionArray, title: alertTitle, message: alertMessage)

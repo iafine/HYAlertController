@@ -49,8 +49,8 @@ class HYTitleView: UIView {
 // MARK: - LifeCycle
 extension HYTitleView {
     fileprivate func initUI() {
-        self.addSubview(self.titleLabel)
-        self.addSubview(self.messageLabel)
+        addSubview(titleLabel)
+        addSubview(messageLabel)
         //        self.addSubview(self.seperatorView)
     }
 
@@ -80,10 +80,10 @@ extension HYTitleView {
     class func titleViewHeight(title: String?, message: String?, width: CGFloat) -> CGFloat {
         var titleHeight: CGFloat = 15
         if let title = title, title.isEmpty {
-            titleHeight += title.heightWithConstrainedWidth(width: width - 40, font: UIFont.systemFont(ofSize: HYConstants.titleFont)) + 1
+            titleHeight += title.heightWithConstrained(width: width - 40, font: UIFont.systemFont(ofSize: HYConstants.titleFont)) + 1
         }
         if let message = message, message.isEmpty {
-            titleHeight += message.heightWithConstrainedWidth(width: width - 40, font: UIFont.systemFont(ofSize: HYConstants.messageFont)) + 1
+            titleHeight += message.heightWithConstrained(width: width - 40, font: UIFont.systemFont(ofSize: HYConstants.messageFont)) + 1
         }
         return titleHeight
     }
@@ -99,7 +99,7 @@ extension HYTitleView {
 
 // MARK: - 根据文字计算高度
 extension String {
-    func heightWithConstrainedWidth(width: CGFloat, font: UIFont) -> CGFloat {
+    func heightWithConstrained(width: CGFloat, font: UIFont) -> CGFloat {
         let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
         let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
 
