@@ -100,7 +100,7 @@ extension HYAlertController {
             shareView.shareMessage = alertMessage
             shareView.frame = newTableFrame
         } else if alertStyle == .actionSheet {
-            var tableHeight = HYAlertCell.cellHeight * CGFloat(actionArray.count) + HYAlertCell.cellHeight + 10
+            var tableHeight = HYAlertCell.cellHeight * CGFloat(actionArray[0].count) + HYAlertCell.cellHeight + 10
             if alertTitle != nil || alertMessage != nil {
                 tableHeight += HYTitleView.titleViewHeight(title: alertTitle,
                     message: alertMessage,
@@ -115,9 +115,9 @@ extension HYAlertController {
             sheetView.sheetMessage = alertMessage
             sheetView.frame = newTableFrame
         } else {
-            var tableHeight = HYAlertCell.cellHeight * CGFloat(actionArray.count) + HYAlertCell.cellHeight + 10
+            var tableHeight = HYAlertCell.cellHeight * CGFloat(actionArray[0].count) + HYAlertCell.cellHeight + 10
             if alertTitle != nil || alertMessage != nil {
-                tableHeight += HYTitleView.titleViewHeight(title: self.alertTitle,
+                tableHeight += HYTitleView.titleViewHeight(title: alertTitle,
                     message: alertMessage,
                     width: HYConstants.ScreenWidth - HYConstants.alertSpec)
             }
@@ -128,6 +128,7 @@ extension HYAlertController {
             alertHeight = tableHeight
             alertView.alertTitle = alertTitle
             alertView.alertMessage = alertMessage
+            print(newTableFrame, "😁")
             alertView.frame = newTableFrame
             alertView.center = view.center
         }

@@ -48,7 +48,7 @@ extension HYActionSheetView {
     fileprivate func initUI() {
         sheetTable.delegate = self
         sheetTable.dataSource = self
-        addSubview(self.sheetTable)
+        addSubview(sheetTable)
     }
 
     override func layoutSubviews() {
