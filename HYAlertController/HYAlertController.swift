@@ -144,8 +144,7 @@ extension HYAlertController {
     /// 添加必须是元素为HYAlertAction的数组，调用几次该方法，分享显示几行
     open func addShare(_ actions: [HYAlertAction]) {
         actionArray += [actions]
-
-//        shareView.refreshData(dataArray: actionArray, cancelArray: cancelAction, title: alertTitle, message: alertMessage)
+        (pickerView as? HYShareView)?.refresh(actionArray, cancelAction: cancelAction, title: alertTitle, message: alertMessage)
     }
 }
 

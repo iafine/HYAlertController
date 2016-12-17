@@ -31,7 +31,7 @@ class HYShareView: HYPickerView {
     }()
 
     fileprivate var shareDataArray: [[HYAlertAction]] = [[]]
-    fileprivate var cancelDataArray: [HYAlertAction] = []
+    fileprivate var cancelAction: HYAlertAction?
     /// 存储各个collectionView的偏移量
     fileprivate var contentOffsetDictionary: [Int: CGFloat] = [:]
 
@@ -78,9 +78,9 @@ extension HYShareView {
 
 // MARK: - Public Methods
 extension HYShareView {
-    open func refreshData(dataArray: [[HYAlertAction]], cancelArray: [HYAlertAction], title: String?, message: String?) {
-        shareDataArray = dataArray
-        cancelDataArray = cancelArray
+    open func refresh(_ actions: [[HYAlertAction]], cancelAction: HYAlertAction?, title: String?, message: String?) {
+        shareDataArray = actions
+        self.cancelAction = cancelAction
 
         shareTable.reloadData()
     }
@@ -175,9 +175,8 @@ extension HYShareView: UICollectionViewDataSource {
 // MARK: - Events
 extension HYShareView {
     @objc fileprivate func clickedCancelBtnHandler() {
-        if !cancelDataArray.isEmpty {
-            let action = cancelDataArray[0]
-            action.myHandler(action)
+        if let cancelAction = cancelAction {
+            cancelAction.myHandler(cancelAction)
         }
         delegate?.clickItemHandler()
     }

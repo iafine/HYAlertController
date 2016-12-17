@@ -22,12 +22,7 @@ class HYAlertPresentSlideUp: NSObject, UIViewControllerAnimatedTransitioning {
 
         // start animation status
         toVC.dimBackgroundView.alpha = 0
-        if toVC.alertStyle == .actionSheet {
-            toVC.pickerView.frame = CGRect(x: fromVC.view.frame.minX,
-                y: fromVC.view.frame.height,
-                width: fromVC.view.frame.width,
-                height: fromVC.view.frame.height)
-        } else if toVC.alertStyle == .shareSheet {
+        if  [.shareSheet, .actionSheet].contains(toVC.alertStyle) {
             toVC.pickerView.frame = CGRect(x: fromVC.view.frame.minX,
                 y: fromVC.view.frame.height,
                 width: fromVC.view.frame.width,
