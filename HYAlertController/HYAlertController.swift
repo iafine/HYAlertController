@@ -63,8 +63,8 @@ public class HYAlertController: UIViewController {
 
         // 自定义转场动画
         transitioningDelegate = self
-        modalPresentationStyle = UIModalPresentationStyle.custom
-        modalTransitionStyle = UIModalTransitionStyle.coverVertical
+        modalPresentationStyle = .custom
+        modalTransitionStyle = .coverVertical
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -84,7 +84,7 @@ extension HYAlertController {
     override public func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-        if self.alertStyle == .shareSheet {
+        if alertStyle == .shareSheet {
             var tableHeight = HYShareTableViewCell.cellHeight * CGFloat(actionArray.count) + 44
             if !alertTitle.isEmpty || !alertMessage.isEmpty {
                 tableHeight += HYTitleView.titleViewHeight(title: alertTitle,
@@ -95,11 +95,11 @@ extension HYAlertController {
                 y: HYConstants.ScreenHeight - tableHeight,
                 width: HYConstants.ScreenWidth,
                 height: tableHeight)
-            self.alertHeight = tableHeight
-            self.shareView.shareTitle = self.alertTitle
-            self.shareView.shareMessage = self.alertMessage
-            self.shareView.frame = newTableFrame
-        } else if self.alertStyle == .actionSheet {
+            alertHeight = tableHeight
+            shareView.shareTitle = self.alertTitle
+            shareView.shareMessage = self.alertMessage
+            shareView.frame = newTableFrame
+        } else if alertStyle == .actionSheet {
             var tableHeight: CGFloat = HYAlertCell.cellHeight * CGFloat(self.actionArray.count) + HYAlertCell.cellHeight + 10
             if self.alertTitle.characters.count > 0 || self.alertMessage.characters.count > 0 {
                 tableHeight += HYTitleView.titleViewHeight(title: self.alertTitle,
@@ -110,12 +110,12 @@ extension HYAlertController {
                 y: HYConstants.ScreenHeight - tableHeight,
                 width: HYConstants.ScreenWidth,
                 height: tableHeight)
-            self.alertHeight = tableHeight
-            self.sheetView.sheetTitle = self.alertTitle
-            self.sheetView.sheetMessage = self.alertMessage
-            self.sheetView.frame = newTableFrame
+            alertHeight = tableHeight
+            sheetView.sheetTitle = self.alertTitle
+            sheetView.sheetMessage = self.alertMessage
+            sheetView.frame = newTableFrame
         } else {
-            var tableHeight: CGFloat = HYAlertCell.cellHeight * CGFloat(self.actionArray.count) + HYAlertCell.cellHeight + 10
+            var tableHeight = HYAlertCell.cellHeight * CGFloat(actionArray.count) + HYAlertCell.cellHeight + 10
             if self.alertTitle.characters.count > 0 || self.alertMessage.characters.count > 0 {
                 tableHeight += HYTitleView.titleViewHeight(title: self.alertTitle,
                     message: self.alertMessage,
@@ -125,31 +125,27 @@ extension HYAlertController {
                 y: 0,
                 width: HYConstants.ScreenWidth - HYConstants.alertSpec,
                 height: tableHeight)
-            self.alertHeight = tableHeight
-            self.alertView.alertTitle = self.alertTitle
-            self.alertView.alertMessage = self.alertMessage
-            self.alertView.frame = newTableFrame
-            self.alertView.center = self.view.center
+            alertHeight = tableHeight
+            alertView.alertTitle = alertTitle
+            alertView.alertMessage = alertMessage
+            alertView.frame = newTableFrame
+            alertView.center = view.center
         }
     }
 
     fileprivate func initUI() {
-        self.view.addSubview(self.dimBackgroundView)
-        switch self.alertStyle {
+        view.addSubview(dimBackgroundView)
+
+        switch alertStyle {
         case .actionSheet:
-            self.sheetView.delegate = self
-            self.view.addSubview(self.sheetView)
-            break
-
+            sheetView.delegate = self
+            view.addSubview(sheetView)
         case .shareSheet:
-            self.shareView.delegate = self
-            self.view.addSubview(self.shareView)
-            break
-
+            shareView.delegate = self
+            view.addSubview(shareView)
         case .alert:
-            self.alertView.delegate = self
-            self.view.addSubview(self.alertView)
-            break
+            alertView.delegate = self
+            view.addSubview(alertView)
         }
     }
 }
@@ -162,10 +158,10 @@ extension HYAlertController {
         } else {
             actionArray[0].append(action)
         }
-        if self.alertStyle == .actionSheet {
+        if alertStyle == .actionSheet {
             sheetView.refreshDate(dataArray: actionArray[0], cancelArray: cancelActionArray, title: alertTitle, message: alertMessage)
-        } else if self.alertStyle == .alert {
-            alertView.refreshDate(dataArray: actionArray[0], cancelArray: self.cancelActionArray, title: alertTitle, message: alertMessage)
+        } else if alertStyle == .alert {
+            alertView.refreshDate(dataArray: actionArray[0], cancelArray: cancelActionArray, title: alertTitle, message: alertMessage)
         } else {
         }
     }

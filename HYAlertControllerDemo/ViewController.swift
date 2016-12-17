@@ -243,7 +243,7 @@ extension ViewController {
 
 // MARK: - SheetDemo
 extension ViewController {
-    func showSheetStyle() {
+    func showSheetStyleWithoutTitleAndMessage() {
         let alertVC = HYAlertController(title: nil, message: nil, style: .actionSheet)
         let oneAction = HYAlertAction(title: "One Action", style: .normal, handler: { (action) in
             print(action.title)
