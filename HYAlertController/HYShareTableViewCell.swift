@@ -25,7 +25,7 @@ class HYShareTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        collectionView.frame = self.contentView.bounds
+        collectionView.frame = contentView.bounds
     }
 }
 

@@ -16,7 +16,7 @@ public enum HYAlertActionStyle: Int {
 
 public typealias actionHandler = (_ action: HYAlertAction) -> Void
 
-public class HYAlertAction: NSObject {
+public struct HYAlertAction {
 
     public var title: String?
     public var image: UIImage?
@@ -27,7 +27,6 @@ public class HYAlertAction: NSObject {
         self.title = title
         self.style = style
         self.myHandler = handler
-        super.init()
     }
 
     public init(title: String?, image: UIImage?, style: HYAlertActionStyle, handler: @escaping actionHandler) {
@@ -35,6 +34,5 @@ public class HYAlertAction: NSObject {
         self.style = style
         self.image = image
         self.myHandler = handler
-        super.init()
     }
 }
