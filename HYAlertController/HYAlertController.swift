@@ -24,7 +24,7 @@ public class HYAlertController: UIViewController {
     var alertMessage: String?
     var alertStyle: HYAlertControllerStyle
 
-    fileprivate var actionArray: [[HYAlertAction]] = [[]]
+    fileprivate var actionArray: [[HYAlertAction]] = []
     fileprivate var cancelActionArray: [HYAlertAction] = []
 
     var alertHeight: CGFloat = 0
@@ -128,7 +128,6 @@ extension HYAlertController {
             alertHeight = tableHeight
             alertView.alertTitle = alertTitle
             alertView.alertMessage = alertMessage
-            print(newTableFrame, "😁")
             alertView.frame = newTableFrame
             alertView.center = view.center
         }
@@ -168,9 +167,10 @@ extension HYAlertController {
     }
 
     /// 添加必须是元素为HYAlertAction的数组，调用几次该方法，分享显示几行
-    open func addShareActions(actions: [HYAlertAction]) {
+    open func addShare(_ actions: [HYAlertAction]) {
         actionArray += [actions]
-        shareView.refreshDate(dataArray: actionArray, cancelArray: cancelActionArray, title: alertTitle, message: alertMessage)
+
+        shareView.refreshData(dataArray: actionArray, cancelArray: cancelActionArray, title: alertTitle, message: alertMessage)
     }
 }
 

@@ -50,8 +50,8 @@ extension HYAlertCell {
     fileprivate func initCellUI() {
 
         preservesSuperviewLayoutMargins = false
-        separatorInset = UIEdgeInsets.zero
-        layoutMargins = UIEdgeInsets.zero
+        separatorInset = .zero
+        layoutMargins = .zero
 
         addSubview(titleLabel)
         addSubview(cellIcon)

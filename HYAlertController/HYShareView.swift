@@ -31,14 +31,13 @@ class HYShareView: UIView {
     }()
 
     lazy var titleView: HYTitleView = {
-        let view: HYTitleView = HYTitleView(frame: CGRect.zero)
-        return view
+        return HYTitleView(frame: .zero)
     }()
 
     var shareTitle: String?
     var shareMessage: String?
     weak var delegate: HYShareViewDelegate?
-    fileprivate var shareDataArray: [[HYAlertAction]] = []
+    fileprivate var shareDataArray: [[HYAlertAction]] = [[]]
     fileprivate var cancelDataArray: [HYAlertAction] = []
     /// 存储各个collectionView的偏移量
     fileprivate var contentOffsetDictionary: [Int: CGFloat] = [:]
@@ -86,7 +85,7 @@ extension HYShareView {
 
 // MARK: - Public Methods
 extension HYShareView {
-    open func refreshDate(dataArray: [[HYAlertAction]], cancelArray: [HYAlertAction], title: String?, message: String?) {
+    open func refreshData(dataArray: [[HYAlertAction]], cancelArray: [HYAlertAction], title: String?, message: String?) {
         shareDataArray = dataArray
         cancelDataArray = cancelArray
 
@@ -105,7 +104,7 @@ extension HYShareView: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: HYShareTableViewCell = HYShareTableViewCell.cellWithTableView(tableView: tableView)
+        let cell = HYShareTableViewCell.cellWithTableView(tableView: tableView)
         return cell
     }
 }
@@ -148,7 +147,7 @@ extension HYShareView: UITableViewDelegate {
 // MARK: - UICollectionViewDelegate
 extension HYShareView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let collectionDataArray = self.shareDataArray[collectionView.tag]
+        let collectionDataArray = shareDataArray[collectionView.tag]
 
         let action = collectionDataArray[indexPath.row]
         action.myHandler(action)
@@ -183,7 +182,7 @@ extension HYShareView: UICollectionViewDataSource {
 // MARK: - Events
 extension HYShareView {
     @objc fileprivate func clickedCancelBtnHandler() {
-        if self.cancelDataArray.count > 0 {
+        if !cancelDataArray.isEmpty {
             let action = cancelDataArray[0]
             action.myHandler(action)
         }

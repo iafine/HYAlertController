@@ -382,7 +382,7 @@ extension ViewController {
             (action) in
             print(action.title as Any)
         })
-        alertVC.addShareActions(actions: [oneAction, twoAction, threeAction, fourAction, fiveAction, sixAction])
+        alertVC.addShare([oneAction, twoAction, threeAction, fourAction, fiveAction, sixAction])
         self.present(alertVC, animated: true, completion: nil)
     }
 
@@ -438,8 +438,8 @@ extension ViewController {
             print(action.title as Any)
         })
 
-        alertVC.addShareActions(actions: [facebookAction, twitterAction, snapchatAction, instagramAction, pinterestAction, lineAction])
-        alertVC.addShareActions(actions: [wechatAction, momentAction, qqAction, qzoneAction, sinaAction, alipayAction])
+        alertVC.addShare( [facebookAction, twitterAction, snapchatAction, instagramAction, pinterestAction, lineAction])
+        alertVC.addShare( [wechatAction, momentAction, qqAction, qzoneAction, sinaAction, alipayAction])
         self.present(alertVC, animated: true, completion: nil)
     }
 
@@ -495,8 +495,8 @@ extension ViewController {
             print(action.title as Any)
         })
 
-        alertVC.addShareActions(actions: [facebookAction, twitterAction, snapchatAction, instagramAction, pinterestAction, lineAction])
-        alertVC.addShareActions(actions: [wechatAction, momentAction, qqAction, qzoneAction, sinaAction, alipayAction])
+        alertVC.addShare( [facebookAction, twitterAction, snapchatAction, instagramAction, pinterestAction, lineAction])
+        alertVC.addShare( [wechatAction, momentAction, qqAction, qzoneAction, sinaAction, alipayAction])
         self.present(alertVC, animated: true, completion: nil)
     }
 
@@ -552,8 +552,8 @@ extension ViewController {
             print(action.title as Any)
         })
 
-        alertVC.addShareActions(actions: [facebookAction, twitterAction, snapchatAction, instagramAction, pinterestAction, lineAction])
-        alertVC.addShareActions(actions: [wechatAction, momentAction, qqAction, qzoneAction, sinaAction, alipayAction])
+        alertVC.addShare( [facebookAction, twitterAction, snapchatAction, instagramAction, pinterestAction, lineAction])
+        alertVC.addShare( [wechatAction, momentAction, qqAction, qzoneAction, sinaAction, alipayAction])
         self.present(alertVC, animated: true, completion: nil)
     }
 
@@ -609,8 +609,8 @@ extension ViewController {
             print(action.title as Any)
         })
 
-        alertVC.addShareActions(actions: [facebookAction, twitterAction, snapchatAction, instagramAction, pinterestAction, lineAction])
-        alertVC.addShareActions(actions: [wechatAction, momentAction, qqAction, qzoneAction, sinaAction, alipayAction])
+        alertVC.addShare( [facebookAction, twitterAction, snapchatAction, instagramAction, pinterestAction, lineAction])
+        alertVC.addShare( [wechatAction, momentAction, qqAction, qzoneAction, sinaAction, alipayAction])
         present(alertVC, animated: true, completion: nil)
     }
 }

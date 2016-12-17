@@ -76,7 +76,7 @@ extension HYAlertView {
     open func refreshData(dataArray: [HYAlertAction], cancelArray: [HYAlertAction], title: String?, message: String?) {
         alertDataArray = dataArray
         cancelDataArray = cancelArray
-        print("✈️", alertDataArray.count)
+
         alertTable.reloadData()
     }
 }
