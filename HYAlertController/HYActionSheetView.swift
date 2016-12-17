@@ -89,16 +89,12 @@ extension HYActionSheetView: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return sheetDataArray.count
-        } else {
-            return 1
-        }
+        return section == 0 ? sheetDataArray.count : 1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell: HYAlertCell = HYAlertCell.cellWithTableView(tableView: tableView)
+            let cell = HYAlertCell.cellWithTableView(tableView: tableView)
             let action = sheetDataArray[indexPath.row]
             cell.titleLabel.text = action.title
             if action.style == .destructive {
@@ -107,7 +103,7 @@ extension HYActionSheetView: UITableViewDataSource {
             cell.cellIcon.image = action.image
             return cell
         } else {
-            let cell: HYAlertCell = HYAlertCell.cellWithTableView(tableView: tableView)
+            let cell = HYAlertCell.cellWithTableView(tableView: tableView)
             if cancelDataArray.count > 0 {
                 let action = cancelDataArray[indexPath.row]
                 cell.titleLabel.text = action.title
