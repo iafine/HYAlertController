@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D84325AD1E03CD85005D80E6 /* HYActionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84325A11E03CD85005D80E6 /* HYActionSheetView.swift */; };
+		D84325AD1E03CD85005D80E6 /* HYSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84325A11E03CD85005D80E6 /* HYSheetView.swift */; };
 		D84325AE1E03CD85005D80E6 /* HYAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84325A21E03CD85005D80E6 /* HYAlertAction.swift */; };
 		D84325AF1E03CD85005D80E6 /* HYAlertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84325A31E03CD85005D80E6 /* HYAlertCell.swift */; };
 		D84325B01E03CD85005D80E6 /* HYAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84325A41E03CD85005D80E6 /* HYAlertController.swift */; };
@@ -19,6 +19,8 @@
 		D84325B61E03CD85005D80E6 /* HYShareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84325AA1E03CD85005D80E6 /* HYShareTableViewCell.swift */; };
 		D84325B71E03CD85005D80E6 /* HYShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84325AB1E03CD85005D80E6 /* HYShareView.swift */; };
 		D84325B81E03CD85005D80E6 /* HYTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84325AC1E03CD85005D80E6 /* HYTitleView.swift */; };
+		D84325BA1E05810A005D80E6 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84325B91E05810A005D80E6 /* Protocols.swift */; };
+		D84325BC1E05864F005D80E6 /* HYPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84325BB1E05864F005D80E6 /* HYPickerView.swift */; };
 		D88975EC1DF00CD2005384F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88975EB1DF00CD2005384F4 /* AppDelegate.swift */; };
 		D88975EE1DF00CD2005384F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88975ED1DF00CD2005384F4 /* ViewController.swift */; };
 		D88975F11DF00CD2005384F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D88975EF1DF00CD2005384F4 /* Main.storyboard */; };
@@ -55,7 +57,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D84325A11E03CD85005D80E6 /* HYActionSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYActionSheetView.swift; sourceTree = "<group>"; };
+		D84325A11E03CD85005D80E6 /* HYSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYSheetView.swift; sourceTree = "<group>"; };
 		D84325A21E03CD85005D80E6 /* HYAlertAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertAction.swift; sourceTree = "<group>"; };
 		D84325A31E03CD85005D80E6 /* HYAlertCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertCell.swift; sourceTree = "<group>"; };
 		D84325A41E03CD85005D80E6 /* HYAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYAlertController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,8 @@
 		D84325AA1E03CD85005D80E6 /* HYShareTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYShareTableViewCell.swift; sourceTree = "<group>"; };
 		D84325AB1E03CD85005D80E6 /* HYShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYShareView.swift; sourceTree = "<group>"; };
 		D84325AC1E03CD85005D80E6 /* HYTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYTitleView.swift; sourceTree = "<group>"; };
+		D84325B91E05810A005D80E6 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		D84325BB1E05864F005D80E6 /* HYPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYPickerView.swift; sourceTree = "<group>"; };
 		D88975E81DF00CD2005384F4 /* HYAlertControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HYAlertControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D88975EB1DF00CD2005384F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D88975ED1DF00CD2005384F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,7 +107,7 @@
 		D84325A01E03CD85005D80E6 /* HYAlertController */ = {
 			isa = PBXGroup;
 			children = (
-				D84325A11E03CD85005D80E6 /* HYActionSheetView.swift */,
+				D84325A11E03CD85005D80E6 /* HYSheetView.swift */,
 				D84325A21E03CD85005D80E6 /* HYAlertAction.swift */,
 				D84325A31E03CD85005D80E6 /* HYAlertCell.swift */,
 				D84325A41E03CD85005D80E6 /* HYAlertController.swift */,
@@ -115,6 +119,8 @@
 				D84325AA1E03CD85005D80E6 /* HYShareTableViewCell.swift */,
 				D84325AB1E03CD85005D80E6 /* HYShareView.swift */,
 				D84325AC1E03CD85005D80E6 /* HYTitleView.swift */,
+				D84325B91E05810A005D80E6 /* Protocols.swift */,
+				D84325BB1E05864F005D80E6 /* HYPickerView.swift */,
 			);
 			path = HYAlertController;
 			sourceTree = SOURCE_ROOT;
@@ -290,12 +296,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D84325BA1E05810A005D80E6 /* Protocols.swift in Sources */,
 				D84325B61E03CD85005D80E6 /* HYShareTableViewCell.swift in Sources */,
 				D84325B71E03CD85005D80E6 /* HYShareView.swift in Sources */,
 				D84325B51E03CD85005D80E6 /* HYShareCollectionCell.swift in Sources */,
 				D84325AF1E03CD85005D80E6 /* HYAlertCell.swift in Sources */,
-				D84325AD1E03CD85005D80E6 /* HYActionSheetView.swift in Sources */,
+				D84325AD1E03CD85005D80E6 /* HYSheetView.swift in Sources */,
 				D84325B41E03CD85005D80E6 /* HYConstants.swift in Sources */,
+				D84325BC1E05864F005D80E6 /* HYPickerView.swift in Sources */,
 				D84325AE1E03CD85005D80E6 /* HYAlertAction.swift in Sources */,
 				D84325B11E03CD85005D80E6 /* HYAlertDismissSlideDown.swift in Sources */,
 				D84325B31E03CD85005D80E6 /* HYAlertView.swift in Sources */,

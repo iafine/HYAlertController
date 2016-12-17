@@ -8,12 +8,7 @@
 
 import UIKit
 
-protocol HYAlertViewDelegate: class {
-    /// 点击事件
-    func clickAlertItemHandler()
-}
-
-class HYAlertView: UIView {
+class HYAlertView: HYPickerView, DataPresenter {
 
     lazy var alertTable: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
@@ -26,11 +21,8 @@ class HYAlertView: UIView {
         return HYTitleView(frame: .zero)
     }()
 
-    var alertTitle: String?
-    var alertMessage: String?
-    weak var delegate: HYAlertViewDelegate?
-    fileprivate var alertDataArray: [HYAlertAction] = []
-    fileprivate var cancelDataArray: [HYAlertAction] = []
+    var actions: [HYAlertAction] = []
+    var cancelAction: HYAlertAction?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -54,14 +46,14 @@ extension HYAlertView {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        if alertTitle != nil || alertMessage != nil {
-            self.titleView.refrenshTitleView(title: alertTitle,
-                message: alertMessage)
+        if title != nil || message != nil {
+            self.titleView.refrenshTitleView(title: title,
+                message: message)
             self.titleView.frame = CGRect(x: 0,
                 y: 0,
                 width: bounds.width,
-                height: HYTitleView.titleViewHeight(title: alertTitle,
-                    message: alertMessage,
+                height: HYTitleView.titleViewHeight(title: title,
+                    message: message,
                     width: bounds.width))
             alertTable.tableHeaderView = titleView
         } else {
@@ -71,15 +63,6 @@ extension HYAlertView {
     }
 }
 
-// MARK: - Public Methods
-extension HYAlertView {
-    open func refreshData(dataArray: [HYAlertAction], cancelArray: [HYAlertAction], title: String?, message: String?) {
-        alertDataArray = dataArray
-        cancelDataArray = cancelArray
-
-        alertTable.reloadData()
-    }
-}
 
 // MARK: - UITableViewDataSource
 extension HYAlertView: UITableViewDataSource {
@@ -88,23 +71,22 @@ extension HYAlertView: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? alertDataArray.count : 1
+        return section == 0 ? actions.count : 1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = HYAlertCell.cellWithTableView(tableView: tableView)
         if indexPath.section == 0 {
-            let action = alertDataArray[indexPath.row]
+            let action = actions[indexPath.row]
             cell.titleLabel.text = action.title
             cell.cellIcon.image = action.image
             if action.style == .destructive {
                 cell.titleLabel.textColor = UIColor.red
             }
         } else {
-            if !cancelDataArray.isEmpty {
-                let action = cancelDataArray[indexPath.row]
-                cell.titleLabel.text = action.title
-                cell.cellIcon.image = action.image
+            if let cancelAction = cancelAction {
+                cell.titleLabel.text = cancelAction.title
+                cell.cellIcon.image = cancelAction.image
             } else {
                 cell.titleLabel.text = HYConstants.defaultCancelText
             }
@@ -131,14 +113,13 @@ extension HYAlertView: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
 
         if indexPath.section == 0 {
-            let action = alertDataArray[indexPath.row]
+            let action = actions[indexPath.row]
             action.myHandler(action)
         } else {
-            if !cancelDataArray.isEmpty {
-                let action = cancelDataArray[indexPath.row]
-                action.myHandler(action)
+            if let cancelAction = cancelAction {
+                cancelAction.myHandler(cancelAction)
             }
         }
-        delegate?.clickAlertItemHandler()
+        delegate?.clickItemHandler()
     }
 }

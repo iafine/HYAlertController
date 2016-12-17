@@ -25,7 +25,7 @@ public class HYAlertController: UIViewController {
     var alertStyle: HYAlertControllerStyle
 
     fileprivate var actionArray: [[HYAlertAction]] = []
-    fileprivate var cancelActionArray: [HYAlertAction] = []
+    fileprivate var cancelAction: HYAlertAction?
 
     var alertHeight: CGFloat = 0
 
@@ -33,8 +33,8 @@ public class HYAlertController: UIViewController {
         return HYShareView(frame: .zero)
     }()
 
-    lazy var sheetView: HYActionSheetView = {
-        return HYActionSheetView(frame: .zero)
+    lazy var sheetView: HYSheetView = {
+        return HYSheetView(frame: .zero)
     }()
 
     lazy var alertView: HYAlertView = {
@@ -96,8 +96,8 @@ extension HYAlertController {
                 width: HYConstants.ScreenWidth,
                 height: tableHeight)
             alertHeight = tableHeight
-            shareView.shareTitle = alertTitle
-            shareView.shareMessage = alertMessage
+            shareView.title = alertTitle
+            shareView.message = alertMessage
             shareView.frame = newTableFrame
         } else if alertStyle == .actionSheet {
             var tableHeight = HYAlertCell.cellHeight * CGFloat(actionArray[0].count) + HYAlertCell.cellHeight + 10
@@ -111,8 +111,8 @@ extension HYAlertController {
                 width: HYConstants.ScreenWidth,
                 height: tableHeight)
             alertHeight = tableHeight
-            sheetView.sheetTitle = alertTitle
-            sheetView.sheetMessage = alertMessage
+            sheetView.title = alertTitle
+            sheetView.message = alertMessage
             sheetView.frame = newTableFrame
         } else {
             var tableHeight = HYAlertCell.cellHeight * CGFloat(actionArray[0].count) + HYAlertCell.cellHeight + 10
@@ -126,8 +126,8 @@ extension HYAlertController {
                 width: HYConstants.ScreenWidth - HYConstants.alertSpec,
                 height: tableHeight)
             alertHeight = tableHeight
-            alertView.alertTitle = alertTitle
-            alertView.alertMessage = alertMessage
+            alertView.title = alertTitle
+            alertView.message = alertMessage
             alertView.frame = newTableFrame
             alertView.center = view.center
         }
@@ -154,7 +154,7 @@ extension HYAlertController {
 extension HYAlertController {
     open func add(_ action: HYAlertAction) {
         if action.style == .cancel {
-            cancelActionArray.append(action)
+            cancelAction = action
         } else {
             if actionArray.isEmpty {
                 actionArray.append([action])
@@ -163,9 +163,9 @@ extension HYAlertController {
             }
         }
         if alertStyle == .actionSheet {
-            sheetView.refreshData(dataArray: actionArray[0], cancelArray: cancelActionArray, title: alertTitle, message: alertMessage)
+            sheetView.refresh(actionArray[0], cancelAction: cancelAction, title: alertTitle, message: alertMessage)
         } else if alertStyle == .alert {
-            alertView.refreshData(dataArray: actionArray[0], cancelArray: cancelActionArray, title: alertTitle, message: alertMessage)
+            alertView.refresh(actionArray[0], cancelAction: cancelAction, title: alertTitle, message: alertMessage)
         } else {
         }
     }
@@ -174,13 +174,13 @@ extension HYAlertController {
     open func addShare(_ actions: [HYAlertAction]) {
         actionArray += [actions]
 
-        shareView.refreshData(dataArray: actionArray, cancelArray: cancelActionArray, title: alertTitle, message: alertMessage)
+//        shareView.refreshData(dataArray: actionArray, cancelArray: cancelAction, title: alertTitle, message: alertMessage)
     }
 }
 
-// MARK: - HYActionSheetViewDelegate
-extension HYAlertController: HYActionSheetViewDelegate {
-    func clickSheetItemHandler() {
+// MARK: - HYSheetViewDelegate
+extension HYAlertController: HYActionDelegate {
+    func clickItemHandler() {
         dismiss()
     }
 }
@@ -188,13 +188,6 @@ extension HYAlertController: HYActionSheetViewDelegate {
 // MARK: - HYShareViewDelegate
 extension HYAlertController: HYShareViewDelegate {
     func clickedShareItemHandler() {
-        dismiss()
-    }
-}
-
-// MARK: - HYAlertViewDelegate
-extension HYAlertController: HYAlertViewDelegate {
-    func clickAlertItemHandler() {
         dismiss()
     }
 }
@@ -224,7 +217,7 @@ extension HYAlertController {
     // 取消视图显示和控制器加载
     fileprivate func dismiss() {
         actionArray.removeAll()
-        cancelActionArray.removeAll()
+        cancelAction = nil
 
         dismiss(animated: true, completion: nil)
     }

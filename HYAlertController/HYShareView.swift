@@ -12,7 +12,7 @@ protocol HYShareViewDelegate: class {
     // 点击分享item事件
     func clickedShareItemHandler()
 }
-class HYShareView: UIView {
+class HYShareView: HYPickerView {
 
     lazy var shareTable: UITableView = {
         let tableView: UITableView = UITableView(frame: CGRect.zero, style: .plain)
@@ -34,9 +34,6 @@ class HYShareView: UIView {
         return HYTitleView(frame: .zero)
     }()
 
-    var shareTitle: String?
-    var shareMessage: String?
-    weak var delegate: HYShareViewDelegate?
     fileprivate var shareDataArray: [[HYAlertAction]] = [[]]
     fileprivate var cancelDataArray: [HYAlertAction] = []
     /// 存储各个collectionView的偏移量
@@ -67,14 +64,14 @@ extension HYShareView {
 
         shareTable.frame = bounds
 
-        if shareTitle != nil || shareMessage != nil {
-            titleView.refrenshTitleView(title: shareTitle,
-                message: shareMessage)
+        if title != nil || message != nil {
+            titleView.refrenshTitleView(title: title,
+                message: message)
             titleView.frame = CGRect(x: 0,
                 y: 0,
                 width: bounds.width,
-                height: HYTitleView.titleViewHeight(title: self.shareTitle,
-                    message: shareMessage,
+                height: HYTitleView.titleViewHeight(title: title,
+                    message: message,
                     width: bounds.width))
             shareTable.tableHeaderView = titleView
         } else {
@@ -152,7 +149,7 @@ extension HYShareView: UICollectionViewDelegate {
         let action = collectionDataArray[indexPath.row]
         action.myHandler(action)
 
-        delegate?.clickedShareItemHandler()
+        delegate?.clickItemHandler()
     }
 }
 
@@ -186,6 +183,6 @@ extension HYShareView {
             let action = cancelDataArray[0]
             action.myHandler(action)
         }
-        delegate?.clickedShareItemHandler()
+        delegate?.clickItemHandler()
     }
 }
