@@ -23,12 +23,12 @@ class HYAlertPresentSlideUp: NSObject, UIViewControllerAnimatedTransitioning {
         // start animation status
         toVC.dimBackgroundView.alpha = 0
         if toVC.alertStyle == .actionSheet {
-            toVC.sheetView.frame = CGRect(x: fromVC.view.frame.minX,
+            toVC.pickerView.frame = CGRect(x: fromVC.view.frame.minX,
                 y: fromVC.view.frame.height,
                 width: fromVC.view.frame.width,
                 height: fromVC.view.frame.height)
         } else if toVC.alertStyle == .shareSheet {
-            toVC.shareView.frame = CGRect(x: fromVC.view.frame.minX,
+            toVC.pickerView.frame = CGRect(x: fromVC.view.frame.minX,
                 y: fromVC.view.frame.height,
                 width: fromVC.view.frame.width,
                 height: fromVC.view.frame.height)
@@ -42,10 +42,8 @@ class HYAlertPresentSlideUp: NSObject, UIViewControllerAnimatedTransitioning {
         // 执行动画
         UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.0, options: .curveLinear, animations: {
             toVC.dimBackgroundView.alpha = 1
-            if toVC.alertStyle == .actionSheet {
-                toVC.sheetView.frame = transitionContext.finalFrame(for: toVC)
-            } else if toVC.alertStyle == .shareSheet {
-                toVC.shareView.frame = transitionContext.finalFrame(for: toVC)
+            if [.actionSheet, .shareSheet].contains(toVC.alertStyle) {
+                toVC.pickerView.frame = transitionContext.finalFrame(for: toVC)
             } else {
                 toVC.view.alpha = 1
             }

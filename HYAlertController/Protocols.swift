@@ -11,7 +11,7 @@ import UIKit
 protocol DataPresenter: class {
     var actions: [HYAlertAction] { set get }
     var cancelAction: HYAlertAction? { set get }
-    
+
     func refresh(_ actions: [HYAlertAction], cancelAction: HYAlertAction?, title: String?, message: String?)
 }
 

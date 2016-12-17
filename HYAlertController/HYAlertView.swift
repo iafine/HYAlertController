@@ -63,7 +63,6 @@ extension HYAlertView {
     }
 }
 
-
 // MARK: - UITableViewDataSource
 extension HYAlertView: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {

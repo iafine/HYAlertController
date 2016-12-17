@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol HYShareViewDelegate: class {
-    // 点击分享item事件
-    func clickedShareItemHandler()
-}
 class HYShareView: HYPickerView {
 
     lazy var shareTable: UITableView = {

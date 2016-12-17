@@ -22,24 +22,14 @@ public class HYAlertController: UIViewController {
 
     var alertTitle: String?
     var alertMessage: String?
-    var alertStyle: HYAlertControllerStyle
+    var alertStyle = HYAlertControllerStyle.alert
 
     fileprivate var actionArray: [[HYAlertAction]] = []
     fileprivate var cancelAction: HYAlertAction?
 
     var alertHeight: CGFloat = 0
 
-    lazy var shareView: HYShareView = {
-        return HYShareView(frame: .zero)
-    }()
-
-    lazy var sheetView: HYSheetView = {
-        return HYSheetView(frame: .zero)
-    }()
-
-    lazy var alertView: HYAlertView = {
-        return HYAlertView(frame: .zero)
-    }()
+    var pickerView: HYPickerView!
 
     lazy var dimBackgroundView: UIView = {
         let view: UIView = UIView(frame: CGRect(x: 0,
@@ -55,20 +45,28 @@ public class HYAlertController: UIViewController {
         return view
     }()
 
-    public init(title: String?, message: String?, style: HYAlertControllerStyle) {
+    convenience init(title: String?, message: String?, style: HYAlertControllerStyle) {
+        self.init()
+
         alertTitle = title
         alertMessage = message
         alertStyle = style
-        super.init(nibName: nil, bundle: nil)
 
         // 自定义转场动画
         transitioningDelegate = self
         modalPresentationStyle = .custom
         modalTransitionStyle = .coverVertical
-    }
 
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        switch alertStyle {
+        case .actionSheet:
+            pickerView = HYSheetView(frame: .zero)
+        case .shareSheet:
+            pickerView = HYShareView(frame: .zero)
+        case .alert:
+            pickerView = HYAlertView(frame: .zero)
+        }
+        pickerView.delegate = self
+        view.addSubview(pickerView)
     }
 }
 
@@ -77,13 +75,13 @@ extension HYAlertController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.clear
-
-        initUI()
+        view.addSubview(dimBackgroundView)
     }
 
     override public func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-
+        pickerView.title = alertTitle
+        pickerView.message = alertMessage
         if alertStyle == .shareSheet {
             var tableHeight = HYShareTableViewCell.cellHeight * CGFloat(actionArray.count) + 44
             if alertTitle != nil || alertMessage != nil {
@@ -96,9 +94,7 @@ extension HYAlertController {
                 width: HYConstants.ScreenWidth,
                 height: tableHeight)
             alertHeight = tableHeight
-            shareView.title = alertTitle
-            shareView.message = alertMessage
-            shareView.frame = newTableFrame
+            pickerView.frame = newTableFrame
         } else if alertStyle == .actionSheet {
             var tableHeight = HYAlertCell.cellHeight * CGFloat(actionArray[0].count) + HYAlertCell.cellHeight + 10
             if alertTitle != nil || alertMessage != nil {
@@ -111,9 +107,7 @@ extension HYAlertController {
                 width: HYConstants.ScreenWidth,
                 height: tableHeight)
             alertHeight = tableHeight
-            sheetView.title = alertTitle
-            sheetView.message = alertMessage
-            sheetView.frame = newTableFrame
+            pickerView.frame = newTableFrame
         } else {
             var tableHeight = HYAlertCell.cellHeight * CGFloat(actionArray[0].count) + HYAlertCell.cellHeight + 10
             if alertTitle != nil || alertMessage != nil {
@@ -126,26 +120,8 @@ extension HYAlertController {
                 width: HYConstants.ScreenWidth - HYConstants.alertSpec,
                 height: tableHeight)
             alertHeight = tableHeight
-            alertView.title = alertTitle
-            alertView.message = alertMessage
-            alertView.frame = newTableFrame
-            alertView.center = view.center
-        }
-    }
-
-    fileprivate func initUI() {
-        view.addSubview(dimBackgroundView)
-
-        switch alertStyle {
-        case .actionSheet:
-            sheetView.delegate = self
-            view.addSubview(sheetView)
-        case .shareSheet:
-            shareView.delegate = self
-            view.addSubview(shareView)
-        case .alert:
-            alertView.delegate = self
-            view.addSubview(alertView)
+            pickerView.frame = newTableFrame
+            pickerView.center = view.center
         }
     }
 }
@@ -162,12 +138,7 @@ extension HYAlertController {
                 actionArray[0].append(action)
             }
         }
-        if alertStyle == .actionSheet {
-            sheetView.refresh(actionArray[0], cancelAction: cancelAction, title: alertTitle, message: alertMessage)
-        } else if alertStyle == .alert {
-            alertView.refresh(actionArray[0], cancelAction: cancelAction, title: alertTitle, message: alertMessage)
-        } else {
-        }
+        (pickerView as? DataPresenter)?.refresh(actionArray[0], cancelAction: cancelAction, title: alertTitle, message: alertMessage)
     }
 
     /// 添加必须是元素为HYAlertAction的数组，调用几次该方法，分享显示几行
@@ -181,13 +152,6 @@ extension HYAlertController {
 // MARK: - HYSheetViewDelegate
 extension HYAlertController: HYActionDelegate {
     func clickItemHandler() {
-        dismiss()
-    }
-}
-
-// MARK: - HYShareViewDelegate
-extension HYAlertController: HYShareViewDelegate {
-    func clickedShareItemHandler() {
         dismiss()
     }
 }
