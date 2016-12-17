@@ -77,12 +77,12 @@ extension HYTitleView {
 
 // MARK: - Class Methods
 extension HYTitleView {
-    class func titleViewHeight(title: String, message: String, width: CGFloat) -> CGFloat {
+    class func titleViewHeight(title: String?, message: String?, width: CGFloat) -> CGFloat {
         var titleHeight: CGFloat = 15
-        if title.characters.count > 0 {
+        if let title = title, title.isEmpty {
             titleHeight += title.heightWithConstrainedWidth(width: width - 40, font: UIFont.systemFont(ofSize: HYConstants.titleFont)) + 1
         }
-        if message.characters.count > 0 {
+        if let message = message, message.isEmpty {
             titleHeight += message.heightWithConstrainedWidth(width: width - 40, font: UIFont.systemFont(ofSize: HYConstants.messageFont)) + 1
         }
         return titleHeight
@@ -91,9 +91,9 @@ extension HYTitleView {
 
 // MARK: - Public Methods
 extension HYTitleView {
-    open func refrenshTitleView(title: String, message: String) {
-        self.titleLabel.text = title
-        self.messageLabel.text = message
+    open func refrenshTitleView(title: String?, message: String?) {
+        titleLabel.text = title
+        messageLabel.text = message
     }
 }
 

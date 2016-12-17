@@ -26,8 +26,8 @@ class HYActionSheetView: UIView {
         return HYTitleView(frame: .zero)
     }()
 
-    var sheetTitle = ""
-    var sheetMessage = ""
+    var sheetTitle: String?
+    var sheetMessage: String?
     weak var delegate: HYActionSheetViewDelegate?
     fileprivate var sheetDataArray: [HYAlertAction] = []
     fileprivate var cancelDataArray: [HYAlertAction] = []
@@ -56,10 +56,10 @@ extension HYActionSheetView {
 
         sheetTable.frame = bounds
 
-        if !sheetTitle.isEmpty || !sheetMessage.isEmpty {
-            self.titleView.refrenshTitleView(title: self.sheetTitle,
+        if sheetTitle != nil || sheetMessage != nil {
+            titleView.refrenshTitleView(title: self.sheetTitle,
                 message: sheetMessage)
-            self.titleView.frame = CGRect(x: 0,
+            titleView.frame = CGRect(x: 0,
                 y: 0,
                 width: bounds.width,
                 height: HYTitleView.titleViewHeight(title: sheetTitle,
@@ -74,9 +74,10 @@ extension HYActionSheetView {
 
 // MARK: - Public Methods
 extension HYActionSheetView {
-    open func refreshDate(dataArray: [HYAlertAction], cancelArray: [HYAlertAction], title: String, message: String) {
+    open func refreshDate(dataArray: [HYAlertAction], cancelArray: [HYAlertAction], title: String?, message: String?) {
         sheetDataArray = dataArray
         cancelDataArray = cancelArray
+
         sheetTable.reloadData()
     }
 }

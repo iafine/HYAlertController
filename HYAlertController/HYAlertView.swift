@@ -26,8 +26,8 @@ class HYAlertView: UIView {
         return HYTitleView(frame: .zero)
     }()
 
-    var alertTitle = ""
-    var alertMessage = ""
+    var alertTitle: String?
+    var alertMessage: String?
     weak var delegate: HYAlertViewDelegate?
     fileprivate var alertDataArray: [HYAlertAction] = []
     fileprivate var cancelDataArray: [HYAlertAction] = []
@@ -54,7 +54,7 @@ extension HYAlertView {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        if !alertTitle.isEmpty || !alertMessage.isEmpty {
+        if alertTitle != nil || alertMessage != nil {
             self.titleView.refrenshTitleView(title: alertTitle,
                 message: alertMessage)
             self.titleView.frame = CGRect(x: 0,
@@ -65,7 +65,7 @@ extension HYAlertView {
                     width: bounds.width))
             alertTable.tableHeaderView = titleView
         } else {
-            self.alertTable.tableHeaderView = UIView()
+            alertTable.tableHeaderView = UIView()
         }
         alertTable.frame = bounds
     }
@@ -73,7 +73,7 @@ extension HYAlertView {
 
 // MARK: - Public Methods
 extension HYAlertView {
-    open func refreshDate(dataArray: [HYAlertAction], cancelArray: [HYAlertAction], title: String, message: String) {
+    open func refreshDate(dataArray: [HYAlertAction], cancelArray: [HYAlertAction], title: String?, message: String?) {
         alertDataArray = dataArray
         cancelDataArray = cancelArray
         alertTable.reloadData()

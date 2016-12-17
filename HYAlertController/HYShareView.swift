@@ -35,8 +35,8 @@ class HYShareView: UIView {
         return view
     }()
 
-    var shareTitle: String = String()
-    var shareMessage: String = String()
+    var shareTitle: String?
+    var shareMessage: String?
     weak var delegate: HYShareViewDelegate?
     fileprivate var shareDataArray: [[HYAlertAction]] = []
     fileprivate var cancelDataArray: [HYAlertAction] = []
@@ -60,37 +60,37 @@ extension HYShareView {
         shareTable.delegate = self
         shareTable.dataSource = self
         shareTable.tableFooterView = cancelButton
-        addSubview(self.shareTable)
+        addSubview(shareTable)
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        self.shareTable.frame = self.bounds
+        shareTable.frame = bounds
 
-        if self.shareTitle.characters.count > 0 || self.shareMessage.characters.count > 0 {
-            self.titleView.refrenshTitleView(title: self.shareTitle,
-                message: self.shareMessage)
-            self.titleView.frame = CGRect(x: 0,
+        if shareTitle != nil || shareMessage != nil {
+            titleView.refrenshTitleView(title: shareTitle,
+                message: shareMessage)
+            titleView.frame = CGRect(x: 0,
                 y: 0,
                 width: bounds.width,
                 height: HYTitleView.titleViewHeight(title: self.shareTitle,
-                    message: self.shareMessage,
-                    width: self.bounds.size.width))
-            self.shareTable.tableHeaderView = titleView
+                    message: shareMessage,
+                    width: bounds.width))
+            shareTable.tableHeaderView = titleView
         } else {
-            self.shareTable.tableHeaderView = UIView()
+            shareTable.tableHeaderView = UIView()
         }
     }
 }
 
 // MARK: - Public Methods
 extension HYShareView {
-    open func refreshDate(dataArray: [[HYAlertAction]], cancelArray: [HYAlertAction], title: String, message: String) {
-        self.shareDataArray = dataArray
-        self.cancelDataArray = cancelArray
+    open func refreshDate(dataArray: [[HYAlertAction]], cancelArray: [HYAlertAction], title: String?, message: String?) {
+        shareDataArray = dataArray
+        cancelDataArray = cancelArray
 
-        self.shareTable.reloadData()
+        shareTable.reloadData()
     }
 }
 
@@ -101,7 +101,7 @@ extension HYShareView: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.shareDataArray.count
+        return shareDataArray.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
