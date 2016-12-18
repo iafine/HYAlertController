@@ -31,18 +31,14 @@ public class HYAlertController: UIViewController {
 
     var pickerView: HYPickerView!
 
-    lazy var dimBackgroundView: UIView = {
-        let view: UIView = UIView(frame: CGRect(x: 0,
+    lazy var dimBackgroundView: UIControl = {
+        let control = UIControl(frame: CGRect(x: 0,
             y: 0,
             width: HYConstants.ScreenWidth,
             height: HYConstants.ScreenHeight))
-        view.backgroundColor = UIColor(white: 0, alpha: HYConstants.dimBackgroundAlpha)
-        view.alpha = 0
-
-        // 添加手势监听
-        let tapGR = UITapGestureRecognizer(target: self, action: #selector(clickedBgViewHandler))
-        view.addGestureRecognizer(tapGR)
-        return view
+        control.backgroundColor = UIColor(white: 0, alpha: HYConstants.dimBackgroundAlpha)
+        control.addTarget(self, action: #selector(clickedBgViewHandler), for: .touchDown)
+        return control
     }()
 
     convenience init(title: String?, message: String?, style: HYAlertControllerStyle) {
@@ -57,14 +53,7 @@ public class HYAlertController: UIViewController {
         modalPresentationStyle = .custom
         modalTransitionStyle = .coverVertical
 
-        switch alertStyle {
-        case .actionSheet:
-            pickerView = HYSheetView(frame: .zero)
-        case .shareSheet:
-            pickerView = HYShareView(frame: .zero)
-        case .alert:
-            pickerView = HYAlertView(frame: .zero)
-        }
+        pickerView = HYPickerView.pickerView(for: alertStyle)
         pickerView.delegate = self
         view.addSubview(pickerView)
     }
