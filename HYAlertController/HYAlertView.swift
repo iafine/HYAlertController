@@ -47,14 +47,14 @@ extension HYAlertView {
         super.layoutSubviews()
 
         if title != nil || message != nil {
-            self.titleView.refrenshTitleView(title: title,
+            titleView.refrenshTitleView(title: title,
                 message: message)
-            self.titleView.frame = CGRect(x: 0,
+            titleView.frame = CGRect(x: 0,
                 y: 0,
                 width: bounds.width,
                 height: HYTitleView.titleViewHeight(title: title,
-                    message: message,
-                    width: bounds.width))
+                message: message,
+                width: bounds.width))
             alertTable.tableHeaderView = titleView
         } else {
             alertTable.tableHeaderView = UIView()
@@ -74,7 +74,7 @@ extension HYAlertView: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = HYAlertCell.cellWithTableView(tableView: tableView)
+        let cell = HYAlertCell(style: .default, reuseIdentifier: HYAlertCell.ID)
         if indexPath.section == 0 {
             let action = actions[indexPath.row]
             cell.titleLabel.text = action.title

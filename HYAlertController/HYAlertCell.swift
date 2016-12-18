@@ -21,6 +21,35 @@ class HYAlertCell: UITableViewCell {
     lazy var cellIcon: UIImageView = {
         return UIImageView()
     }()
+
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+        addSubview(titleLabel)
+        addSubview(cellIcon)
+
+        initCellLayout()
+    }
+
+    private func initCellLayout() {
+        titleLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(snp.left)
+            make.top.equalTo(snp.top)
+            make.right.equalTo(snp.right)
+            make.bottom.equalTo(snp.bottom)
+        }
+
+        cellIcon.snp.makeConstraints { (make) in
+            make.left.equalTo(snp.left).offset(20)
+            make.top.equalTo(snp.top).offset(10)
+            make.bottom.equalTo(snp.bottom).offset(-10)
+            make.width.equalTo(cellIcon.snp.height)
+        }
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
 // MARK: - Class Methods
@@ -31,45 +60,5 @@ extension HYAlertCell {
 
     class var cellHeight: CGFloat {
         return HYConstants.alertCellheight
-    }
-
-    class func cellWithTableView(tableView: UITableView) -> HYAlertCell {
-        // 修改cell类型为定义类型
-        var cell = tableView.dequeueReusableCell(withIdentifier: ID) as? HYAlertCell
-        if cell == nil {
-            cell = HYAlertCell()
-            cell?.initCellUI()
-            cell?.initCellLayout()
-        }
-        return cell!
-    }
-}
-
-// MARK: - Private Methods
-extension HYAlertCell {
-    fileprivate func initCellUI() {
-
-        preservesSuperviewLayoutMargins = false
-        separatorInset = .zero
-        layoutMargins = .zero
-
-        addSubview(titleLabel)
-        addSubview(cellIcon)
-    }
-
-    fileprivate func initCellLayout() {
-        self.titleLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(snp.left)
-            make.top.equalTo(snp.top)
-            make.right.equalTo(snp.right)
-            make.bottom.equalTo(snp.bottom)
-        }
-
-        self.cellIcon.snp.makeConstraints { (make) in
-            make.left.equalTo(snp.left).offset(20)
-            make.top.equalTo(snp.top).offset(10)
-            make.bottom.equalTo(snp.bottom).offset(-10)
-            make.width.equalTo(cellIcon.snp.height)
-        }
     }
 }

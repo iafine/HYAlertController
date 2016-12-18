@@ -63,16 +63,6 @@ extension HYSheetView {
     }
 }
 
-// MARK: - Public Methods
-//extension HYSheetView {
-//    open func refreshData(dataArray: [HYAlertAction], cancelAction: HYAlertAction, title: String?, message: String?) {
-//        actions = dataArray
-//        self.cancelAction = cancelAction
-//
-//        sheetTable.reloadData()
-//    }
-//}
-
 // MARK: - UITableViewDataSource
 extension HYSheetView: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -84,8 +74,10 @@ extension HYSheetView: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: HYAlertCell.ID) as? HYAlertCell else {
+            return UITableViewCell()
+        }
         if indexPath.section == 0 {
-            let cell = HYAlertCell.cellWithTableView(tableView: tableView)
             let action = actions[indexPath.row]
             cell.titleLabel.text = action.title
             if action.style == .destructive {
@@ -94,7 +86,6 @@ extension HYSheetView: UITableViewDataSource {
             cell.cellIcon.image = action.image
             return cell
         } else {
-            let cell = HYAlertCell.cellWithTableView(tableView: tableView)
             if let cancelAction = cancelAction {
                 cell.titleLabel.text = cancelAction.title
                 cell.cellIcon.image = cancelAction.image
