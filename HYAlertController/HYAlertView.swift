@@ -27,6 +27,12 @@ class HYAlertView: HYPickerView, DataPresenter {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
+        if alertTable.responds(to: #selector(setter: UITableViewCell.separatorInset)) {
+            alertTable.separatorInset = .zero
+        }
+        if alertTable.responds(to: #selector(setter: UIView.layoutMargins)) {
+            alertTable.layoutMargins = .zero
+        }
         initUI()
     }
 
@@ -106,6 +112,15 @@ extension HYAlertView: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return HYAlertCell.cellHeight
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if cell.responds(to: #selector(setter: UITableViewCell.separatorInset)) {
+            cell.separatorInset = .zero
+        }
+        if cell.responds(to: #selector(setter: UIView.layoutMargins)) {
+            cell.layoutMargins = .zero
+        }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
