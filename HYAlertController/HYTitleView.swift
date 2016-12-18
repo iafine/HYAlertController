@@ -29,12 +29,6 @@ class HYTitleView: UIView {
         return label
     }()
 
-    lazy var seperatorView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(red: 206 / 255, green: 206 / 255, blue: 206 / 255, alpha: 1)
-        return view
-    }()
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         initUI()
@@ -49,9 +43,9 @@ class HYTitleView: UIView {
 // MARK: - LifeCycle
 extension HYTitleView {
     fileprivate func initUI() {
+        titleLabel.backgroundColor = UIColor.red
         addSubview(titleLabel)
         addSubview(messageLabel)
-        //        self.addSubview(self.seperatorView)
     }
 
     fileprivate func initLayout() {
@@ -66,12 +60,6 @@ extension HYTitleView {
             make.right.equalTo(self.snp.right).offset(-20)
             make.bottom.equalTo(self.snp.bottom).offset(-5)
         }
-        //        self.seperatorView.snp.makeConstraints { (make) in
-        //            make.left.equalTo(self.snp.left)
-        //            make.bottom.equalTo(self.snp.bottom)
-        //            make.right.equalTo(self.snp.right)
-        //            make.height.equalTo(0.5)
-        //        }
     }
 }
 
