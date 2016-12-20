@@ -72,8 +72,7 @@ extension HYShareView: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = HYShareTableViewCell.cellWithTableView(tableView: tableView)
-        return cell
+        return HYShareTableViewCell(style: .default, reuseIdentifier: HYShareTableViewCell.ID)
     }
 }
 

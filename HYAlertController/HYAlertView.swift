@@ -11,7 +11,7 @@ import UIKit
 class HYAlertView: HYPickerView, DataPresenter {
 
     lazy var alertTable: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .plain)
+        let tableView = UITableView(frame: .zero)
         tableView.backgroundColor = UIColor.white
         tableView.isScrollEnabled = false
         return tableView
@@ -29,6 +29,7 @@ class HYAlertView: HYPickerView, DataPresenter {
         if alertTable.responds(to: #selector(setter: UIView.layoutMargins)) {
             alertTable.layoutMargins = .zero
         }
+
         alertTable.delegate = self
         alertTable.dataSource = self
         addSubview(alertTable)
@@ -74,10 +75,6 @@ extension HYAlertView: UITableViewDataSource {
 extension HYAlertView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return section == 1 ? 10 : 0.1
-    }
-
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0.1
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

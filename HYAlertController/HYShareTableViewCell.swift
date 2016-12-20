@@ -21,6 +21,16 @@ class HYShareTableViewCell: UITableViewCell {
         collection.showsHorizontalScrollIndicator = false
         return collection
     }()
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        backgroundColor = UIColor.lightGray
+        contentView.addSubview(collectionView)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -38,17 +48,6 @@ extension HYShareTableViewCell {
     class var cellHeight: CGFloat {
         return HYConstants.shareItemHeight + HYConstants.shareItemPadding * 2
     }
-
-    class func cellWithTableView(tableView: UITableView) -> HYShareTableViewCell {
-        // 修改cell类型为定义类型
-        var cell: HYShareTableViewCell? = tableView.dequeueReusableCell(withIdentifier: ID) as? HYShareTableViewCell
-        if cell == nil {
-            cell = HYShareTableViewCell()
-            cell?.initCellUI()
-            cell?.initCellLayout()
-        }
-        return cell!
-    }
 }
 
 // MARK: - Public Methods
@@ -60,16 +59,5 @@ extension HYShareTableViewCell {
         collectionView.setContentOffset(collectionView.contentOffset, animated: false)
 
         collectionView.reloadData()
-    }
-}
-
-// MARK: - Private Methods
-extension HYShareTableViewCell {
-    fileprivate func initCellUI() {
-        backgroundColor = UIColor.lightGray
-        contentView.addSubview(collectionView)
-    }
-
-    fileprivate func initCellLayout() {
     }
 }
