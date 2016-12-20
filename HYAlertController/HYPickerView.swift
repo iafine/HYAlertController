@@ -38,7 +38,7 @@ class HYPickerView: UIView {
 
         addSubview(tableView)
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         tableView.frame = bounds
@@ -55,7 +55,7 @@ class HYPickerView: UIView {
         }
         return  pickerView
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

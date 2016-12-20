@@ -21,13 +21,13 @@ class HYShareTableViewCell: UITableViewCell {
         collection.showsHorizontalScrollIndicator = false
         return collection
     }()
-    
+
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         backgroundColor = UIColor.lightGray
         contentView.addSubview(collectionView)
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
