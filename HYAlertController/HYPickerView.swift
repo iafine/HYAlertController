@@ -22,12 +22,10 @@ class HYPickerView: UIView {
         var pickerView: HYPickerView!
 
         switch style {
-        case .actionSheet:
-            pickerView = HYSheetView(frame: .zero)
+        case .actionSheet, .alert:
+            pickerView = HYAlertView(frame: .zero)
         case .shareSheet:
             pickerView = HYShareView(frame: .zero)
-        case .alert:
-            pickerView = HYAlertView(frame: .zero)
         }
         return  pickerView
     }

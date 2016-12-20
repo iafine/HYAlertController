@@ -29,7 +29,9 @@ class HYAlertView: HYPickerView, DataPresenter {
         if alertTable.responds(to: #selector(setter: UIView.layoutMargins)) {
             alertTable.layoutMargins = .zero
         }
-        initUI()
+        alertTable.delegate = self
+        alertTable.dataSource = self
+        addSubview(alertTable)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -39,11 +41,6 @@ class HYAlertView: HYPickerView, DataPresenter {
 
 // MARK: - LifeCycle
 extension HYAlertView {
-    fileprivate func initUI() {
-        alertTable.delegate = self
-        alertTable.dataSource = self
-        addSubview(alertTable)
-    }
 
     override func layoutSubviews() {
         super.layoutSubviews()
