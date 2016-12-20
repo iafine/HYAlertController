@@ -10,23 +10,7 @@ import UIKit
 
 class HYShareView: HYPickerView {
 
-    lazy var shareTable: UITableView = {
-        let tableView: UITableView = UITableView(frame: CGRect.zero, style: .plain)
-        tableView.isScrollEnabled = false
-        return tableView
-    }()
-
-    lazy var cancelButton: UIButton = {
-        let button: UIButton = UIButton(type: UIButtonType.custom)
-        button.frame = CGRect(x: 0, y: 0, width: HYConstants.ScreenWidth, height: 44)
-        button.setTitle("取消", for: .normal)
-        button.setTitleColor(UIColor.darkText, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        button.addTarget(self, action: #selector(clickedCancelBtnHandler), for: .touchUpInside)
-        return button
-    }()
-
-    fileprivate var shareDataArray: [[HYAlertAction]] = [[]]
+    fileprivate var shareActions: [[HYAlertAction]] = [[]]
     fileprivate var cancelAction: HYAlertAction?
     /// 存储各个collectionView的偏移量
     fileprivate var contentOffsetDictionary: [Int: CGFloat] = [:]
@@ -34,10 +18,8 @@ class HYShareView: HYPickerView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        shareTable.delegate = self
-        shareTable.dataSource = self
-        shareTable.tableFooterView = cancelButton
-        addSubview(shareTable)
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -45,30 +27,20 @@ class HYShareView: HYPickerView {
     }
 }
 
-// MARK: - LifeCycle
-extension HYShareView {
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
-        shareTable.frame = bounds
-    }
-}
-
 // MARK: - Public Methods
 extension HYShareView {
     open func refresh(_ actions: [[HYAlertAction]], cancelAction: HYAlertAction?, title: String?, message: String?) {
-        shareDataArray = actions
+        shareActions = actions
         self.cancelAction = cancelAction
 
-        shareTable.reloadData()
+        tableView.reloadData()
     }
 }
 
 // MARK: - UITableViewDataSource
 extension HYShareView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return shareDataArray.count
+        return shareActions.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,11 +51,13 @@ extension HYShareView: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension HYShareView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return HYShareTableViewCell.cellHeight
+        return (cancelAction != nil && shareActions.count == indexPath.row) ? 44 : HYShareTableViewCell.cellHeight
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let shareCell = cell as? HYShareTableViewCell
+        shareCell?.textLabel?.text = (cancelAction != nil && shareActions.count == indexPath.row) ? cancelAction?.title : nil
+
         shareCell?.setCollectionViewDataSourceDelegate(collectionDataSource: self, collectionDelegate: self, indexPath: indexPath)
 
         let index = shareCell?.collectionView.tag ?? 0
@@ -103,7 +77,7 @@ extension HYShareView: UITableViewDelegate {
 // MARK: - UICollectionViewDelegate
 extension HYShareView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let collectionDataArray = shareDataArray[collectionView.tag]
+        let collectionDataArray = shareActions[collectionView.tag]
 
         let action = collectionDataArray[indexPath.row]
         action.myHandler(action)
@@ -116,13 +90,13 @@ extension HYShareView: UICollectionViewDelegate {
 extension HYShareView: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return shareDataArray[section].count
+        return shareActions[section].count + (cancelAction != nil ? 1 : 0)
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HYShareCollectionCell.ID, for: indexPath) as? HYShareCollectionCell
 
-        let collectionDataArray = shareDataArray[collectionView.tag]
+        let collectionDataArray = shareActions[collectionView.tag]
 
         let action = collectionDataArray[indexPath.row]
         cell?.cellIcon.image = action.image

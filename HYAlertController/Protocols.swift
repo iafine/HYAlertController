@@ -25,6 +25,6 @@ extension DataPresenter {
 
 extension DataPresenter where Self: HYAlertView {
     func refresh(_ actions: [HYAlertAction], cancelAction: HYAlertAction?, title: String?, message: String?) {
-        refresh(for: alertTable, actions: actions, cancelAction: cancelAction, title: title, message: message)
+        refresh(for: tableView, actions: actions, cancelAction: cancelAction, title: title, message: message)
     }
 }

@@ -10,29 +10,26 @@ import UIKit
 
 class HYAlertView: HYPickerView, DataPresenter {
 
-    lazy var alertTable: UITableView = {
-        let tableView = UITableView(frame: .zero)
-        tableView.backgroundColor = UIColor.white
-        tableView.isScrollEnabled = false
-        return tableView
-    }()
-
     var actions: [HYAlertAction] = []
     var cancelAction: HYAlertAction?
+
+    fileprivate var isShowCancelCell: Bool {
+        return cancelAction != nil
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        if alertTable.responds(to: #selector(setter: UITableViewCell.separatorInset)) {
-            alertTable.separatorInset = .zero
+        if tableView.responds(to: #selector(setter: UITableViewCell.separatorInset)) {
+            tableView.separatorInset = .zero
         }
-        if alertTable.responds(to: #selector(setter: UIView.layoutMargins)) {
-            alertTable.layoutMargins = .zero
+        if tableView.responds(to: #selector(setter: UIView.layoutMargins)) {
+            tableView.layoutMargins = .zero
         }
 
-        alertTable.delegate = self
-        alertTable.dataSource = self
-        addSubview(alertTable)
+        tableView.delegate = self
+        tableView.dataSource = self
+        addSubview(tableView)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -40,20 +37,10 @@ class HYAlertView: HYPickerView, DataPresenter {
     }
 }
 
-// MARK: - LifeCycle
-extension HYAlertView {
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
-        alertTable.frame = bounds
-    }
-}
-
 // MARK: - UITableViewDataSource
 extension HYAlertView: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return isShowCancelCell ? 2 : 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

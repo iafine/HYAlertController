@@ -18,6 +18,32 @@ class HYPickerView: UIView {
     var message: String?
     weak var delegate: HYActionDelegate?
 
+    lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero)
+        tableView.backgroundColor = UIColor.groupTableViewBackground
+        tableView.tableFooterView = UIView()
+        tableView.isScrollEnabled = false
+        return tableView
+    }()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        if tableView.responds(to: #selector(setter: UITableViewCell.separatorInset)) {
+            tableView.separatorInset = .zero
+        }
+        if tableView.responds(to: #selector(setter: UIView.layoutMargins)) {
+            tableView.layoutMargins = .zero
+        }
+
+        addSubview(tableView)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        tableView.frame = bounds
+    }
+
     static func pickerView(for style: HYAlertControllerStyle) -> HYPickerView {
         var pickerView: HYPickerView!
 
@@ -28,5 +54,9 @@ class HYPickerView: UIView {
             pickerView = HYShareView(frame: .zero)
         }
         return  pickerView
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

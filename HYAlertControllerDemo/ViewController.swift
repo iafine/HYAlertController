@@ -149,7 +149,7 @@ extension ViewController {
         alertVC.add(oneAction)
         alertVC.add(twoAction)
         alertVC.add(threeAction)
-        alertVC.add(cancelAction)
+        //alertVC.add(cancelAction)
         self.present(alertVC, animated: true, completion: nil)
     }
 
