@@ -25,8 +25,15 @@ class HYSheetView: HYPickerView, DataPresenter {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-
-        initUI()
+        if sheetTable.responds(to: #selector(setter: UITableViewCell.separatorInset)) {
+            sheetTable.separatorInset = .zero
+        }
+        if sheetTable.responds(to: #selector(setter: UIView.layoutMargins)) {
+            sheetTable.layoutMargins = .zero
+        }
+        sheetTable.delegate = self
+        sheetTable.dataSource = self
+        addSubview(sheetTable)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -36,11 +43,6 @@ class HYSheetView: HYPickerView, DataPresenter {
 
 // MARK: - LifeCycle
 extension HYSheetView {
-    fileprivate func initUI() {
-        sheetTable.delegate = self
-        sheetTable.dataSource = self
-        addSubview(sheetTable)
-    }
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -74,9 +76,7 @@ extension HYSheetView: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: HYAlertCell.ID) as? HYAlertCell else {
-            return UITableViewCell()
-        }
+        let cell = HYAlertCell(style: .default, reuseIdentifier: HYAlertCell.ID)
         if indexPath.section == 0 {
             let action = actions[indexPath.row]
             cell.titleLabel.text = action.title
@@ -105,6 +105,15 @@ extension HYSheetView: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.1
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if cell.responds(to: #selector(setter: UITableViewCell.separatorInset)) {
+            cell.separatorInset = .zero
+        }
+        if cell.responds(to: #selector(setter: UIView.layoutMargins)) {
+            cell.layoutMargins = .zero
+        }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
