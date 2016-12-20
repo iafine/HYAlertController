@@ -17,9 +17,6 @@ class HYSheetView: HYPickerView, DataPresenter {
         return tableView
     }()
 
-    lazy var titleView: HYTitleView = {
-        return HYTitleView(frame: .zero)
-    }()
     var actions: [HYAlertAction] = []
     var cancelAction: HYAlertAction?
 
@@ -48,20 +45,6 @@ extension HYSheetView {
         super.layoutSubviews()
 
         sheetTable.frame = bounds
-
-        if title != nil || message != nil {
-            titleView.refrenshTitleView(title: title,
-                message: message)
-            titleView.frame = CGRect(x: 0,
-                y: 0,
-                width: bounds.width,
-                height: HYTitleView.titleViewHeight(title: title,
-                    message: message,
-                    width: bounds.width))
-            sheetTable.tableHeaderView = titleView
-        } else {
-            sheetTable.tableHeaderView = UIView()
-        }
     }
 }
 
@@ -111,7 +94,6 @@ extension HYSheetView: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-
         if indexPath.section == 0 {
             let action = actions[indexPath.row]
             action.myHandler(action)

@@ -26,10 +26,6 @@ class HYShareView: HYPickerView {
         return button
     }()
 
-    lazy var titleView: HYTitleView = {
-        return HYTitleView(frame: .zero)
-    }()
-
     fileprivate var shareDataArray: [[HYAlertAction]] = [[]]
     fileprivate var cancelAction: HYAlertAction?
     /// 存储各个collectionView的偏移量
@@ -38,7 +34,10 @@ class HYShareView: HYPickerView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        initUI()
+        shareTable.delegate = self
+        shareTable.dataSource = self
+        shareTable.tableFooterView = cancelButton
+        addSubview(shareTable)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -48,31 +47,11 @@ class HYShareView: HYPickerView {
 
 // MARK: - LifeCycle
 extension HYShareView {
-    fileprivate func initUI() {
-        shareTable.delegate = self
-        shareTable.dataSource = self
-        shareTable.tableFooterView = cancelButton
-        addSubview(shareTable)
-    }
 
     override func layoutSubviews() {
         super.layoutSubviews()
 
         shareTable.frame = bounds
-
-        if title != nil || message != nil {
-            titleView.refrenshTitleView(title: title,
-                message: message)
-            titleView.frame = CGRect(x: 0,
-                y: 0,
-                width: bounds.width,
-                height: HYTitleView.titleViewHeight(title: title,
-                    message: message,
-                    width: bounds.width))
-            shareTable.tableHeaderView = titleView
-        } else {
-            shareTable.tableHeaderView = UIView()
-        }
     }
 }
 
@@ -88,10 +67,6 @@ extension HYShareView {
 
 // MARK: - UITableViewDataSource
 extension HYShareView: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return shareDataArray.count
     }
@@ -104,19 +79,8 @@ extension HYShareView: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension HYShareView: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.1
-    }
-
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0.1
-    }
-
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return HYShareTableViewCell.cellHeight
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -154,10 +118,6 @@ extension HYShareView: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return shareDataArray[section].count
-    }
-
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

@@ -17,10 +17,6 @@ class HYAlertView: HYPickerView, DataPresenter {
         return tableView
     }()
 
-    lazy var titleView: HYTitleView = {
-        return HYTitleView(frame: .zero)
-    }()
-
     var actions: [HYAlertAction] = []
     var cancelAction: HYAlertAction?
 
@@ -52,19 +48,6 @@ extension HYAlertView {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        if title != nil || message != nil {
-            titleView.refrenshTitleView(title: title,
-                message: message)
-            titleView.frame = CGRect(x: 0,
-                y: 0,
-                width: bounds.width,
-                height: HYTitleView.titleViewHeight(title: title,
-                message: message,
-                width: bounds.width))
-            alertTable.tableHeaderView = titleView
-        } else {
-            alertTable.tableHeaderView = UIView()
-        }
         alertTable.frame = bounds
     }
 }

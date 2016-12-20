@@ -74,9 +74,9 @@ extension HYAlertController {
         if alertStyle == .shareSheet {
             var tableHeight = HYShareTableViewCell.cellHeight * CGFloat(actionArray.count) + 44
             if alertTitle != nil || alertMessage != nil {
-                tableHeight += HYTitleView.titleViewHeight(title: alertTitle,
-                    message: alertMessage,
-                    width: HYConstants.ScreenWidth)
+                // tableHeight += HYTitleView.titleViewHeight(title: alertTitle,
+                    //message: alertMessage,
+                    //width: HYConstants.ScreenWidth)
             }
             let newTableFrame = CGRect(x: 0,
                 y: HYConstants.ScreenHeight - tableHeight,
@@ -87,9 +87,9 @@ extension HYAlertController {
         } else if alertStyle == .actionSheet {
             var tableHeight = HYAlertCell.cellHeight * CGFloat(actionArray.first?.count ?? 0) + HYAlertCell.cellHeight + 10
             if alertTitle != nil || alertMessage != nil {
-                tableHeight += HYTitleView.titleViewHeight(title: alertTitle,
-                    message: alertMessage,
-                    width: HYConstants.ScreenWidth)
+                //tableHeight += HYTitleView.titleViewHeight(title: alertTitle,
+                    //message: alertMessage,
+                    //width: HYConstants.ScreenWidth)
             }
             let newTableFrame = CGRect(x: 0,
                 y: HYConstants.ScreenHeight - tableHeight,
@@ -100,9 +100,9 @@ extension HYAlertController {
         } else {
             var tableHeight = HYAlertCell.cellHeight * CGFloat(actionArray.first?.count ?? 0) + HYAlertCell.cellHeight + 10
             if alertTitle != nil || alertMessage != nil {
-                tableHeight += HYTitleView.titleViewHeight(title: alertTitle,
-                    message: alertMessage,
-                    width: HYConstants.ScreenWidth - HYConstants.alertSpec)
+                //tableHeight += HYTitleView.titleViewHeight(title: alertTitle,
+                  //  message: alertMessage,
+                    //width: HYConstants.ScreenWidth - HYConstants.alertSpec)
             }
             let newTableFrame = CGRect(x: 0,
                 y: 0,
