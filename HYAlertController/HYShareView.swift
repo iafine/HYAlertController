@@ -11,7 +11,6 @@ import UIKit
 class HYShareView: HYPickerView {
 
     fileprivate var shareActions: [[HYAlertAction]] = [[]]
-    fileprivate var cancelAction: HYAlertAction?
     /// 存储各个collectionView的偏移量
     fileprivate var contentOffsetDictionary: [Int: CGFloat] = [:]
 

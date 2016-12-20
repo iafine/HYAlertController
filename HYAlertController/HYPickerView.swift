@@ -18,6 +18,8 @@ class HYPickerView: UIView {
     var message: String?
     weak var delegate: HYActionDelegate?
 
+    var cancelAction: HYAlertAction?
+
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.backgroundColor = UIColor.groupTableViewBackground

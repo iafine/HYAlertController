@@ -11,7 +11,6 @@ import UIKit
 class HYAlertView: HYPickerView, DataPresenter {
 
     var actions: [HYAlertAction] = []
-    var cancelAction: HYAlertAction?
 
     fileprivate var isShowCancelCell: Bool {
         return cancelAction != nil

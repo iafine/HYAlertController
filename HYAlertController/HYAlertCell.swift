@@ -36,6 +36,10 @@ class HYAlertCell: UITableViewCell {
             }
         }
     }
+    
+    class var cellHeight: CGFloat {
+        return HYConstants.alertCellheight
+    }
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -44,16 +48,5 @@ class HYAlertCell: UITableViewCell {
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-}
-
-// MARK: - Class Methods
-extension HYAlertCell {
-    class var ID: String {
-        return "HYAlertCell"
-    }
-
-    class var cellHeight: CGFloat {
-        return HYConstants.alertCellheight
     }
 }

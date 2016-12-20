@@ -24,7 +24,7 @@ class HYShareTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = UIColor.lightGray
+        backgroundColor = UIColor.white
         contentView.addSubview(collectionView)
     }
 
@@ -35,15 +35,12 @@ class HYShareTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        collectionView.frame = contentView.bounds
+//        collectionView.frame = contentView.bounds
     }
 }
 
 // MARK: - Class Methods
 extension HYShareTableViewCell {
-    class var ID: String {
-        return "HYShareTableViewCell"
-    }
 
     class var cellHeight: CGFloat {
         return HYConstants.shareItemHeight + HYConstants.shareItemPadding * 2

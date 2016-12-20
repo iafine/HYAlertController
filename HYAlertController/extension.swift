@@ -17,3 +17,9 @@ extension String {
         return boundingBox.height
     }
 }
+
+extension UITableViewCell {
+    class var ID: String {
+        return "\(classForCoder())"
+    }
+}

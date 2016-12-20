@@ -71,8 +71,9 @@ extension HYAlertController {
         super.viewDidLayoutSubviews()
         pickerView.title = alertTitle
         pickerView.message = alertMessage
+        let cancelHight = pickerView.cancelAction != nil ? HYAlertCell.cellHeight + 10 : 0
         if alertStyle == .shareSheet {
-            var tableHeight = HYShareTableViewCell.cellHeight * CGFloat(actionArray.count) + 44
+            let tableHeight = HYShareTableViewCell.cellHeight * CGFloat(actionArray.count) + cancelHight
             let newTableFrame = CGRect(x: 0,
                 y: HYConstants.ScreenHeight - tableHeight,
                 width: HYConstants.ScreenWidth,
@@ -80,7 +81,7 @@ extension HYAlertController {
             alertHeight = tableHeight
             pickerView.frame = newTableFrame
         } else if alertStyle == .actionSheet {
-            var tableHeight = HYAlertCell.cellHeight * CGFloat(actionArray.first?.count ?? 0) + HYAlertCell.cellHeight + 10
+            let tableHeight = HYAlertCell.cellHeight * CGFloat(actionArray.first?.count ?? 0) + cancelHight
             let newTableFrame = CGRect(x: 0,
                 y: HYConstants.ScreenHeight - tableHeight,
                 width: HYConstants.ScreenWidth,
@@ -88,7 +89,7 @@ extension HYAlertController {
             alertHeight = tableHeight
             pickerView.frame = newTableFrame
         } else {
-            var tableHeight = HYAlertCell.cellHeight * CGFloat(actionArray.first?.count ?? 0) + HYAlertCell.cellHeight + 10
+            let tableHeight = HYAlertCell.cellHeight * CGFloat(actionArray.first?.count ?? 0) + cancelHight
             let newTableFrame = CGRect(x: 0,
                 y: 0,
                 width: HYConstants.ScreenWidth - HYConstants.alertSpec,
