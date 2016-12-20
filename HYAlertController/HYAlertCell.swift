@@ -10,41 +10,36 @@ import UIKit
 import SnapKit
 
 class HYAlertCell: UITableViewCell {
-    lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = UIColor.darkText
-        return label
-    }()
-
-    lazy var cellIcon: UIImageView = {
-        return UIImageView()
-    }()
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        addSubview(titleLabel)
-        addSubview(cellIcon)
-
-        initCellLayout()
     }
 
-    private func initCellLayout() {
-        titleLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(snp.left)
-            make.top.equalTo(snp.top)
-            make.right.equalTo(snp.right)
-            make.bottom.equalTo(snp.bottom)
+    var action: HYAlertAction? {
+        didSet {
+            textLabel?.text = action?.title
+            imageView?.image = action?.image
+            if action?.style == .destructive {
+                textLabel?.textColor = UIColor.red
+            }
         }
+    }
 
-        cellIcon.snp.makeConstraints { (make) in
-            make.left.equalTo(snp.left).offset(20)
-            make.top.equalTo(snp.top).offset(10)
-            make.bottom.equalTo(snp.bottom).offset(-10)
-            make.width.equalTo(cellIcon.snp.height)
+    var cancelAction: HYAlertAction? {
+        didSet {
+            if let cancelAction = cancelAction {
+                textLabel?.text = cancelAction.title
+                imageView?.image = cancelAction.image
+            } else {
+                textLabel?.text = HYConstants.defaultCancelText
+            }
         }
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        textLabel?.center.x = center.x
     }
 
     required init?(coder aDecoder: NSCoder) {

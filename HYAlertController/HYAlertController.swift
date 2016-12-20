@@ -98,7 +98,7 @@ extension HYAlertController {
             alertHeight = tableHeight
             pickerView.frame = newTableFrame
         } else {
-            var tableHeight = HYAlertCell.cellHeight * CGFloat(actionArray[0].count) + HYAlertCell.cellHeight + 10
+            var tableHeight = HYAlertCell.cellHeight * CGFloat(actionArray.first?.count ?? 0) + HYAlertCell.cellHeight + 10
             if alertTitle != nil || alertMessage != nil {
                 tableHeight += HYTitleView.titleViewHeight(title: alertTitle,
                     message: alertMessage,

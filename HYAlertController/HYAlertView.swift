@@ -80,21 +80,11 @@ extension HYAlertView: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = HYAlertCell(style: .default, reuseIdentifier: HYAlertCell.ID)
+        let cell = HYAlertCell(style: .value1, reuseIdentifier: HYAlertCell.ID)
         if indexPath.section == 0 {
-            let action = actions[indexPath.row]
-            cell.titleLabel.text = action.title
-            cell.cellIcon.image = action.image
-            if action.style == .destructive {
-                cell.titleLabel.textColor = UIColor.red
-            }
+            cell.action = actions[indexPath.row]
         } else {
-            if let cancelAction = cancelAction {
-                cell.titleLabel.text = cancelAction.title
-                cell.cellIcon.image = cancelAction.image
-            } else {
-                cell.titleLabel.text = HYConstants.defaultCancelText
-            }
+            cell.cancelAction = cancelAction
         }
         return cell
     }
