@@ -34,8 +34,10 @@ class HYShareTableViewCell: UITableViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        textLabel?.textAlignment = .center
+        textLabel?.center.x = center.x
 
-//        collectionView.frame = contentView.bounds
+        collectionView.frame = contentView.bounds
     }
 }
 

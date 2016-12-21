@@ -36,7 +36,7 @@ class HYAlertCell: UITableViewCell {
             }
         }
     }
-    
+
     class var cellHeight: CGFloat {
         return HYConstants.alertCellheight
     }

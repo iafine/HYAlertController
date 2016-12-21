@@ -28,9 +28,8 @@ class HYShareView: HYPickerView {
 
 // MARK: - Public Methods
 extension HYShareView {
-    open func refresh(_ actions: [[HYAlertAction]], cancelAction: HYAlertAction?, title: String?, message: String?) {
+    open func refresh(_ actions: [[HYAlertAction]]) {
         shareActions = actions
-        self.cancelAction = cancelAction
 
         tableView.reloadData()
     }
@@ -38,6 +37,11 @@ extension HYShareView {
 
 // MARK: - UITableViewDataSource
 extension HYShareView: UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return shareActions.count
     }
@@ -49,19 +53,26 @@ extension HYShareView: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension HYShareView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return section == 1 ? 10 : 0.1
+    }
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return (cancelAction != nil && shareActions.count == indexPath.row) ? 44 : HYShareTableViewCell.cellHeight
+        return indexPath == IndexPath(row: 0, section: 1) ? 44 : HYShareTableViewCell.cellHeight
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let shareCell = cell as? HYShareTableViewCell
-        shareCell?.textLabel?.text = (cancelAction != nil && shareActions.count == indexPath.row) ? cancelAction?.title : nil
+        if  indexPath == IndexPath(row: 0, section: 1) {
+            cell.textLabel?.text = "取消"
+        } else {
+            let shareCell = cell as? HYShareTableViewCell
 
-        shareCell?.setCollectionViewDataSourceDelegate(collectionDataSource: self, collectionDelegate: self, indexPath: indexPath)
+            shareCell?.setCollectionViewDataSourceDelegate(collectionDataSource: self, collectionDelegate: self, indexPath: indexPath)
 
-        let index = shareCell?.collectionView.tag ?? 0
-        if let horizontalOffset = contentOffsetDictionary[index] {
-            shareCell?.collectionView.contentOffset = CGPoint(x: horizontalOffset, y: 0)
+            let index = shareCell?.collectionView.tag ?? 0
+            if let horizontalOffset = contentOffsetDictionary[index] {
+                shareCell?.collectionView.contentOffset = CGPoint(x: horizontalOffset, y: 0)
+            }
         }
     }
 
@@ -70,6 +81,12 @@ extension HYShareView: UITableViewDelegate {
         let index = shareCell?.collectionView.tag ?? 0
         let horizontalOffset = shareCell?.collectionView.contentOffset.x ?? 0
         contentOffsetDictionary[index] = horizontalOffset
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if  indexPath == IndexPath(row: 0, section: 1) {
+            
+        }
     }
 }
 
@@ -89,7 +106,7 @@ extension HYShareView: UICollectionViewDelegate {
 extension HYShareView: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return shareActions[section].count + (cancelAction != nil ? 1 : 0)
+        return shareActions[section].count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -107,9 +124,7 @@ extension HYShareView: UICollectionViewDataSource {
 // MARK: - Events
 extension HYShareView {
     @objc fileprivate func clickedCancelBtnHandler() {
-        if let cancelAction = cancelAction {
-            cancelAction.myHandler(cancelAction)
-        }
+//        cancelAction.myHandler(cancelAction)
         delegate?.clickItemHandler()
     }
 }

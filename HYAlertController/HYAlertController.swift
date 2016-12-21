@@ -20,14 +20,12 @@ public enum HYAlertControllerStyle: Int {
 // MARK: - Class
 public class HYAlertController: UIViewController {
 
-    var alertTitle: String?
-    var alertMessage: String?
     var alertStyle = HYAlertControllerStyle.alert
 
+    fileprivate var alertTitle: String?
+    fileprivate var alertMessage: String?
     fileprivate var actionArray: [[HYAlertAction]] = []
     fileprivate var cancelAction: HYAlertAction?
-
-    var alertHeight: CGFloat = 0
 
     var pickerView: HYPickerView!
 
@@ -44,9 +42,9 @@ public class HYAlertController: UIViewController {
     convenience init(title: String?, message: String?, style: HYAlertControllerStyle) {
         self.init()
 
+        alertStyle = style
         alertTitle = title
         alertMessage = message
-        alertStyle = style
 
         // 自定义转场动画
         transitioningDelegate = self
@@ -69,35 +67,31 @@ extension HYAlertController {
 
     override public func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        pickerView.title = alertTitle
-        pickerView.message = alertMessage
-        let cancelHight = pickerView.cancelAction != nil ? HYAlertCell.cellHeight + 10 : 0
+
+        let cancelHight = (pickerView as? HYAlertView)?.cancelAction != nil ? HYAlertCell.cellHeight + 10 : 0
+        let tableHeight = HYAlertCell.cellHeight * CGFloat(actionArray.first?.count ?? 0) + cancelHight
         if alertStyle == .shareSheet {
-            let tableHeight = HYShareTableViewCell.cellHeight * CGFloat(actionArray.count) + cancelHight
+            let tableHeight = HYShareTableViewCell.cellHeight * CGFloat(actionArray.count) + HYAlertCell.cellHeight + 10
             let newTableFrame = CGRect(x: 0,
                 y: HYConstants.ScreenHeight - tableHeight,
                 width: HYConstants.ScreenWidth,
                 height: tableHeight)
-            alertHeight = tableHeight
             pickerView.frame = newTableFrame
         } else if alertStyle == .actionSheet {
-            let tableHeight = HYAlertCell.cellHeight * CGFloat(actionArray.first?.count ?? 0) + cancelHight
             let newTableFrame = CGRect(x: 0,
                 y: HYConstants.ScreenHeight - tableHeight,
                 width: HYConstants.ScreenWidth,
                 height: tableHeight)
-            alertHeight = tableHeight
             pickerView.frame = newTableFrame
         } else {
-            let tableHeight = HYAlertCell.cellHeight * CGFloat(actionArray.first?.count ?? 0) + cancelHight
             let newTableFrame = CGRect(x: 0,
                 y: 0,
                 width: HYConstants.ScreenWidth - HYConstants.alertSpec,
                 height: tableHeight)
-            alertHeight = tableHeight
             pickerView.frame = newTableFrame
             pickerView.center = view.center
         }
+        pickerView.set(title: alertTitle, message: alertMessage)
     }
 }
 
@@ -113,13 +107,14 @@ extension HYAlertController {
                 actionArray[0].append(action)
             }
         }
-        (pickerView as? DataPresenter)?.refresh(actionArray[0], cancelAction: cancelAction, title: alertTitle, message: alertMessage)
+        (pickerView as? DataPresenter)?.refresh(actionArray[0], cancelAction: cancelAction)
     }
 
     /// 添加必须是元素为HYAlertAction的数组，调用几次该方法，分享显示几行
     open func addShare(_ actions: [HYAlertAction]) {
         actionArray += [actions]
-        (pickerView as? HYShareView)?.refresh(actionArray, cancelAction: cancelAction, title: alertTitle, message: alertMessage)
+
+        (pickerView as? HYShareView)?.refresh(actionArray)
     }
 }
 
