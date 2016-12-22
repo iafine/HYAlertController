@@ -18,6 +18,8 @@ class HYPickerView: UIView {
     var message: String?
     weak var delegate: HYActionDelegate?
 
+    var cancelAction: HYAlertAction?
+
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.backgroundColor = UIColor.groupTableViewBackground
@@ -48,6 +50,7 @@ class HYPickerView: UIView {
         if title == nil && message == nil { return }
         let headerView = HYTitleView(width: bounds.width, title: title, message: message)
         frame.size.height += headerView.frame.height
+        frame.origin.y -= headerView.frame.height
         tableView.tableHeaderView = headerView
     }
 

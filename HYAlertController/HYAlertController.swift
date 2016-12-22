@@ -68,10 +68,10 @@ extension HYAlertController {
     override public func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-        let cancelHight = (pickerView as? HYAlertView)?.cancelAction != nil ? HYAlertCell.cellHeight + 10 : 0
+        let cancelHight = cancelAction != nil ? HYAlertCell.cellHeight + 10 : 0
         let tableHeight = HYAlertCell.cellHeight * CGFloat(actionArray.first?.count ?? 0) + cancelHight
         if alertStyle == .shareSheet {
-            let tableHeight = HYShareTableViewCell.cellHeight * CGFloat(actionArray.count) + HYAlertCell.cellHeight + 10
+            let tableHeight = HYShareTableViewCell.cellHeight * CGFloat(actionArray.count) + cancelHight
             let newTableFrame = CGRect(x: 0,
                 y: HYConstants.ScreenHeight - tableHeight,
                 width: HYConstants.ScreenWidth,

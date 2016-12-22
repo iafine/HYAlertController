@@ -39,7 +39,7 @@ extension HYShareView {
 extension HYShareView: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return cancelAction != nil ? 2 : 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
