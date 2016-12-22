@@ -11,12 +11,23 @@ import UIKit
 class HYShareCollectionCell: UICollectionViewCell {
 
     private lazy var button: UIButton = {
-        return UIButton()
+        let button = UIButton(frame: self.bounds)
+        button.isUserInteractionEnabled = false
+        button.setTitleColor( UIColor.lightGray, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
+        return button
     }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
+        contentView.addSubview(button)
+    }
+
+    var action: HYAlertAction? {
+        didSet {
+            button.set(action?.title, with: action?.image)
+        }
     }
 
     required init?(coder aDecoder: NSCoder) {

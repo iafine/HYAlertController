@@ -15,7 +15,7 @@ class HYShareTableViewCell: UITableViewCell {
         collectionLayout.itemSize = HYShareCollectionCell.cellSize
         collectionLayout.sectionInset = HYShareCollectionCell.cellInset
         collectionLayout.scrollDirection = .horizontal
-        let collection = UICollectionView(frame: .zero, collectionViewLayout: collectionLayout)
+        let collection = UICollectionView(frame: self.frame, collectionViewLayout: collectionLayout)
         collection.delegate = self
         collection.dataSource = self
         collection.register(HYShareCollectionCell.self, forCellWithReuseIdentifier: HYShareCollectionCell.ID)
@@ -23,7 +23,7 @@ class HYShareTableViewCell: UITableViewCell {
         collection.showsHorizontalScrollIndicator = false
         return collection
     }()
-    
+
     var actions: [HYAlertAction]? {
         didSet {
             if actions != nil {
@@ -64,7 +64,7 @@ extension HYShareTableViewCell: UICollectionViewDataSource {
 extension HYShareTableViewCell: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        
+        (cell as? HYShareCollectionCell)?.action = actions?[indexPath.row]
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
