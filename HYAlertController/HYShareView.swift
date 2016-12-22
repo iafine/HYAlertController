@@ -43,7 +43,7 @@ extension HYShareView: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return shareActions.count
+        return section == 0 ? shareActions.count : 1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -82,10 +82,10 @@ extension HYShareView: UITableViewDelegate {
         let horizontalOffset = shareCell?.collectionView.contentOffset.x ?? 0
         contentOffsetDictionary[index] = horizontalOffset
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if  indexPath == IndexPath(row: 0, section: 1) {
-            
+
         }
     }
 }
