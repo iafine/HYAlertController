@@ -22,8 +22,9 @@ class HYAlertDismissSlideDown: NSObject, UIViewControllerAnimatedTransitioning {
 
         // start animation status
         fromVC.dimBackgroundView.alpha = 1
+        let style = fromVC.alertStyle
 
-        if fromVC.alertStyle == .alert {
+        if style == .alert {
             fromVC.view.alpha = 1
         }
         let duration = transitionDuration(using: transitionContext)
@@ -32,7 +33,7 @@ class HYAlertDismissSlideDown: NSObject, UIViewControllerAnimatedTransitioning {
         // 执行动画
         UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.0, options: .curveEaseInOut, animations: {
             fromVC.dimBackgroundView.alpha = 0
-            if [.actionSheet, .shareSheet].contains(fromVC.alertStyle) {
+            if [.actionSheet, .shareSheet].contains(style) {
                 fromVC.pickerView.frame.origin.y += finalY
             } else {
                 fromVC.view.alpha = 0
