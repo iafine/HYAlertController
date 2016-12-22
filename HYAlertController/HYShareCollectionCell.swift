@@ -9,23 +9,14 @@
 import UIKit
 
 class HYShareCollectionCell: UICollectionViewCell {
-    lazy var cellIcon: UIImageView = {
-        return UIImageView()
-    }()
 
-    lazy var titleView: UITextView = {
-        let text: UITextView = UITextView()
-        text.textAlignment = .center
-        text.font = UIFont.systemFont(ofSize: 11)
-        text.textAlignment = .center
-        text.isUserInteractionEnabled = false
-        return text
+    private lazy var button: UIButton = {
+        return UIButton()
     }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        initCellUI()
-        initCellLayout()
+
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -45,29 +36,5 @@ extension HYShareCollectionCell {
 
     class var cellInset: UIEdgeInsets {
         return UIEdgeInsets(top: HYConstants.shareItemPadding, left: HYConstants.shareItemPadding, bottom: HYConstants.shareItemPadding, right: HYConstants.shareItemPadding)
-    }
-}
-
-// MARK: - Private Methods
-extension HYShareCollectionCell {
-    fileprivate func initCellUI() {
-        addSubview(titleView)
-        addSubview(cellIcon)
-    }
-
-    fileprivate func initCellLayout() {
-        self.cellIcon.snp.makeConstraints { (make) in
-            make.left.equalTo(self.snp.left).offset(10)
-            make.top.equalTo(self.snp.top).offset(10)
-            make.right.equalTo(self.snp.right).offset(-10)
-            make.height.equalTo(self.cellIcon.snp.width)
-        }
-
-        self.titleView.snp.makeConstraints { (make) in
-            make.left.equalTo(self.snp.left)
-            make.top.equalTo(self.cellIcon.snp.bottom).offset(5)
-            make.right.equalTo(self.snp.right)
-            make.bottom.equalTo(self.snp.bottom)
-        }
     }
 }

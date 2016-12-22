@@ -15,12 +15,22 @@ class HYShareTableViewCell: UITableViewCell {
         collectionLayout.itemSize = HYShareCollectionCell.cellSize
         collectionLayout.sectionInset = HYShareCollectionCell.cellInset
         collectionLayout.scrollDirection = .horizontal
-        let collection: UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: collectionLayout)
+        let collection = UICollectionView(frame: .zero, collectionViewLayout: collectionLayout)
+        collection.delegate = self
+        collection.dataSource = self
         collection.register(HYShareCollectionCell.self, forCellWithReuseIdentifier: HYShareCollectionCell.ID)
         collection.backgroundColor = UIColor.white
         collection.showsHorizontalScrollIndicator = false
         return collection
     }()
+    
+    var actions: [HYAlertAction]? {
+        didSet {
+            if actions != nil {
+                collectionView.reloadData()
+            }
+        }
+    }
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -41,22 +51,31 @@ class HYShareTableViewCell: UITableViewCell {
     }
 }
 
+extension HYShareTableViewCell: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return actions?.count ?? 0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return collectionView.dequeueReusableCell(withReuseIdentifier: HYShareCollectionCell.ID, for: indexPath)
+    }
+}
+
+extension HYShareTableViewCell: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+    }
+}
+
 // MARK: - Class Methods
 extension HYShareTableViewCell {
 
     class var cellHeight: CGFloat {
         return HYConstants.shareItemHeight + HYConstants.shareItemPadding * 2
-    }
-}
-
-// MARK: - Public Methods
-extension HYShareTableViewCell {
-    func setCollectionViewDataSourceDelegate(collectionDataSource: UICollectionViewDataSource, collectionDelegate: UICollectionViewDelegate, indexPath: IndexPath) {
-        collectionView.dataSource = collectionDataSource
-        collectionView.delegate = collectionDelegate
-        collectionView.tag = indexPath.row
-        collectionView.setContentOffset(collectionView.contentOffset, animated: false)
-
-        collectionView.reloadData()
     }
 }

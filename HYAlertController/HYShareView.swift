@@ -67,20 +67,12 @@ extension HYShareView: UITableViewDelegate {
         } else {
             let shareCell = cell as? HYShareTableViewCell
 
-            shareCell?.setCollectionViewDataSourceDelegate(collectionDataSource: self, collectionDelegate: self, indexPath: indexPath)
-
-            let index = shareCell?.collectionView.tag ?? 0
-            if let horizontalOffset = contentOffsetDictionary[index] {
-                shareCell?.collectionView.contentOffset = CGPoint(x: horizontalOffset, y: 0)
-            }
+            shareCell?.actions = shareActions[indexPath.row]
         }
     }
 
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let shareCell = cell as? HYShareTableViewCell
-        let index = shareCell?.collectionView.tag ?? 0
-        let horizontalOffset = shareCell?.collectionView.contentOffset.x ?? 0
-        contentOffsetDictionary[index] = horizontalOffset
+        
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -90,41 +82,10 @@ extension HYShareView: UITableViewDelegate {
     }
 }
 
-// MARK: - UICollectionViewDelegate
-extension HYShareView: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let collectionDataArray = shareActions[collectionView.tag]
-
-        let action = collectionDataArray[indexPath.row]
-        action.myHandler(action)
-
-        delegate?.clickItemHandler()
-    }
-}
-
-// MARK: - UICollectionViewDataSource
-extension HYShareView: UICollectionViewDataSource {
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return shareActions[section].count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HYShareCollectionCell.ID, for: indexPath) as? HYShareCollectionCell
-
-        let collectionDataArray = shareActions[collectionView.tag]
-
-        let action = collectionDataArray[indexPath.row]
-        cell?.cellIcon.image = action.image
-        cell?.titleView.text = action.title
-        return cell!
-    }
-}
-
 // MARK: - Events
 extension HYShareView {
     @objc fileprivate func clickedCancelBtnHandler() {
-//        cancelAction.myHandler(cancelAction)
+//        cancelAction?.myHandler(cancelAction)
         delegate?.clickItemHandler()
     }
 }
