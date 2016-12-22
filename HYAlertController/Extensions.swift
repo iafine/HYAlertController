@@ -66,3 +66,20 @@ extension UIButton {
         }
     }
 }
+
+extension UIResponder {
+
+    struct Keys {
+        static let shareCollectionCell = "shareCollectionCell"
+    }
+
+    struct EventName {
+        static let didSelectItem = "didSelectItem"
+    }
+
+    func router(with eventName: String, userInfo: [String: Any]?) {
+        if let next = next {
+            next.router(with: eventName, userInfo: userInfo)
+        }
+    }
+}

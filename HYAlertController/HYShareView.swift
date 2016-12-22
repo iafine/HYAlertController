@@ -21,6 +21,13 @@ class HYShareView: HYPickerView {
         tableView.dataSource = self
     }
 
+    // 回调选中Item事件
+    override func router(with eventName: String, userInfo: [String : Any]?) {
+        if eventName == EventName.didSelectItem {
+            delegate?.clickItemHandler()
+        }
+    }
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

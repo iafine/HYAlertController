@@ -13,9 +13,8 @@ class HYShareTableViewCell: UITableViewCell {
     lazy var collectionView: UICollectionView = {
         let collectionLayout = UICollectionViewFlowLayout()
         collectionLayout.itemSize = HYShareCollectionCell.cellSize
-        collectionLayout.sectionInset = HYShareCollectionCell.cellInset
         collectionLayout.scrollDirection = .horizontal
-        let collection = UICollectionView(frame: self.frame, collectionViewLayout: collectionLayout)
+        let collection = UICollectionView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 0), collectionViewLayout: collectionLayout)
         collection.delegate = self
         collection.dataSource = self
         collection.register(HYShareCollectionCell.self, forCellWithReuseIdentifier: HYShareCollectionCell.ID)
@@ -46,7 +45,7 @@ class HYShareTableViewCell: UITableViewCell {
         super.layoutSubviews()
         textLabel?.textAlignment = .center
         textLabel?.center.x = center.x
-
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         collectionView.frame = contentView.bounds
     }
 }
@@ -64,23 +63,21 @@ extension HYShareTableViewCell: UICollectionViewDataSource {
 extension HYShareTableViewCell: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        cell.backgroundColor = .white
+
+        let backgroundView = UIView(frame: cell.frame)
+        backgroundView.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        cell.selectedBackgroundView = backgroundView
         (cell as? HYShareCollectionCell)?.action = actions?[indexPath.row]
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.router(with: EventName.didSelectItem, userInfo: nil)
+        collectionView.deselectItem(at: indexPath, animated: true)
         if let action = actions?[indexPath.row] {
             action.myHandler(action)
         }
-    }
-
-    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath)
-        cell?.contentView.backgroundColor = UIColor(white: 0.9, alpha: 1)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath)
-        cell?.contentView.backgroundColor = nil
     }
 }
 
