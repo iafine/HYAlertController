@@ -16,7 +16,7 @@ class HYConstants: UIView {
     static let alertCellheight: CGFloat = 44  // AlertCell的高度
     static let alertSpec: CGFloat = 40      // AlertCell距离屏幕边的间距
 
-    static let shareItemHeight: CGFloat = 100   // 分享item的高度
+    static let shareItemHeight: CGFloat = 80   // 分享item的高度
     static let shareItemWidth: CGFloat = 72     // 分享item的宽度
     static let shareItemPadding: CGFloat = 14   // 分享item之间的距离
     static let shareCancelItemHeight: CGFloat = 49   // 分享底部取消的高度
