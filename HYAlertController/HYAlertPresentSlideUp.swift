@@ -12,41 +12,36 @@ class HYAlertPresentSlideUp: NSObject, UIViewControllerAnimatedTransitioning {
 
     // MARK: - UIViewControllerAnimatedTransitioning
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return HY_Constants.presentAnimateDuration
+        return HYConstants.presentAnimateDuration
     }
-    
+
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        let toVC: HYAlertController = transitionContext.viewController(forKey: .to) as! HYAlertController
-        let fromVC: UIViewController = transitionContext.viewController(forKey: .from)!
-        let containerView: UIView = transitionContext.containerView
-        
+        guard let toVC = transitionContext.viewController(forKey: .to) as? HYAlertController else { return }
+        let fromVC = transitionContext.viewController(forKey: .from)!
+        let containerView = transitionContext.containerView
+
         // start animation status
         toVC.dimBackgroundView.alpha = 0
-        if toVC.alertStyle == .actionSheet {
-            toVC.sheetView.frame = CGRect (x: fromVC.view.frame.origin.x,
-                                           y: fromVC.view.frame.size.height,
-                                           width: fromVC.view.frame.size.width,
-                                           height: fromVC.view.frame.size.height)
-        }else if toVC.alertStyle == .shareSheet {
-            toVC.shareView.frame = CGRect (x: fromVC.view.frame.origin.x,
-                                           y: fromVC.view.frame.size.height,
-                                           width: fromVC.view.frame.size.width,
-                                           height: fromVC.view.frame.size.height)
-        }else {
+        let isSheet = [.shareSheet, .actionSheet].contains(toVC.alertStyle)
+
+        if isSheet {
+            toVC.pickerView.frame = CGRect(x: fromVC.view.frame.minX,
+                y: fromVC.view.frame.height,
+                width: fromVC.view.frame.width,
+                height: fromVC.view.frame.height)
+        } else {
             toVC.view.alpha = 0
         }
         containerView.addSubview(toVC.view)
-        
-        let duration: TimeInterval = transitionDuration(using: transitionContext)
-        
+
+        let duration = transitionDuration(using: transitionContext)
+
         // 执行动画
         UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.0, options: .curveLinear, animations: {
             toVC.dimBackgroundView.alpha = 1
-            if toVC.alertStyle == .actionSheet {
-                toVC.sheetView.frame = transitionContext.finalFrame(for: toVC)
-            }else if toVC.alertStyle == .shareSheet {
-                toVC.shareView.frame = transitionContext.finalFrame(for: toVC)
-            }else {
+            if isSheet {
+                toVC.pickerView.frame = transitionContext.finalFrame(for: toVC)
+            } else {
                 toVC.view.alpha = 1
             }
         }, completion: { (finished) in

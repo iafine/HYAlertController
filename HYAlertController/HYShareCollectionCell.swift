@@ -9,26 +9,27 @@
 import UIKit
 
 class HYShareCollectionCell: UICollectionViewCell {
-    lazy var cellIcon: UIImageView = {
-        let imageView: UIImageView = UIImageView ()
-        return imageView
+
+    private lazy var button: UIButton = {
+        let button = UIButton(frame: self.bounds)
+        button.isUserInteractionEnabled = false
+        button.setTitleColor( UIColor.lightGray, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
+        return button
     }()
-    
-    lazy var titleView: UITextView = {
-        let text: UITextView = UITextView ()
-        text.textAlignment = .center
-        text.font = UIFont.systemFont(ofSize: 11)
-        text.textAlignment = .center
-        text.isUserInteractionEnabled = false
-        return text
-    }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        initCellUI()
-        initCellLayout()
+
+        contentView.addSubview(button)
     }
-    
+
+    var action: HYAlertAction? {
+        didSet {
+            button.set(action?.title, with: action?.image)
+        }
+    }
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -36,39 +37,15 @@ class HYShareCollectionCell: UICollectionViewCell {
 
 // MARK: - Class Methods
 extension HYShareCollectionCell {
-    class func ID() -> String {
+    class var ID: String {
         return "HYShareCollectionCell"
     }
-    
-    class func cellSize() -> CGSize {
-        return CGSize (width: HY_Constants.shareItemWidth, height: HY_Constants.shareItemHeight)
-    }
-    
-    class func cellInset() -> UIEdgeInsets {
-        return UIEdgeInsets (top: HY_Constants.shareItemPadding, left: HY_Constants.shareItemPadding, bottom: HY_Constants.shareItemPadding, right: HY_Constants.shareItemPadding)
-    }
-}
 
-// MARK: - Private Methods
-extension HYShareCollectionCell {
-    fileprivate func initCellUI() {
-        self.addSubview(self.titleView)
-        self.addSubview(self.cellIcon)
+    class var cellSize: CGSize {
+        return CGSize(width: HYConstants.shareItemWidth, height: HYConstants.shareItemHeight)
     }
-    
-    fileprivate func initCellLayout() {
-        self.cellIcon.snp.makeConstraints { (make) in
-            make.left.equalTo(self.snp.left).offset(10)
-            make.top.equalTo(self.snp.top).offset(10)
-            make.right.equalTo(self.snp.right).offset(-10)
-            make.height.equalTo(self.cellIcon.snp.width)
-        }
-        
-        self.titleView.snp.makeConstraints { (make) in
-            make.left.equalTo(self.snp.left)
-            make.top.equalTo(self.cellIcon.snp.bottom).offset(5)
-            make.right.equalTo(self.snp.right)
-            make.bottom.equalTo(self.snp.bottom)
-        }
+
+    class var cellInset: UIEdgeInsets {
+        return UIEdgeInsets(top: HYConstants.shareItemPadding, left: HYConstants.shareItemPadding, bottom: HYConstants.shareItemPadding, right: HYConstants.shareItemPadding)
     }
 }

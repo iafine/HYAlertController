@@ -12,29 +12,30 @@ class HYAlertDismissSlideDown: NSObject, UIViewControllerAnimatedTransitioning {
 
     // MARK: - UIViewControllerAnimatedTransitioning
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return HY_Constants.dismissAnimateDuration
+        return HYConstants.dismissAnimateDuration
     }
-    
+
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        let fromVC: HYAlertController = transitionContext.viewController(forKey: .from) as! HYAlertController
-        
+        guard let fromVC = transitionContext.viewController(forKey: .from) as? HYAlertController else {
+            return
+        }
+
         // start animation status
         fromVC.dimBackgroundView.alpha = 1
-        
-        if fromVC.alertStyle == .alert {
+        let style = fromVC.alertStyle
+
+        if style == .alert {
             fromVC.view.alpha = 1
         }
-        let duration: TimeInterval = transitionDuration(using: transitionContext)
-        let finalY: CGFloat = fromVC.view.frame.size.height
-        
+        let duration = transitionDuration(using: transitionContext)
+        let finalY = fromVC.view.frame.height
+
         // 执行动画
         UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.0, options: .curveEaseInOut, animations: {
             fromVC.dimBackgroundView.alpha = 0
-            if fromVC.alertStyle == .actionSheet {
-                fromVC.sheetView.frame.origin.y += finalY
-            }else if fromVC.alertStyle == .shareSheet {
-                fromVC.shareView.frame.origin.y += finalY
-            }else {
+            if [.actionSheet, .shareSheet].contains(style) {
+                fromVC.pickerView.frame.origin.y += finalY
+            } else {
                 fromVC.view.alpha = 0
             }
         }, completion: { (finished) in
@@ -42,4 +43,3 @@ class HYAlertDismissSlideDown: NSObject, UIViewControllerAnimatedTransitioning {
         })
     }
 }
-
