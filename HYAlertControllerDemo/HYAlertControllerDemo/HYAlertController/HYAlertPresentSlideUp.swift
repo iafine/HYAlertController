@@ -30,7 +30,7 @@ class HYAlertPresentSlideUp: NSObject, UIViewControllerAnimatedTransitioning {
                 width: fromVC.view.frame.width,
                 height: fromVC.view.frame.height)
         } else {
-            toVC.view.alpha = 0
+            toVC.pickerView.transform = CGAffineTransform (scaleX: 0, y: 0)
         }
         containerView.addSubview(toVC.view)
 
@@ -42,7 +42,7 @@ class HYAlertPresentSlideUp: NSObject, UIViewControllerAnimatedTransitioning {
             if isSheet {
                 toVC.pickerView.frame = transitionContext.finalFrame(for: toVC)
             } else {
-                toVC.view.alpha = 1
+                toVC.pickerView.transform = CGAffineTransform (scaleX: 1, y: 1)
             }
         }, completion: { (finished) in
             transitionContext.completeTransition(true)
