@@ -33,6 +33,15 @@ class HYShareCollectionCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        button.imageView?.bounds = CGRect (x: 0,
+                                           y: 0,
+                                           width: HYConstants.shareImageSize.width,
+                                           height: HYConstants.shareImageSize.height)
+    }
 }
 
 // MARK: - Class Methods

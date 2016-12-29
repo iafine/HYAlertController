@@ -142,14 +142,14 @@ extension ViewController {
         let threeAction = HYAlertAction(title: "Three Action", style: .destructive, handler: { (action) in
             print(action.title as Any)
         })
-        let cancelAction = HYAlertAction(title: "Cancel Action", style: .cancel, handler: { (action) in
+        let cancelAction = HYAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
             print(action.title as Any)
         })
         
+        alertVC.add(cancelAction)
         alertVC.add(oneAction)
         alertVC.add(twoAction)
         alertVC.add(threeAction)
-        alertVC.add(cancelAction)
         self.present(alertVC, animated: true, completion: nil)
     }
     
@@ -164,7 +164,7 @@ extension ViewController {
         let threeAction = HYAlertAction(title: "Three Action", style: .destructive, handler: { (action) in
             print(action.title as Any)
         })
-        let cancelAction = HYAlertAction(title: "Cancel Action", style: .cancel, handler: { (action) in
+        let cancelAction = HYAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
             print(action.title as Any)
         })
         alertVC.add(oneAction)
@@ -185,7 +185,7 @@ extension ViewController {
         let threeAction = HYAlertAction(title: "Three Action", style: .destructive, handler: { (action) in
             print(action.title as Any)
         })
-        let cancelAction = HYAlertAction(title: "Cancel Action", style: .cancel, handler: { (action) in
+        let cancelAction = HYAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
             print(action.title as Any)
         })
         alertVC.add(oneAction)
@@ -206,7 +206,7 @@ extension ViewController {
         let threeAction = HYAlertAction(title: "Three Action", style: .destructive, handler: { (action) in
             print(action.title as Any)
         })
-        let cancelAction = HYAlertAction(title: "Cancel Action", style: .cancel, handler: { (action) in
+        let cancelAction = HYAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
             print(action.title  as Any)
         })
         alertVC.add(oneAction)
@@ -218,6 +218,11 @@ extension ViewController {
     
     func showAlertStyleWithoutAction() {
         let alertVC = HYAlertController(title: "Title", message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .alert)
+        let cancelAction = HYAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+            print(action.title as Any)
+        })
+        
+        alertVC.add(cancelAction)
         self.present(alertVC, animated: true, completion: nil)
     }
     
@@ -235,6 +240,11 @@ extension ViewController {
             (action) in
             print(action.title as Any)
         })
+        let cancelAction = HYAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+            print(action.title as Any)
+        })
+        
+        alertVC.add(cancelAction)
         alertVC.add(oneAction)
         alertVC.add(twoAction)
         alertVC.add(threeAction)
@@ -255,7 +265,7 @@ extension ViewController {
         let threeAction = HYAlertAction(title: "Three Action", style: .destructive, handler: { (action) in
             print(action.title as Any)
         })
-        let cancelAction = HYAlertAction(title: "Cancel Action", style: .cancel, handler: { (action) in
+        let cancelAction = HYAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
             print(action.title as Any)
         })
         alertVC.add(oneAction)
@@ -276,7 +286,7 @@ extension ViewController {
         let threeAction = HYAlertAction(title: "Three Action", style: .destructive, handler: { (action) in
             print(action.title as Any)
         })
-        let cancelAction = HYAlertAction(title: "Cancel Action", style: .cancel, handler: { (action) in
+        let cancelAction = HYAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
             print(action.title as Any)
         })
         alertVC.add(oneAction)
@@ -297,7 +307,7 @@ extension ViewController {
         let threeAction = HYAlertAction(title: "Three Action", style: .destructive, handler: { (action) in
             print(action.title as Any)
         })
-        let cancelAction = HYAlertAction(title: "Cancel Action", style: .cancel, handler: { (action) in
+        let cancelAction = HYAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
             print(action.title as Any)
         })
         alertVC.add(oneAction)
@@ -318,7 +328,7 @@ extension ViewController {
         let threeAction = HYAlertAction(title: "Three Action", style: .destructive, handler: { (action) in
             print(action.title as Any)
         })
-        let cancelAction = HYAlertAction(title: "Cancel Action", style: .cancel, handler: { (action) in
+        let cancelAction = HYAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
             print(action.title as Any)
         })
         alertVC.add(oneAction)
@@ -330,6 +340,11 @@ extension ViewController {
     
     func showSheetStyleWithoutAction() {
         let alertVC: HYAlertController = HYAlertController(title: "Title", message: "Here you can describe the details of its title, and you can write here what you want to express.", style: .actionSheet)
+        let cancelAction = HYAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+            print(action.title as Any)
+        })
+        
+        alertVC.add(cancelAction)
         self.present(alertVC, animated: true, completion: nil)
     }
     
@@ -382,6 +397,7 @@ extension ViewController {
             (action) in
             print(action.title as Any)
         })
+        
         alertVC.addShare([oneAction, twoAction, threeAction, fourAction, fiveAction, sixAction])
         self.present(alertVC, animated: true, completion: nil)
     }
