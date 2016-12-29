@@ -86,6 +86,7 @@ class HYTitleView: UIView {
         messageLabel.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
         messageLabel.textColor = UIColor(white: 0.8, alpha: 1)
         messageLabel.numberOfLines = 0
+        messageLabel.textAlignment = .center
         messageLabel.text = message
         messageLabel.sizeToFit()
         addSubview(messageLabel)

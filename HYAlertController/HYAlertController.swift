@@ -55,6 +55,14 @@ public class HYAlertController: UIViewController {
         pickerView.delegate = self
         view.addSubview(pickerView)
     }
+    
+    public override var shouldAutorotate: Bool {
+        return false
+    }
+    
+    public override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
 }
 
 // MARK: - LifeCycle
@@ -88,6 +96,7 @@ extension HYAlertController {
                 y: 0,
                 width: HYConstants.ScreenWidth - HYConstants.alertSpec,
                 height: tableHeight)
+            pickerView.cornerRadius = HYConstants.alertCornerRadius    // set cornerRadius
             pickerView.frame = newTableFrame
             pickerView.center = view.center
         }
@@ -107,7 +116,11 @@ extension HYAlertController {
                 actionArray[0].append(action)
             }
         }
-        (pickerView as? DataPresenter)?.refresh(actionArray[0], cancelAction: cancelAction)
+        if let rowArray = actionArray.first {
+            (pickerView as? DataPresenter)?.refresh(rowArray, cancelAction: cancelAction)
+        }else {
+            (pickerView as? DataPresenter)?.refresh([], cancelAction: cancelAction)
+        }
     }
 
     /// 添加必须是元素为HYAlertAction的数组，调用几次该方法，分享显示几行
