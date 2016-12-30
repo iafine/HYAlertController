@@ -1,6 +1,6 @@
 # HYAlertController
-  
- 
+
+
   [![Language](https://img.shields.io/badge/Swift-3.0-orange.svg)]()
   [![GitHub license](https://img.shields.io/cocoapods/l/HYAlertController.svg)](https://github.com/castial/HYAlertController/blob/master/LICENSE)
   [![Pod version](http://img.shields.io/cocoapods/v/HYAlertController.svg)](https://cocoapods.org/pods/HYAlertController)
@@ -32,7 +32,7 @@ HYAlertController是一款极简形式的Alert控件，包含多种使用场景�
 - [x] 与UIAlertController相同的语法实现
 - [x] 支持Swift 3
 - [x] Cocoapods
-- [ ] Carthage(暂不支持)
+- [ ] Carthage
 
 
 ## 要求
@@ -65,14 +65,9 @@ pod 'HYAlertController'
 $ pod install
 ```
 
->注意：`HYAlertController`会依赖安装`SnapKit`库，`HYAlertController`所有的自动布局都采用`SnapKit`完成，如果您的项目中也使用到了`SnapKit`，请避免依赖重复。
-
 ## 手动安装
 
-1. 下载该项目文件，将```/HYAlertController```文件夹拖到您的项目中去；
-2. 如果您的项目中没有使用`SnapKit`，您还需要安装`SnapKit`，版本是3.0.0+；
-
->注意：推荐您使用Cocoapods方式安装，这样可以避免繁琐的依赖问题，但是如果您是手动安装的话，一定要保证您的`SnapKit`版本高于3.0.0。
+下载该项目文件，将```/HYAlertController```文件夹拖到您的项目中去。
 
 ## 用法
 用法类似于`UIAlertController`，不过`HYAlertController`提供了三种风格: Alert、Sheet和Share。
