@@ -24,8 +24,7 @@ extension UITableViewCell {
     }
 }
 
-extension UIButton {
-
+extension UIButton {    
     func set(_ title: String?, with image: UIImage?, direction: NSLayoutAttribute = .top, interval: CGFloat = 10.0) {
         setTitle(title, for: .normal)
         setImage(image, for: .normal)

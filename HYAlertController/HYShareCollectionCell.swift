@@ -10,37 +10,36 @@ import UIKit
 
 class HYShareCollectionCell: UICollectionViewCell {
 
-    private lazy var button: UIButton = {
-        let button = UIButton(frame: self.bounds)
-        button.isUserInteractionEnabled = false
-        button.setTitleColor( UIColor.lightGray, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
-        return button
+    fileprivate lazy var shareImageView: UIImageView = {
+        let imageView = UIImageView (frame: CGRect (x: 15, y: 0, width: self.bounds.size.width - 30, height: self.bounds.size.width - 30))
+        imageView.contentMode = .scaleAspectFit
+        return imageView
     }()
 
+    fileprivate lazy var shareTitleLabel: UILabel = {
+        let label = UILabel (frame: CGRect (x: 0, y: self.shareImageView.frame.maxY + 5, width: self.bounds.size.width, height: 20))
+        label.textColor = UIColor.lightGray
+        label.font = UIFont.systemFont(ofSize: 12.0)
+        label.textAlignment = .center
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        contentView.addSubview(button)
+        contentView.addSubview(shareImageView)
+        contentView.addSubview(shareTitleLabel)
     }
 
     var action: HYAlertAction? {
         didSet {
-            button.set(action?.title, with: action?.image)
+            self.shareImageView.image = action?.image
+            self.shareTitleLabel.text = action?.title
         }
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        button.imageView?.bounds = CGRect (x: 0,
-                                           y: 0,
-                                           width: HYConstants.shareImageSize.width,
-                                           height: HYConstants.shareImageSize.height)
     }
 }
 
@@ -56,5 +55,12 @@ extension HYShareCollectionCell {
 
     class var cellInset: UIEdgeInsets {
         return UIEdgeInsets(top: HYConstants.shareItemPadding, left: HYConstants.shareItemPadding, bottom: HYConstants.shareItemPadding, right: HYConstants.shareItemPadding)
+    }
+}
+
+// MARK: - Layout Methods
+extension HYShareCollectionCell {
+    fileprivate func initLayout(title: String?, image: UIImage?) {
+        
     }
 }

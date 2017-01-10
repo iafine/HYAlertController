@@ -20,7 +20,6 @@ struct HYConstants {
     static let shareItemWidth: CGFloat = 80     // 分享item的宽度
     static let shareItemPadding: CGFloat = 14   // 分享item之间的距离
     static let shareCancelItemHeight: CGFloat = 49   // 分享底部取消的高度
-    static let shareImageSize: CGSize = CGSize (width: 35, height: 35)  // 分享图片默认大小
     
     static let presentAnimateDuration: TimeInterval = 0.7   // present动画时间
     static let dismissAnimateDuration: TimeInterval = 0.7   // dismiss动画时间
